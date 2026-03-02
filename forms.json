@@ -1,0 +1,247 @@
+[
+    {
+        "page": "http://localhost:8080/setup.php",
+        "action": "http://localhost:8080/",
+        "method": "post",
+        "inputs": [
+            {
+                "name": "create_db",
+                "type": "submit"
+            },
+            {
+                "name": "user_token",
+                "type": "hidden"
+            }
+        ]
+    },
+    {
+        "page": "http://localhost:8080/vulnerabilities/brute/",
+        "action": "http://localhost:8080/",
+        "method": "get",
+        "inputs": [
+            {
+                "name": "username",
+                "type": "text"
+            },
+            {
+                "name": "password",
+                "type": "password"
+            },
+            {
+                "name": "Login",
+                "type": "submit"
+            }
+        ]
+    },
+    {
+        "page": "http://localhost:8080/vulnerabilities/exec/",
+        "action": "http://localhost:8080/",
+        "method": "post",
+        "inputs": [
+            {
+                "name": "ip",
+                "type": "text"
+            },
+            {
+                "name": "Submit",
+                "type": "submit"
+            }
+        ]
+    },
+    {
+        "page": "http://localhost:8080/vulnerabilities/csrf/",
+        "action": "http://localhost:8080/",
+        "method": "get",
+        "inputs": [
+            {
+                "name": "password_new",
+                "type": "password"
+            },
+            {
+                "name": "password_conf",
+                "type": "password"
+            },
+            {
+                "name": "Change",
+                "type": "submit"
+            }
+        ]
+    },
+    {
+        "page": "http://localhost:8080/vulnerabilities/upload/",
+        "action": "http://localhost:8080/",
+        "method": "post",
+        "inputs": [
+            {
+                "name": "MAX_FILE_SIZE",
+                "type": "hidden"
+            },
+            {
+                "name": "uploaded",
+                "type": "file"
+            },
+            {
+                "name": "Upload",
+                "type": "submit"
+            }
+        ]
+    },
+    {
+        "page": "http://localhost:8080/vulnerabilities/captcha/",
+        "action": "http://localhost:8080/",
+        "method": "post",
+        "inputs": [
+            {
+                "name": "step",
+                "type": "hidden"
+            },
+            {
+                "name": "password_new",
+                "type": "password"
+            },
+            {
+                "name": "password_conf",
+                "type": "password"
+            },
+            {
+                "name": "Change",
+                "type": "submit"
+            }
+        ]
+    },
+    {
+        "page": "http://localhost:8080/vulnerabilities/sqli/",
+        "action": "http://localhost:8080/",
+        "method": "get",
+        "inputs": [
+            {
+                "name": "id",
+                "type": "text"
+            },
+            {
+                "name": "Submit",
+                "type": "submit"
+            }
+        ]
+    },
+    {
+        "page": "http://localhost:8080/vulnerabilities/sqli_blind/",
+        "action": "http://localhost:8080/",
+        "method": "get",
+        "inputs": [
+            {
+                "name": "id",
+                "type": "text"
+            },
+            {
+                "name": "Submit",
+                "type": "submit"
+            }
+        ]
+    },
+    {
+        "page": "http://localhost:8080/vulnerabilities/weak_id/",
+        "action": "http://localhost:8080/",
+        "method": "post",
+        "inputs": [
+            {
+                "name": null,
+                "type": "submit"
+            }
+        ]
+    },
+    {
+        "page": "http://localhost:8080/vulnerabilities/xss_d/",
+        "action": "http://localhost:8080/",
+        "method": "get",
+        "inputs": [
+            {
+                "name": null,
+                "type": "submit"
+            }
+        ]
+    },
+    {
+        "page": "http://localhost:8080/vulnerabilities/xss_r/",
+        "action": "http://localhost:8080/",
+        "method": "get",
+        "inputs": [
+            {
+                "name": "name",
+                "type": "text"
+            },
+            {
+                "name": null,
+                "type": "submit"
+            }
+        ]
+    },
+    {
+        "page": "http://localhost:8080/vulnerabilities/xss_s/",
+        "action": "http://localhost:8080/",
+        "method": "post",
+        "inputs": [
+            {
+                "name": "txtName",
+                "type": "text"
+            },
+            {
+                "name": "btnSign",
+                "type": "submit"
+            },
+            {
+                "name": "btnClear",
+                "type": "submit"
+            }
+        ]
+    },
+    {
+        "page": "http://localhost:8080/vulnerabilities/csp/",
+        "action": "http://localhost:8080/",
+        "method": "post",
+        "inputs": [
+            {
+                "name": "include",
+                "type": "text"
+            },
+            {
+                "name": null,
+                "type": "submit"
+            }
+        ]
+    },
+    {
+        "page": "http://localhost:8080/vulnerabilities/javascript/",
+        "action": "http://localhost:8080/",
+        "method": "post",
+        "inputs": [
+            {
+                "name": "token",
+                "type": "hidden"
+            },
+            {
+                "name": "phrase",
+                "type": "text"
+            },
+            {
+                "name": "send",
+                "type": "submit"
+            }
+        ]
+    },
+    {
+        "page": "http://localhost:8080/security.php",
+        "action": "http://localhost:8080/",
+        "method": "post",
+        "inputs": [
+            {
+                "name": "seclev_submit",
+                "type": "submit"
+            },
+            {
+                "name": "user_token",
+                "type": "hidden"
+            }
+        ]
+    }
+]
