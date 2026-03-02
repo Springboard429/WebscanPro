@@ -1,0 +1,534 @@
+{
+    "urls": [
+        "http://localhost:80/",
+        "http://localhost:80/instructions.php",
+        "http://localhost:80/setup.php",
+        "http://localhost:80/vulnerabilities/brute/",
+        "http://localhost:80/vulnerabilities/exec/",
+        "http://localhost:80/vulnerabilities/csrf/",
+        "http://localhost:80/vulnerabilities/fi/?page=include.php",
+        "http://localhost:80/vulnerabilities/upload/",
+        "http://localhost:80/vulnerabilities/captcha/",
+        "http://localhost:80/vulnerabilities/sqli/",
+        "http://localhost:80/vulnerabilities/sqli_blind/",
+        "http://localhost:80/vulnerabilities/weak_id/",
+        "http://localhost:80/vulnerabilities/xss_d/",
+        "http://localhost:80/vulnerabilities/xss_r/",
+        "http://localhost:80/vulnerabilities/xss_s/",
+        "http://localhost:80/vulnerabilities/csp/",
+        "http://localhost:80/vulnerabilities/javascript/",
+        "http://localhost:80/security.php",
+        "http://localhost:80/phpinfo.php",
+        "http://localhost:80/about.php",
+        "http://localhost:80/logout.php",
+        "http://localhost:80/docs/DVWA_v1.3.pdf",
+        "http://localhost:80/instructions.php?doc=PHPIDS-license",
+        "http://localhost:80?doc=readme",
+        "http://localhost:80?doc=PDF",
+        "http://localhost:80?doc=changelog",
+        "http://localhost:80?doc=copying",
+        "http://localhost:80?doc=PHPIDS-license",
+        "http://localhost:80?phpids=on",
+        "http://localhost:80?test=%22><script>eval(window.name)</script>",
+        "http://localhost:80/ids_log.php",
+        "http://localhost:80?page=file1.php",
+        "http://localhost:80?page=file2.php",
+        "http://localhost:80?page=file3.php"
+    ],
+    "forms": [
+        {
+            "action": "login.php",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "username",
+                    "type": "text"
+                },
+                {
+                    "name": "password",
+                    "type": "password"
+                },
+                {
+                    "name": "Login",
+                    "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
+                }
+            ]
+        },
+        {
+            "action": "login.php",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "username",
+                    "type": "text"
+                },
+                {
+                    "name": "password",
+                    "type": "password"
+                },
+                {
+                    "name": "Login",
+                    "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
+                }
+            ]
+        },
+        {
+            "action": "login.php",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "username",
+                    "type": "text"
+                },
+                {
+                    "name": "password",
+                    "type": "password"
+                },
+                {
+                    "name": "Login",
+                    "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
+                }
+            ]
+        },
+        {
+            "action": "login.php",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "username",
+                    "type": "text"
+                },
+                {
+                    "name": "password",
+                    "type": "password"
+                },
+                {
+                    "name": "Login",
+                    "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
+                }
+            ]
+        },
+        {
+            "action": "login.php",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "username",
+                    "type": "text"
+                },
+                {
+                    "name": "password",
+                    "type": "password"
+                },
+                {
+                    "name": "Login",
+                    "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
+                }
+            ]
+        },
+        {
+            "action": "login.php",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "username",
+                    "type": "text"
+                },
+                {
+                    "name": "password",
+                    "type": "password"
+                },
+                {
+                    "name": "Login",
+                    "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
+                }
+            ]
+        },
+        {
+            "action": "login.php",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "username",
+                    "type": "text"
+                },
+                {
+                    "name": "password",
+                    "type": "password"
+                },
+                {
+                    "name": "Login",
+                    "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
+                }
+            ]
+        },
+        {
+            "action": "login.php",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "username",
+                    "type": "text"
+                },
+                {
+                    "name": "password",
+                    "type": "password"
+                },
+                {
+                    "name": "Login",
+                    "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
+                }
+            ]
+        },
+        {
+            "action": "login.php",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "username",
+                    "type": "text"
+                },
+                {
+                    "name": "password",
+                    "type": "password"
+                },
+                {
+                    "name": "Login",
+                    "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
+                }
+            ]
+        },
+        {
+            "action": "#",
+            "method": "POST",
+            "inputs": [
+                {
+                    "name": "seclev_submit",
+                    "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
+                }
+            ]
+        },
+        {
+            "action": null,
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "token",
+                    "type": "hidden"
+                },
+                {
+                    "name": "phrase",
+                    "type": "text"
+                },
+                {
+                    "name": "send",
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": null,
+            "method": "POST",
+            "inputs": [
+                {
+                    "name": "include",
+                    "type": "text"
+                },
+                {
+                    "name": null,
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": null,
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "txtName",
+                    "type": "text"
+                },
+                {
+                    "name": "btnSign",
+                    "type": "submit"
+                },
+                {
+                    "name": "btnClear",
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": "#",
+            "method": "GET",
+            "inputs": [
+                {
+                    "name": "name",
+                    "type": "text"
+                },
+                {
+                    "name": null,
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": null,
+            "method": "GET",
+            "inputs": [
+                {
+                    "name": null,
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": null,
+            "method": "post",
+            "inputs": [
+                {
+                    "name": null,
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": "#",
+            "method": "GET",
+            "inputs": [
+                {
+                    "name": "id",
+                    "type": "text"
+                },
+                {
+                    "name": "Submit",
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": "#",
+            "method": "GET",
+            "inputs": [
+                {
+                    "name": "id",
+                    "type": "text"
+                },
+                {
+                    "name": "Submit",
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": "#",
+            "method": "POST",
+            "inputs": [
+                {
+                    "name": "step",
+                    "type": "hidden"
+                },
+                {
+                    "name": "password_new",
+                    "type": "password"
+                },
+                {
+                    "name": "password_conf",
+                    "type": "password"
+                },
+                {
+                    "name": "Change",
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": "#",
+            "method": "POST",
+            "inputs": [
+                {
+                    "name": "MAX_FILE_SIZE",
+                    "type": "hidden"
+                },
+                {
+                    "name": "uploaded",
+                    "type": "file"
+                },
+                {
+                    "name": "Upload",
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": "login.php",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "username",
+                    "type": "text"
+                },
+                {
+                    "name": "password",
+                    "type": "password"
+                },
+                {
+                    "name": "Login",
+                    "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
+                }
+            ]
+        },
+        {
+            "action": "login.php",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "username",
+                    "type": "text"
+                },
+                {
+                    "name": "password",
+                    "type": "password"
+                },
+                {
+                    "name": "Login",
+                    "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
+                }
+            ]
+        },
+        {
+            "action": "login.php",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "username",
+                    "type": "text"
+                },
+                {
+                    "name": "password",
+                    "type": "password"
+                },
+                {
+                    "name": "Login",
+                    "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
+                }
+            ]
+        },
+        {
+            "action": "#",
+            "method": "GET",
+            "inputs": [
+                {
+                    "name": "password_new",
+                    "type": "password"
+                },
+                {
+                    "name": "password_conf",
+                    "type": "password"
+                },
+                {
+                    "name": "Change",
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": "#",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "ip",
+                    "type": "text"
+                },
+                {
+                    "name": "Submit",
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": "#",
+            "method": "GET",
+            "inputs": [
+                {
+                    "name": "username",
+                    "type": "text"
+                },
+                {
+                    "name": "password",
+                    "type": "password"
+                },
+                {
+                    "name": "Login",
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": "#",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "create_db",
+                    "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
+                }
+            ]
+        }
+    ]
+}
