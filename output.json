@@ -1,0 +1,1710 @@
+{
+    "urls": [
+        "http://localhost/",
+        "http://localhost/instructions.php",
+        "http://localhost/setup.php",
+        "http://localhost/vulnerabilities/brute/",
+        "http://localhost/vulnerabilities/exec/",
+        "http://localhost/vulnerabilities/csrf/",
+        "http://localhost/vulnerabilities/fi/?page=include.php",
+        "http://localhost/vulnerabilities/upload/",
+        "http://localhost/vulnerabilities/captcha/",
+        "http://localhost/vulnerabilities/sqli/",
+        "http://localhost/vulnerabilities/sqli_blind/",
+        "http://localhost/vulnerabilities/weak_id/",
+        "http://localhost/vulnerabilities/xss_d/",
+        "http://localhost/vulnerabilities/xss_r/",
+        "http://localhost/vulnerabilities/xss_s/",
+        "http://localhost/vulnerabilities/csp/",
+        "http://localhost/vulnerabilities/javascript/",
+        "http://localhost/security.php",
+        "http://localhost/phpinfo.php",
+        "http://localhost/about.php",
+        "http://localhost/logout.php",
+        "https://www.virtualbox.org/",
+        "https://www.vmware.com/",
+        "https://www.apachefriends.org/en/xampp.html",
+        "http://www.itsecgames.com/",
+        "http://sourceforge.net/projects/mutillidae/files/mutillidae-project/",
+        "http://www.irongeek.com/i.php?page=mutillidae/mutillidae-deliberately-vulnerable-php-owasp-top-10",
+        "https://www.owasp.org/index.php/OWASP_Broken_Web_Applications_Project"
+    ],
+    "forms": [
+        {
+            "action": "#",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "create_db",
+                    "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
+                }
+            ]
+        },
+        {
+            "action": "#",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "username",
+                    "type": "text"
+                },
+                {
+                    "name": "password",
+                    "type": "password"
+                },
+                {
+                    "name": "Login",
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": "#",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "ip",
+                    "type": "text"
+                },
+                {
+                    "name": "Submit",
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": "#",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "password_new",
+                    "type": "password"
+                },
+                {
+                    "name": "password_conf",
+                    "type": "password"
+                },
+                {
+                    "name": "Change",
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": "#",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "MAX_FILE_SIZE",
+                    "type": "hidden"
+                },
+                {
+                    "name": "uploaded",
+                    "type": "file"
+                },
+                {
+                    "name": "Upload",
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": "#",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "step",
+                    "type": "hidden"
+                },
+                {
+                    "name": "password_new",
+                    "type": "password"
+                },
+                {
+                    "name": "password_conf",
+                    "type": "password"
+                },
+                {
+                    "name": "Change",
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": "#",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "id",
+                    "type": "text"
+                },
+                {
+                    "name": "Submit",
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": "#",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "id",
+                    "type": "text"
+                },
+                {
+                    "name": "Submit",
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": null,
+            "method": "post",
+            "inputs": [
+                {
+                    "name": null,
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": null,
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "default",
+                    "type": "select"
+                },
+                {
+                    "name": null,
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": "#",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "name",
+                    "type": "text"
+                },
+                {
+                    "name": null,
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": null,
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "txtName",
+                    "type": "text"
+                },
+                {
+                    "name": "mtxMessage",
+                    "type": "textarea"
+                },
+                {
+                    "name": "btnSign",
+                    "type": "submit"
+                },
+                {
+                    "name": "btnClear",
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": null,
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "include",
+                    "type": "text"
+                },
+                {
+                    "name": null,
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": null,
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "token",
+                    "type": "hidden"
+                },
+                {
+                    "name": "phrase",
+                    "type": "text"
+                },
+                {
+                    "name": "send",
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": "#",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "security",
+                    "type": "select"
+                },
+                {
+                    "name": "seclev_submit",
+                    "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
+                }
+            ]
+        },
+        {
+            "action": "login.php",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "username",
+                    "type": "text"
+                },
+                {
+                    "name": "password",
+                    "type": "password"
+                },
+                {
+                    "name": "Login",
+                    "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
+                }
+            ]
+        },
+        {
+            "action": "/search",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "q",
+                    "type": "text"
+                },
+                {
+                    "name": null,
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": "/search",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "q",
+                    "type": "text"
+                },
+                {
+                    "name": "wiki",
+                    "type": "hidden"
+                },
+                {
+                    "name": "changeset",
+                    "type": "hidden"
+                },
+                {
+                    "name": "ticket",
+                    "type": "hidden"
+                }
+            ]
+        },
+        {
+            "action": "/directory/",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "q",
+                    "type": "text"
+                },
+                {
+                    "name": null,
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": "/directory/",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "q",
+                    "type": "text"
+                },
+                {
+                    "name": null,
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": ".",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "q",
+                    "type": null
+                },
+                {
+                    "name": null,
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": null,
+            "method": "get",
+            "inputs": [
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                },
+                {
+                    "name": null,
+                    "type": "checkbox"
+                }
+            ]
+        },
+        {
+            "action": "/api/instrumentation/gpt",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "_visit_cookie",
+                    "type": "hidden"
+                },
+                {
+                    "name": "timestamp",
+                    "type": "hidden"
+                },
+                {
+                    "name": "spinner",
+                    "type": "hidden"
+                },
+                {
+                    "name": "XEMObwpLCj8KNEcOMw5bCjj8zGkDCgsOrbn4gw75V",
+                    "type": "text"
+                },
+                {
+                    "name": "XEMObwpLCj8KNEcONw5bCjj8zGkDCgsOrbn4gw75V",
+                    "type": "text"
+                },
+                {
+                    "name": "XHcOXwpjCksKLGsKVw47DmcKkw5DCmWbDnsOxwq9vwqpJUA",
+                    "type": "text"
+                },
+                {
+                    "name": "XH8OQwpHCiMKLA8Kjw4vDn8Khw5fDlMO8ccOubcO9DHtE",
+                    "type": "url"
+                },
+                {
+                    "name": "XEsOXwpzClcKJAMOfTCEgw7HCiMOmwrDDv8OnSglKw6Q",
+                    "type": "textarea"
+                },
+                {
+                    "name": null,
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": "https://www.paypal.com/cgi-bin/webscr",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "cmd",
+                    "type": "hidden"
+                },
+                {
+                    "name": "business",
+                    "type": "hidden"
+                },
+                {
+                    "name": "item_name",
+                    "type": "hidden"
+                },
+                {
+                    "name": "buyer_credit_promo_code",
+                    "type": "hidden"
+                },
+                {
+                    "name": "buyer_credit_product_category",
+                    "type": "hidden"
+                },
+                {
+                    "name": "buyer_credit_shipping_method",
+                    "type": "hidden"
+                },
+                {
+                    "name": "buyer_credit_user_address_change",
+                    "type": "hidden"
+                },
+                {
+                    "name": "no_shipping",
+                    "type": "hidden"
+                },
+                {
+                    "name": "no_note",
+                    "type": "hidden"
+                },
+                {
+                    "name": "currency_code",
+                    "type": "hidden"
+                },
+                {
+                    "name": "tax",
+                    "type": "hidden"
+                },
+                {
+                    "name": "lc",
+                    "type": "hidden"
+                },
+                {
+                    "name": "bn",
+                    "type": "hidden"
+                },
+                {
+                    "name": "submit",
+                    "type": "image"
+                }
+            ]
+        },
+        {
+            "action": "https://www.google.com/cse",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "cx",
+                    "type": "hidden"
+                },
+                {
+                    "name": "ie",
+                    "type": "hidden"
+                },
+                {
+                    "name": "q",
+                    "type": "text"
+                },
+                {
+                    "name": "sa",
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": "https://www.paypal.com/cgi-bin/webscr",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "cmd",
+                    "type": "hidden"
+                },
+                {
+                    "name": "business",
+                    "type": "hidden"
+                },
+                {
+                    "name": "item_name",
+                    "type": "hidden"
+                },
+                {
+                    "name": "buyer_credit_promo_code",
+                    "type": "hidden"
+                },
+                {
+                    "name": "buyer_credit_product_category",
+                    "type": "hidden"
+                },
+                {
+                    "name": "buyer_credit_shipping_method",
+                    "type": "hidden"
+                },
+                {
+                    "name": "buyer_credit_user_address_change",
+                    "type": "hidden"
+                },
+                {
+                    "name": "no_shipping",
+                    "type": "hidden"
+                },
+                {
+                    "name": "no_note",
+                    "type": "hidden"
+                },
+                {
+                    "name": "currency_code",
+                    "type": "hidden"
+                },
+                {
+                    "name": "tax",
+                    "type": "hidden"
+                },
+                {
+                    "name": "lc",
+                    "type": "hidden"
+                },
+                {
+                    "name": "bn",
+                    "type": "hidden"
+                },
+                {
+                    "name": "submit",
+                    "type": "image"
+                }
+            ]
+        }
+    ]
+}
