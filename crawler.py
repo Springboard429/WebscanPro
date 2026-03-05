@@ -1,144 +1,107 @@
 import requests
 from bs4 import BeautifulSoup
-import json
 from urllib.parse import urljoin
+import json
 
-def fetch_urls(base_url, session):
-    try:
-        response = session.get(base_url)
-        response.raise_for_status()
-        soup = BeautifulSoup(response.text, 'html.parser')
-        
-        links = []
-        for a_tag in soup.find_all('a', href=True):
-            href = a_tag['href']
-            full_url = urljoin(base_url, href)
-            links.append(full_url)
-        
-        return links
-    except requests.RequestException as e:
-        print(f"Error fetching the page: {e}")
-        return []
+BASE_URL = "http://localhost:80/"
+LOGIN_URL = urljoin(BASE_URL, "login.php")
+USERNAME = "admin"
+PASSWORD = "password"
 
-def fetch_forms(url, session):
-    """Return metadata for all forms found on the page at `url`.
+session = requests.Session()
 
-    Each form entry includes its action, method and a list of fields.  The
-    field list covers `<input>`, `<textarea>` and `<select>` elements so
-    DVWA-style forms (which often use textareas/selects) are handled.
-    """
-    try:
-        response = session.get(url)
-        response.raise_for_status()
-        soup = BeautifulSoup(response.text, 'html.parser')
-
-        forms = []
-        for form in soup.find_all('form'):
-            form_info = {
-                'action': form.get('action'),
-                'method': form.get('method', 'get').lower(),
-                'fields': []
-            }
-
-            # collect various field types
-            for field in form.find_all(['input', 'textarea', 'select']):
-                if field.name == 'input':
-                    form_info['fields'].append({
-                        'type': field.get('type'),
-                        'name': field.get('name'),
-                        'value': field.get('value')
-                    })
-                elif field.name == 'textarea':
-                    form_info['fields'].append({
-                        'type': 'textarea',
-                        'name': field.get('name'),
-                        'value': field.text
-                    })
-                elif field.name == 'select':
-                    options = [opt.get('value') for opt in field.find_all('option')]
-                    form_info['fields'].append({
-                        'type': 'select',
-                        'name': field.get('name'),
-                        'options': options
-                    })
-
-            forms.append(form_info)
-
-        return forms
-    except requests.RequestException as e:
-        print(f"Error fetching forms from {url}: {e}")
-        return []
-
-
-def main():
-    session = requests.Session()
-
-    login_url = "http://localhost/login.php"
-    username = "admin"
-    password = "password"
-
-    print(f"Fetching login page from {login_url}...")
-    login_page = session.get(login_url)
-    if login_page.status_code != 200:
-        print(f"Failed to load login page, status {login_page.status_code}")
-        return
-
-    soup = BeautifulSoup(login_page.text, 'html.parser')
-    user_token = soup.find('input', {'name': 'user_token'})
-    user_token_value = user_token['value'] if user_token else None
-    print(f"User token: {user_token_value}")
-
-    login_data = {
-        'username': username,
-        'password': password,
-        'Login': 'Login'
+# -------------------
+# Login function
+# -------------------
+def login():
+    print("[*] Logging in...")
+    res = session.get(LOGIN_URL)
+    soup = BeautifulSoup(res.text, "html.parser")
+    token_input = soup.find("input", {"name": "user_token"})
+    if not token_input:
+        print("[!] User token not found. Check DVWA login page or security level.")
+        return False
+    token = token_input.get("value", "")
+    data = {
+        "username": USERNAME,
+        "password": PASSWORD,
+        "Login": "Login",
+        "user_token": token
     }
-    if user_token_value:
-        login_data['user_token'] = user_token_value
+    session.post(LOGIN_URL, data=data)
+    print("[*] Login successful")
+    return True
 
-    print("Attempting to log in...")
-    response = session.post(login_url, data=login_data)
-    if response.status_code != 200:
-        print(f"Login failed with status {response.status_code}")
+# -------------------
+# Crawl pages recursively
+# -------------------
+def crawl(url, urls_set):
+    if url in urls_set or not url.startswith(BASE_URL) and "localhost" not in url:
         return
+    print(f"Crawling: {url}")
+    urls_set.add(url)
+    try:
+        res = session.get(url)
+    except:
+        return
+    soup = BeautifulSoup(res.text, "html.parser")
+    
+    # Extract all links
+    for link in soup.find_all("a", href=True):
+        href = link['href']
+        full_url = urljoin(BASE_URL, href)
+        crawl(full_url, urls_set)
 
-    print("Login successful")
-    base_url = "http://localhost/index.php"
-    urls = fetch_urls(base_url, session)
-
-    print(f"Found {len(urls)} urls")
-    for url in urls[:10]:
-        print("  -", url)
-
-    # gather forms from each page (including DVWA-specific fields)
-    forms = []
-    for url in urls:
-        forms.extend(fetch_forms(url, session))
-
-    print(f"Found {len(forms)} forms across all pages")
-    for form in forms[:5]:
-        print("  -", form)
-
-    # build combined structure matching your example
-    combined = {
-        'urls': urls,
-        'forms': []
-    }
-    for f in forms:
-        combined['forms'].append({
-            'action': f.get('action'),
-            'method': f.get('method'),
-            'inputs': [
-                { 'name': fld.get('name'), 'type': fld.get('type') }
-                for fld in f.get('fields', [])
-            ]
+# -------------------
+# Extract all forms
+# -------------------
+def extract_forms(url):
+    forms_list = []
+    try:
+        res = session.get(url)
+    except:
+        return forms_list
+    soup = BeautifulSoup(res.text, "html.parser")
+    for form in soup.find_all("form"):
+        action = form.get("action")
+        if action:
+            action = urljoin(BASE_URL, action)
+        method = form.get("method", "get").lower()
+        inputs = []
+        for inp in form.find_all("input"):
+            name = inp.get("name")
+            typ = inp.get("type", "text")
+            inputs.append({"name": name, "type": typ})
+        forms_list.append({
+            "page": url,
+            "action": action,
+            "method": method,
+            "inputs": inputs
         })
+    return forms_list
 
-    with open('output.json', 'w') as f:
-        json.dump(combined, f, indent=4)
+# -------------------
+# Main execution
+# -------------------
+if login():
+    all_urls = set()
+    crawl(BASE_URL, all_urls)
 
-    print("Combined data saved to output.json")
+    all_urls = list(all_urls)
+    all_urls.sort()
 
+    all_forms = []
+    for u in all_urls:
+        if "localhost" in u:
+            forms = extract_forms(u)
+            all_forms.extend(forms)
 
-if __name__ == '__main__':
-    main()
+    output = {
+        "urls": all_urls,
+        "forms": all_forms
+    }
+
+    with open("output.json", "w") as f:
+        json.dump(output, f, indent=4)
+    print("[*] Scan Completed")
+    print("[*] Results saved in output.json")

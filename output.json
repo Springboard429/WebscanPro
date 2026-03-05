@@ -1,37 +1,389 @@
 {
     "urls": [
-        "http://localhost/",
-        "http://localhost/instructions.php",
-        "http://localhost/setup.php",
-        "http://localhost/vulnerabilities/brute/",
-        "http://localhost/vulnerabilities/exec/",
-        "http://localhost/vulnerabilities/csrf/",
-        "http://localhost/vulnerabilities/fi/?page=include.php",
-        "http://localhost/vulnerabilities/upload/",
-        "http://localhost/vulnerabilities/captcha/",
-        "http://localhost/vulnerabilities/sqli/",
-        "http://localhost/vulnerabilities/sqli_blind/",
-        "http://localhost/vulnerabilities/weak_id/",
-        "http://localhost/vulnerabilities/xss_d/",
-        "http://localhost/vulnerabilities/xss_r/",
-        "http://localhost/vulnerabilities/xss_s/",
-        "http://localhost/vulnerabilities/csp/",
-        "http://localhost/vulnerabilities/javascript/",
-        "http://localhost/security.php",
-        "http://localhost/phpinfo.php",
-        "http://localhost/about.php",
-        "http://localhost/logout.php",
-        "https://www.virtualbox.org/",
-        "https://www.vmware.com/",
-        "https://www.apachefriends.org/en/xampp.html",
-        "http://www.itsecgames.com/",
-        "http://sourceforge.net/projects/mutillidae/files/mutillidae-project/",
-        "http://www.irongeek.com/i.php?page=mutillidae/mutillidae-deliberately-vulnerable-php-owasp-top-10",
-        "https://www.owasp.org/index.php/OWASP_Broken_Web_Applications_Project"
+        "http://localhost:80/",
+        "http://localhost:80/?doc=PDF",
+        "http://localhost:80/?doc=PHPIDS-license",
+        "http://localhost:80/?doc=changelog",
+        "http://localhost:80/?doc=copying",
+        "http://localhost:80/?doc=readme",
+        "http://localhost:80/?page=file1.php",
+        "http://localhost:80/?page=file2.php",
+        "http://localhost:80/?page=file3.php",
+        "http://localhost:80/?phpids=on",
+        "http://localhost:80/?test=%22><script>eval(window.name)</script>",
+        "http://localhost:80/about.php",
+        "http://localhost:80/docs/DVWA_v1.3.pdf",
+        "http://localhost:80/ids_log.php",
+        "http://localhost:80/instructions.php",
+        "http://localhost:80/instructions.php?doc=PHPIDS-license",
+        "http://localhost:80/logout.php",
+        "http://localhost:80/phpinfo.php",
+        "http://localhost:80/security.php",
+        "http://localhost:80/setup.php",
+        "http://localhost:80/vulnerabilities/brute/",
+        "http://localhost:80/vulnerabilities/captcha/",
+        "http://localhost:80/vulnerabilities/csp/",
+        "http://localhost:80/vulnerabilities/csrf/",
+        "http://localhost:80/vulnerabilities/exec/",
+        "http://localhost:80/vulnerabilities/fi/?page=include.php",
+        "http://localhost:80/vulnerabilities/javascript/",
+        "http://localhost:80/vulnerabilities/sqli/",
+        "http://localhost:80/vulnerabilities/sqli_blind/",
+        "http://localhost:80/vulnerabilities/upload/",
+        "http://localhost:80/vulnerabilities/weak_id/",
+        "http://localhost:80/vulnerabilities/xss_d/",
+        "http://localhost:80/vulnerabilities/xss_r/",
+        "http://localhost:80/vulnerabilities/xss_s/"
     ],
     "forms": [
         {
-            "action": "#",
+            "page": "http://localhost:80/",
+            "action": "http://localhost:80/login.php",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "username",
+                    "type": "text"
+                },
+                {
+                    "name": "password",
+                    "type": "password"
+                },
+                {
+                    "name": "Login",
+                    "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
+                }
+            ]
+        },
+        {
+            "page": "http://localhost:80/?doc=PDF",
+            "action": "http://localhost:80/login.php",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "username",
+                    "type": "text"
+                },
+                {
+                    "name": "password",
+                    "type": "password"
+                },
+                {
+                    "name": "Login",
+                    "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
+                }
+            ]
+        },
+        {
+            "page": "http://localhost:80/?doc=PHPIDS-license",
+            "action": "http://localhost:80/login.php",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "username",
+                    "type": "text"
+                },
+                {
+                    "name": "password",
+                    "type": "password"
+                },
+                {
+                    "name": "Login",
+                    "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
+                }
+            ]
+        },
+        {
+            "page": "http://localhost:80/?doc=changelog",
+            "action": "http://localhost:80/login.php",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "username",
+                    "type": "text"
+                },
+                {
+                    "name": "password",
+                    "type": "password"
+                },
+                {
+                    "name": "Login",
+                    "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
+                }
+            ]
+        },
+        {
+            "page": "http://localhost:80/?doc=copying",
+            "action": "http://localhost:80/login.php",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "username",
+                    "type": "text"
+                },
+                {
+                    "name": "password",
+                    "type": "password"
+                },
+                {
+                    "name": "Login",
+                    "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
+                }
+            ]
+        },
+        {
+            "page": "http://localhost:80/?doc=readme",
+            "action": "http://localhost:80/login.php",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "username",
+                    "type": "text"
+                },
+                {
+                    "name": "password",
+                    "type": "password"
+                },
+                {
+                    "name": "Login",
+                    "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
+                }
+            ]
+        },
+        {
+            "page": "http://localhost:80/?page=file1.php",
+            "action": "http://localhost:80/login.php",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "username",
+                    "type": "text"
+                },
+                {
+                    "name": "password",
+                    "type": "password"
+                },
+                {
+                    "name": "Login",
+                    "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
+                }
+            ]
+        },
+        {
+            "page": "http://localhost:80/?page=file2.php",
+            "action": "http://localhost:80/login.php",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "username",
+                    "type": "text"
+                },
+                {
+                    "name": "password",
+                    "type": "password"
+                },
+                {
+                    "name": "Login",
+                    "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
+                }
+            ]
+        },
+        {
+            "page": "http://localhost:80/?page=file3.php",
+            "action": "http://localhost:80/login.php",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "username",
+                    "type": "text"
+                },
+                {
+                    "name": "password",
+                    "type": "password"
+                },
+                {
+                    "name": "Login",
+                    "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
+                }
+            ]
+        },
+        {
+            "page": "http://localhost:80/?phpids=on",
+            "action": "http://localhost:80/login.php",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "username",
+                    "type": "text"
+                },
+                {
+                    "name": "password",
+                    "type": "password"
+                },
+                {
+                    "name": "Login",
+                    "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
+                }
+            ]
+        },
+        {
+            "page": "http://localhost:80/?test=%22><script>eval(window.name)</script>",
+            "action": "http://localhost:80/login.php",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "username",
+                    "type": "text"
+                },
+                {
+                    "name": "password",
+                    "type": "password"
+                },
+                {
+                    "name": "Login",
+                    "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
+                }
+            ]
+        },
+        {
+            "page": "http://localhost:80/ids_log.php",
+            "action": "http://localhost:80/login.php",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "username",
+                    "type": "text"
+                },
+                {
+                    "name": "password",
+                    "type": "password"
+                },
+                {
+                    "name": "Login",
+                    "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
+                }
+            ]
+        },
+        {
+            "page": "http://localhost:80/logout.php",
+            "action": "http://localhost:80/login.php",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "username",
+                    "type": "text"
+                },
+                {
+                    "name": "password",
+                    "type": "password"
+                },
+                {
+                    "name": "Login",
+                    "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
+                }
+            ]
+        },
+        {
+            "page": "http://localhost:80/phpinfo.php",
+            "action": "http://localhost:80/login.php",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "username",
+                    "type": "text"
+                },
+                {
+                    "name": "password",
+                    "type": "password"
+                },
+                {
+                    "name": "Login",
+                    "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
+                }
+            ]
+        },
+        {
+            "page": "http://localhost:80/security.php",
+            "action": "http://localhost:80/login.php",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "username",
+                    "type": "text"
+                },
+                {
+                    "name": "password",
+                    "type": "password"
+                },
+                {
+                    "name": "Login",
+                    "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
+                }
+            ]
+        },
+        {
+            "page": "http://localhost:80/setup.php",
+            "action": "http://localhost:80/#",
             "method": "post",
             "inputs": [
                 {
@@ -45,235 +397,8 @@
             ]
         },
         {
-            "action": "#",
-            "method": "get",
-            "inputs": [
-                {
-                    "name": "username",
-                    "type": "text"
-                },
-                {
-                    "name": "password",
-                    "type": "password"
-                },
-                {
-                    "name": "Login",
-                    "type": "submit"
-                }
-            ]
-        },
-        {
-            "action": "#",
-            "method": "post",
-            "inputs": [
-                {
-                    "name": "ip",
-                    "type": "text"
-                },
-                {
-                    "name": "Submit",
-                    "type": "submit"
-                }
-            ]
-        },
-        {
-            "action": "#",
-            "method": "get",
-            "inputs": [
-                {
-                    "name": "password_new",
-                    "type": "password"
-                },
-                {
-                    "name": "password_conf",
-                    "type": "password"
-                },
-                {
-                    "name": "Change",
-                    "type": "submit"
-                }
-            ]
-        },
-        {
-            "action": "#",
-            "method": "post",
-            "inputs": [
-                {
-                    "name": "MAX_FILE_SIZE",
-                    "type": "hidden"
-                },
-                {
-                    "name": "uploaded",
-                    "type": "file"
-                },
-                {
-                    "name": "Upload",
-                    "type": "submit"
-                }
-            ]
-        },
-        {
-            "action": "#",
-            "method": "post",
-            "inputs": [
-                {
-                    "name": "step",
-                    "type": "hidden"
-                },
-                {
-                    "name": "password_new",
-                    "type": "password"
-                },
-                {
-                    "name": "password_conf",
-                    "type": "password"
-                },
-                {
-                    "name": "Change",
-                    "type": "submit"
-                }
-            ]
-        },
-        {
-            "action": "#",
-            "method": "get",
-            "inputs": [
-                {
-                    "name": "id",
-                    "type": "text"
-                },
-                {
-                    "name": "Submit",
-                    "type": "submit"
-                }
-            ]
-        },
-        {
-            "action": "#",
-            "method": "get",
-            "inputs": [
-                {
-                    "name": "id",
-                    "type": "text"
-                },
-                {
-                    "name": "Submit",
-                    "type": "submit"
-                }
-            ]
-        },
-        {
-            "action": null,
-            "method": "post",
-            "inputs": [
-                {
-                    "name": null,
-                    "type": "submit"
-                }
-            ]
-        },
-        {
-            "action": null,
-            "method": "get",
-            "inputs": [
-                {
-                    "name": "default",
-                    "type": "select"
-                },
-                {
-                    "name": null,
-                    "type": "submit"
-                }
-            ]
-        },
-        {
-            "action": "#",
-            "method": "get",
-            "inputs": [
-                {
-                    "name": "name",
-                    "type": "text"
-                },
-                {
-                    "name": null,
-                    "type": "submit"
-                }
-            ]
-        },
-        {
-            "action": null,
-            "method": "post",
-            "inputs": [
-                {
-                    "name": "txtName",
-                    "type": "text"
-                },
-                {
-                    "name": "mtxMessage",
-                    "type": "textarea"
-                },
-                {
-                    "name": "btnSign",
-                    "type": "submit"
-                },
-                {
-                    "name": "btnClear",
-                    "type": "submit"
-                }
-            ]
-        },
-        {
-            "action": null,
-            "method": "post",
-            "inputs": [
-                {
-                    "name": "include",
-                    "type": "text"
-                },
-                {
-                    "name": null,
-                    "type": "submit"
-                }
-            ]
-        },
-        {
-            "action": null,
-            "method": "post",
-            "inputs": [
-                {
-                    "name": "token",
-                    "type": "hidden"
-                },
-                {
-                    "name": "phrase",
-                    "type": "text"
-                },
-                {
-                    "name": "send",
-                    "type": "submit"
-                }
-            ]
-        },
-        {
-            "action": "#",
-            "method": "post",
-            "inputs": [
-                {
-                    "name": "security",
-                    "type": "select"
-                },
-                {
-                    "name": "seclev_submit",
-                    "type": "submit"
-                },
-                {
-                    "name": "user_token",
-                    "type": "hidden"
-                }
-            ]
-        },
-        {
-            "action": "login.php",
+            "page": "http://localhost:80/vulnerabilities/brute/",
+            "action": "http://localhost:80/login.php",
             "method": "post",
             "inputs": [
                 {
@@ -295,1414 +420,301 @@
             ]
         },
         {
-            "action": "/search",
-            "method": "get",
-            "inputs": [
-                {
-                    "name": "q",
-                    "type": "text"
-                },
-                {
-                    "name": null,
-                    "type": "submit"
-                }
-            ]
-        },
-        {
-            "action": "/search",
-            "method": "get",
-            "inputs": [
-                {
-                    "name": "q",
-                    "type": "text"
-                },
-                {
-                    "name": "wiki",
-                    "type": "hidden"
-                },
-                {
-                    "name": "changeset",
-                    "type": "hidden"
-                },
-                {
-                    "name": "ticket",
-                    "type": "hidden"
-                }
-            ]
-        },
-        {
-            "action": "/directory/",
-            "method": "get",
-            "inputs": [
-                {
-                    "name": "q",
-                    "type": "text"
-                },
-                {
-                    "name": null,
-                    "type": "submit"
-                }
-            ]
-        },
-        {
-            "action": "/directory/",
-            "method": "get",
-            "inputs": [
-                {
-                    "name": "q",
-                    "type": "text"
-                },
-                {
-                    "name": null,
-                    "type": "submit"
-                }
-            ]
-        },
-        {
-            "action": ".",
-            "method": "get",
-            "inputs": [
-                {
-                    "name": "q",
-                    "type": null
-                },
-                {
-                    "name": null,
-                    "type": "submit"
-                }
-            ]
-        },
-        {
-            "action": null,
-            "method": "get",
-            "inputs": [
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                },
-                {
-                    "name": null,
-                    "type": "checkbox"
-                }
-            ]
-        },
-        {
-            "action": "/api/instrumentation/gpt",
+            "page": "http://localhost:80/vulnerabilities/captcha/",
+            "action": "http://localhost:80/login.php",
             "method": "post",
             "inputs": [
                 {
-                    "name": "_visit_cookie",
-                    "type": "hidden"
-                },
-                {
-                    "name": "timestamp",
-                    "type": "hidden"
-                },
-                {
-                    "name": "spinner",
-                    "type": "hidden"
-                },
-                {
-                    "name": "XEMObwpLCj8KNEcOMw5bCjj8zGkDCgsOrbn4gw75V",
+                    "name": "username",
                     "type": "text"
                 },
                 {
-                    "name": "XEMObwpLCj8KNEcONw5bCjj8zGkDCgsOrbn4gw75V",
-                    "type": "text"
+                    "name": "password",
+                    "type": "password"
                 },
                 {
-                    "name": "XHcOXwpjCksKLGsKVw47DmcKkw5DCmWbDnsOxwq9vwqpJUA",
-                    "type": "text"
-                },
-                {
-                    "name": "XH8OQwpHCiMKLA8Kjw4vDn8Khw5fDlMO8ccOubcO9DHtE",
-                    "type": "url"
-                },
-                {
-                    "name": "XEsOXwpzClcKJAMOfTCEgw7HCiMOmwrDDv8OnSglKw6Q",
-                    "type": "textarea"
-                },
-                {
-                    "name": null,
+                    "name": "Login",
                     "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
                 }
             ]
         },
         {
-            "action": "https://www.paypal.com/cgi-bin/webscr",
+            "page": "http://localhost:80/vulnerabilities/csp/",
+            "action": "http://localhost:80/login.php",
             "method": "post",
             "inputs": [
                 {
-                    "name": "cmd",
-                    "type": "hidden"
-                },
-                {
-                    "name": "business",
-                    "type": "hidden"
-                },
-                {
-                    "name": "item_name",
-                    "type": "hidden"
-                },
-                {
-                    "name": "buyer_credit_promo_code",
-                    "type": "hidden"
-                },
-                {
-                    "name": "buyer_credit_product_category",
-                    "type": "hidden"
-                },
-                {
-                    "name": "buyer_credit_shipping_method",
-                    "type": "hidden"
-                },
-                {
-                    "name": "buyer_credit_user_address_change",
-                    "type": "hidden"
-                },
-                {
-                    "name": "no_shipping",
-                    "type": "hidden"
-                },
-                {
-                    "name": "no_note",
-                    "type": "hidden"
-                },
-                {
-                    "name": "currency_code",
-                    "type": "hidden"
-                },
-                {
-                    "name": "tax",
-                    "type": "hidden"
-                },
-                {
-                    "name": "lc",
-                    "type": "hidden"
-                },
-                {
-                    "name": "bn",
-                    "type": "hidden"
-                },
-                {
-                    "name": "submit",
-                    "type": "image"
-                }
-            ]
-        },
-        {
-            "action": "https://www.google.com/cse",
-            "method": "get",
-            "inputs": [
-                {
-                    "name": "cx",
-                    "type": "hidden"
-                },
-                {
-                    "name": "ie",
-                    "type": "hidden"
-                },
-                {
-                    "name": "q",
+                    "name": "username",
                     "type": "text"
                 },
                 {
-                    "name": "sa",
+                    "name": "password",
+                    "type": "password"
+                },
+                {
+                    "name": "Login",
                     "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
                 }
             ]
         },
         {
-            "action": "https://www.paypal.com/cgi-bin/webscr",
+            "page": "http://localhost:80/vulnerabilities/csrf/",
+            "action": "http://localhost:80/login.php",
             "method": "post",
             "inputs": [
                 {
-                    "name": "cmd",
-                    "type": "hidden"
+                    "name": "username",
+                    "type": "text"
                 },
                 {
-                    "name": "business",
-                    "type": "hidden"
+                    "name": "password",
+                    "type": "password"
                 },
                 {
-                    "name": "item_name",
-                    "type": "hidden"
+                    "name": "Login",
+                    "type": "submit"
                 },
                 {
-                    "name": "buyer_credit_promo_code",
+                    "name": "user_token",
                     "type": "hidden"
+                }
+            ]
+        },
+        {
+            "page": "http://localhost:80/vulnerabilities/exec/",
+            "action": "http://localhost:80/login.php",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "username",
+                    "type": "text"
                 },
                 {
-                    "name": "buyer_credit_product_category",
-                    "type": "hidden"
+                    "name": "password",
+                    "type": "password"
                 },
                 {
-                    "name": "buyer_credit_shipping_method",
-                    "type": "hidden"
+                    "name": "Login",
+                    "type": "submit"
                 },
                 {
-                    "name": "buyer_credit_user_address_change",
+                    "name": "user_token",
                     "type": "hidden"
+                }
+            ]
+        },
+        {
+            "page": "http://localhost:80/vulnerabilities/fi/?page=include.php",
+            "action": "http://localhost:80/login.php",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "username",
+                    "type": "text"
                 },
                 {
-                    "name": "no_shipping",
-                    "type": "hidden"
+                    "name": "password",
+                    "type": "password"
                 },
                 {
-                    "name": "no_note",
-                    "type": "hidden"
+                    "name": "Login",
+                    "type": "submit"
                 },
                 {
-                    "name": "currency_code",
+                    "name": "user_token",
                     "type": "hidden"
+                }
+            ]
+        },
+        {
+            "page": "http://localhost:80/vulnerabilities/javascript/",
+            "action": "http://localhost:80/login.php",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "username",
+                    "type": "text"
                 },
                 {
-                    "name": "tax",
-                    "type": "hidden"
+                    "name": "password",
+                    "type": "password"
                 },
                 {
-                    "name": "lc",
-                    "type": "hidden"
+                    "name": "Login",
+                    "type": "submit"
                 },
                 {
-                    "name": "bn",
+                    "name": "user_token",
                     "type": "hidden"
+                }
+            ]
+        },
+        {
+            "page": "http://localhost:80/vulnerabilities/sqli/",
+            "action": "http://localhost:80/login.php",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "username",
+                    "type": "text"
                 },
                 {
-                    "name": "submit",
-                    "type": "image"
+                    "name": "password",
+                    "type": "password"
+                },
+                {
+                    "name": "Login",
+                    "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
+                }
+            ]
+        },
+        {
+            "page": "http://localhost:80/vulnerabilities/sqli_blind/",
+            "action": "http://localhost:80/login.php",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "username",
+                    "type": "text"
+                },
+                {
+                    "name": "password",
+                    "type": "password"
+                },
+                {
+                    "name": "Login",
+                    "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
+                }
+            ]
+        },
+        {
+            "page": "http://localhost:80/vulnerabilities/upload/",
+            "action": "http://localhost:80/login.php",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "username",
+                    "type": "text"
+                },
+                {
+                    "name": "password",
+                    "type": "password"
+                },
+                {
+                    "name": "Login",
+                    "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
+                }
+            ]
+        },
+        {
+            "page": "http://localhost:80/vulnerabilities/weak_id/",
+            "action": "http://localhost:80/login.php",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "username",
+                    "type": "text"
+                },
+                {
+                    "name": "password",
+                    "type": "password"
+                },
+                {
+                    "name": "Login",
+                    "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
+                }
+            ]
+        },
+        {
+            "page": "http://localhost:80/vulnerabilities/xss_d/",
+            "action": "http://localhost:80/login.php",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "username",
+                    "type": "text"
+                },
+                {
+                    "name": "password",
+                    "type": "password"
+                },
+                {
+                    "name": "Login",
+                    "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
+                }
+            ]
+        },
+        {
+            "page": "http://localhost:80/vulnerabilities/xss_r/",
+            "action": "http://localhost:80/login.php",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "username",
+                    "type": "text"
+                },
+                {
+                    "name": "password",
+                    "type": "password"
+                },
+                {
+                    "name": "Login",
+                    "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
+                }
+            ]
+        },
+        {
+            "page": "http://localhost:80/vulnerabilities/xss_s/",
+            "action": "http://localhost:80/login.php",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "username",
+                    "type": "text"
+                },
+                {
+                    "name": "password",
+                    "type": "password"
+                },
+                {
+                    "name": "Login",
+                    "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
                 }
             ]
         }
