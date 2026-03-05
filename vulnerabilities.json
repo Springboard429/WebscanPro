@@ -1,0 +1,56 @@
+[
+    {
+        "url": "http://localhost:8080/vulnerabilities/brute/",
+        "form_action": "http://localhost:8080/vulnerabilities/brute/",
+        "method": "get",
+        "vulnerable_input": "username",
+        "payload": "'",
+        "error_detected": "Database error message found",
+        "remediation": "Use parameterized queries (prepared statements) instead of string concatenation."
+    },
+    {
+        "url": "http://localhost:8080/vulnerabilities/brute/",
+        "form_action": "http://localhost:8080/vulnerabilities/brute/",
+        "method": "get",
+        "vulnerable_input": "username",
+        "payload": "'; WAITFOR DELAY '0:0:5'--",
+        "error_detected": "Database error message found",
+        "remediation": "Use parameterized queries (prepared statements) instead of string concatenation."
+    },
+    {
+        "url": "http://localhost:8080/vulnerabilities/brute/",
+        "form_action": "http://localhost:8080/vulnerabilities/brute/",
+        "method": "get",
+        "vulnerable_input": "username",
+        "payload": "' AND 1=0 UNION SELECT username,password FROM users --",
+        "error_detected": "Database error message found",
+        "remediation": "Use parameterized queries (prepared statements) instead of string concatenation."
+    },
+    {
+        "url": "http://localhost:8080/vulnerabilities/sqli/",
+        "form_action": "http://localhost:8080/vulnerabilities/sqli/",
+        "method": "get",
+        "vulnerable_input": "id",
+        "payload": "'",
+        "error_detected": "Database error message found",
+        "remediation": "Use parameterized queries (prepared statements) instead of string concatenation."
+    },
+    {
+        "url": "http://localhost:8080/vulnerabilities/sqli/",
+        "form_action": "http://localhost:8080/vulnerabilities/sqli/",
+        "method": "get",
+        "vulnerable_input": "id",
+        "payload": "'; WAITFOR DELAY '0:0:5'--",
+        "error_detected": "Database error message found",
+        "remediation": "Use parameterized queries (prepared statements) instead of string concatenation."
+    },
+    {
+        "url": "http://localhost:8080/vulnerabilities/sqli/",
+        "form_action": "http://localhost:8080/vulnerabilities/sqli/",
+        "method": "get",
+        "vulnerable_input": "id",
+        "payload": "' AND 1=0 UNION SELECT username,password FROM users --",
+        "error_detected": "Database error message found",
+        "remediation": "Use parameterized queries (prepared statements) instead of string concatenation."
+    }
+]
