@@ -1,0 +1,302 @@
+{
+    "urls": [
+        "http://localhost/index.php",
+        "http://localhost/",
+        "http://localhost/instructions.php",
+        "http://localhost/setup.php",
+        "http://localhost/vulnerabilities/brute/",
+        "http://localhost/vulnerabilities/exec/",
+        "http://localhost/vulnerabilities/csrf/",
+        "http://localhost/vulnerabilities/fi/",
+        "http://localhost/vulnerabilities/upload/",
+        "http://localhost/vulnerabilities/captcha/",
+        "http://localhost/vulnerabilities/sqli/",
+        "http://localhost/vulnerabilities/sqli_blind/",
+        "http://localhost/vulnerabilities/weak_id/",
+        "http://localhost/vulnerabilities/xss_d/",
+        "http://localhost/vulnerabilities/xss_r/",
+        "http://localhost/vulnerabilities/xss_s/",
+        "http://localhost/vulnerabilities/csp/",
+        "http://localhost/vulnerabilities/javascript/",
+        "http://localhost/security.php",
+        "http://localhost/phpinfo.php",
+        "http://localhost/about.php",
+        "http://localhost/logout.php",
+        "http://localhost/docs/DVWA_v1.3.pdf",
+        "http://localhost/ids_log.php"
+    ],
+    "forms": [
+        {
+            "action": "http://localhost/login.php",
+            "method": "POST",
+            "inputs": [
+                {
+                    "name": "username",
+                    "type": "text"
+                },
+                {
+                    "name": "password",
+                    "type": "password"
+                },
+                {
+                    "name": "Login",
+                    "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
+                }
+            ]
+        },
+        {
+            "action": "http://localhost/login.php",
+            "method": "POST",
+            "inputs": [
+                {
+                    "name": "username",
+                    "type": "text"
+                },
+                {
+                    "name": "password",
+                    "type": "password"
+                },
+                {
+                    "name": "Login",
+                    "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
+                }
+            ]
+        },
+        {
+            "action": "http://localhost/security.php",
+            "method": "POST",
+            "inputs": [
+                {
+                    "name": "seclev_submit",
+                    "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
+                }
+            ]
+        },
+        {
+            "action": "http://localhost/vulnerabilities/javascript/",
+            "method": "POST",
+            "inputs": [
+                {
+                    "name": "token",
+                    "type": "hidden"
+                },
+                {
+                    "name": "phrase",
+                    "type": "text"
+                },
+                {
+                    "name": "send",
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": "http://localhost/vulnerabilities/csp/",
+            "method": "POST",
+            "inputs": [
+                {
+                    "name": "include",
+                    "type": "text"
+                },
+                {
+                    "name": null,
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": "http://localhost/vulnerabilities/xss_s/",
+            "method": "POST",
+            "inputs": [
+                {
+                    "name": "txtName",
+                    "type": "text"
+                },
+                {
+                    "name": "btnSign",
+                    "type": "submit"
+                },
+                {
+                    "name": "btnClear",
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": "http://localhost/vulnerabilities/xss_r/",
+            "method": "GET",
+            "inputs": [
+                {
+                    "name": "name",
+                    "type": "text"
+                },
+                {
+                    "name": null,
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": "http://localhost/vulnerabilities/xss_d/",
+            "method": "GET",
+            "inputs": [
+                {
+                    "name": null,
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": "http://localhost/vulnerabilities/weak_id/",
+            "method": "POST",
+            "inputs": [
+                {
+                    "name": null,
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": "http://localhost/vulnerabilities/sqli_blind/",
+            "method": "GET",
+            "inputs": [
+                {
+                    "name": "id",
+                    "type": "text"
+                },
+                {
+                    "name": "Submit",
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": "http://localhost/vulnerabilities/captcha/",
+            "method": "POST",
+            "inputs": [
+                {
+                    "name": "step",
+                    "type": "hidden"
+                },
+                {
+                    "name": "password_new",
+                    "type": "password"
+                },
+                {
+                    "name": "password_conf",
+                    "type": "password"
+                },
+                {
+                    "name": "Change",
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": "http://localhost/vulnerabilities/upload/",
+            "method": "POST",
+            "inputs": [
+                {
+                    "name": "MAX_FILE_SIZE",
+                    "type": "hidden"
+                },
+                {
+                    "name": "uploaded",
+                    "type": "file"
+                },
+                {
+                    "name": "Upload",
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": "http://localhost/vulnerabilities/csrf/",
+            "method": "GET",
+            "inputs": [
+                {
+                    "name": "password_new",
+                    "type": "password"
+                },
+                {
+                    "name": "password_conf",
+                    "type": "password"
+                },
+                {
+                    "name": "Change",
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": "http://localhost/vulnerabilities/exec/",
+            "method": "POST",
+            "inputs": [
+                {
+                    "name": "ip",
+                    "type": "text"
+                },
+                {
+                    "name": "Submit",
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": "http://localhost/vulnerabilities/brute/",
+            "method": "GET",
+            "inputs": [
+                {
+                    "name": "username",
+                    "type": "text"
+                },
+                {
+                    "name": "password",
+                    "type": "password"
+                },
+                {
+                    "name": "Login",
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": "http://localhost/setup.php",
+            "method": "POST",
+            "inputs": [
+                {
+                    "name": "create_db",
+                    "type": "submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden"
+                }
+            ]
+        }
+    ],
+    "vulnerabilities": [
+        {
+            "type": "Blind SQL Injection",
+            "url": "http://localhost/vulnerabilities/sqli/",
+            "payload": "1' OR '1'='1"
+        },
+        {
+            "type": "Blind SQL Injection",
+            "url": "http://localhost/vulnerabilities/sqli_blind/",
+            "payload": "1' OR '1'='1"
+        }
+    ]
+}
