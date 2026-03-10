@@ -1,0 +1,16 @@
+[
+    {
+        "url": "http://localhost:8080/vulnerabilities/brute/",
+        "method": "get",
+        "payload": "'; WAITFOR DELAY '0:0:5' --",
+        "issue": "Possible SQL Injection",
+        "fix": "Use prepared statements / parameterized queries"
+    },
+    {
+        "url": "http://localhost:8080/vulnerabilities/sqli/",
+        "method": "get",
+        "payload": "'; WAITFOR DELAY '0:0:5' --",
+        "issue": "Possible SQL Injection",
+        "fix": "Use prepared statements / parameterized queries"
+    }
+]
