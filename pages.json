@@ -1,0 +1,1302 @@
+{    
+    "all_urls": [
+        "http://localhost/setup.php",
+        "http://localhost/vulnerabilities/sqli_blind/",
+        "http://localhost/vulnerabilities/xss_s/",
+        "http://localhost/vulnerabilities/fi/?page=file2.php",
+        "http://localhost/instructions.php?doc=changelog",
+        "http://localhost/vulnerabilities/fi/?page=file1.php",
+        "http://localhost/ids_log.php",
+        "http://localhost/",
+        "http://localhost/index.php",
+        "http://localhost/logout.php",
+        "http://localhost/vulnerabilities/xss_d/",
+        "http://localhost/phpinfo.php",
+        "http://localhost/vulnerabilities/fi/?page=include.php",
+        "http://localhost/vulnerabilities/sqli/",
+        "http://localhost/vulnerabilities/fi/?page=file3.php",
+        "http://localhost/vulnerabilities/xss_r/",
+        "http://localhost/about.php",
+        "http://localhost/instructions.php?doc=readme",
+        "http://localhost/vulnerabilities/javascript/",
+        "http://localhost/security.php?phpids=on",
+        "http://localhost/vulnerabilities/csp/",
+        "http://localhost/vulnerabilities/upload/",
+        "http://localhost/instructions.php",
+        "http://localhost/instructions.php?doc=PHPIDS-license",
+        "http://localhost/vulnerabilities/weak_id/",
+        "http://localhost/instructions.php?doc=copying",
+        "http://localhost/vulnerabilities/csrf/",
+        "http://localhost/vulnerabilities/exec/",
+        "http://localhost/instructions.php?doc=PDF",
+        "http://localhost/docs/DVWA_v1.3.pdf",
+        "http://localhost/vulnerabilities/brute/",
+        "http://localhost/security.php",
+        "http://localhost/vulnerabilities/captcha/",
+        "http://localhost/security.php?test=%22><script>eval(window.name)</script>"
+    ],
+    "pages": [
+        {
+            "url": "http://localhost/index.php",
+            "links_on_page": [
+                "http://localhost/setup.php",
+                "http://localhost/vulnerabilities/sqli_blind/",
+                "http://localhost/vulnerabilities/xss_s/",
+                "http://localhost/",
+                "http://localhost/logout.php",
+                "http://localhost/vulnerabilities/xss_d/",
+                "http://localhost/phpinfo.php",
+                "http://localhost/vulnerabilities/fi/?page=include.php",
+                "http://localhost/vulnerabilities/sqli/",
+                "http://localhost/vulnerabilities/xss_r/",
+                "http://localhost/about.php",
+                "http://localhost/vulnerabilities/javascript/",
+                "http://localhost/vulnerabilities/csp/",
+                "http://localhost/vulnerabilities/upload/",
+                "http://localhost/instructions.php",
+                "http://localhost/vulnerabilities/weak_id/",
+                "http://localhost/vulnerabilities/csrf/",
+                "http://localhost/vulnerabilities/exec/",
+                "http://localhost/vulnerabilities/brute/",
+                "http://localhost/security.php",
+                "http://localhost/vulnerabilities/captcha/"
+            ],
+            "forms_on_page": []
+        },
+        {
+            "url": "http://localhost/",
+            "links_on_page": [
+                "http://localhost/setup.php",
+                "http://localhost/vulnerabilities/sqli_blind/",
+                "http://localhost/vulnerabilities/xss_s/",
+                "http://localhost/",
+                "http://localhost/logout.php",
+                "http://localhost/vulnerabilities/xss_d/",
+                "http://localhost/phpinfo.php",
+                "http://localhost/vulnerabilities/fi/?page=include.php",
+                "http://localhost/vulnerabilities/sqli/",
+                "http://localhost/vulnerabilities/xss_r/",
+                "http://localhost/about.php",
+                "http://localhost/vulnerabilities/javascript/",
+                "http://localhost/vulnerabilities/csp/",
+                "http://localhost/vulnerabilities/upload/",
+                "http://localhost/instructions.php",
+                "http://localhost/vulnerabilities/weak_id/",
+                "http://localhost/vulnerabilities/csrf/",
+                "http://localhost/vulnerabilities/exec/",
+                "http://localhost/vulnerabilities/brute/",
+                "http://localhost/security.php",
+                "http://localhost/vulnerabilities/captcha/"
+            ],
+            "forms_on_page": []
+        },
+        {
+            "url": "http://localhost/instructions.php",
+            "links_on_page": [
+                "http://localhost/setup.php",
+                "http://localhost/vulnerabilities/sqli_blind/",
+                "http://localhost/vulnerabilities/xss_s/",
+                "http://localhost/instructions.php?doc=changelog",
+                "http://localhost/",
+                "http://localhost/logout.php",
+                "http://localhost/vulnerabilities/xss_d/",
+                "http://localhost/phpinfo.php",
+                "http://localhost/vulnerabilities/fi/?page=include.php",
+                "http://localhost/vulnerabilities/sqli/",
+                "http://localhost/vulnerabilities/xss_r/",
+                "http://localhost/about.php",
+                "http://localhost/instructions.php?doc=readme",
+                "http://localhost/vulnerabilities/javascript/",
+                "http://localhost/vulnerabilities/csp/",
+                "http://localhost/vulnerabilities/upload/",
+                "http://localhost/instructions.php",
+                "http://localhost/instructions.php?doc=PHPIDS-license",
+                "http://localhost/vulnerabilities/weak_id/",
+                "http://localhost/instructions.php?doc=copying",
+                "http://localhost/vulnerabilities/csrf/",
+                "http://localhost/vulnerabilities/exec/",
+                "http://localhost/instructions.php?doc=PDF",
+                "http://localhost/vulnerabilities/brute/",
+                "http://localhost/security.php",
+                "http://localhost/vulnerabilities/captcha/"
+            ],
+            "forms_on_page": []
+        },
+        {
+            "url": "http://localhost/setup.php",
+            "links_on_page": [
+                "http://localhost/setup.php",
+                "http://localhost/vulnerabilities/sqli_blind/",
+                "http://localhost/vulnerabilities/xss_s/",
+                "http://localhost/",
+                "http://localhost/logout.php",
+                "http://localhost/vulnerabilities/xss_d/",
+                "http://localhost/phpinfo.php",
+                "http://localhost/vulnerabilities/fi/?page=include.php",
+                "http://localhost/vulnerabilities/sqli/",
+                "http://localhost/vulnerabilities/xss_r/",
+                "http://localhost/about.php",
+                "http://localhost/vulnerabilities/javascript/",
+                "http://localhost/vulnerabilities/csp/",
+                "http://localhost/vulnerabilities/upload/",
+                "http://localhost/instructions.php",
+                "http://localhost/vulnerabilities/weak_id/",
+                "http://localhost/vulnerabilities/csrf/",
+                "http://localhost/vulnerabilities/exec/",
+                "http://localhost/vulnerabilities/brute/",
+                "http://localhost/security.php",
+                "http://localhost/vulnerabilities/captcha/"
+            ],
+            "forms_on_page": [
+                {
+                    "action": "#",
+                    "method": "post",
+                    "inputs": [
+                        {
+                            "tag": "input",
+                            "type": "hidden",
+                            "name": "user_token",
+                            "value": "7629d27f7aab7bd756462ecaccb630e8"
+                        }
+                    ],
+                    "buttons": [
+                        {
+                            "tag": "input",
+                            "type": "submit",
+                            "name": "create_db",
+                            "value": "Create / Reset Database"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "url": "http://localhost/vulnerabilities/brute/",
+            "links_on_page": [
+                "http://localhost/setup.php",
+                "http://localhost/vulnerabilities/sqli_blind/",
+                "http://localhost/vulnerabilities/xss_s/",
+                "http://localhost/",
+                "http://localhost/logout.php",
+                "http://localhost/vulnerabilities/xss_d/",
+                "http://localhost/phpinfo.php",
+                "http://localhost/vulnerabilities/fi/?page=include.php",
+                "http://localhost/vulnerabilities/sqli/",
+                "http://localhost/vulnerabilities/xss_r/",
+                "http://localhost/about.php",
+                "http://localhost/vulnerabilities/javascript/",
+                "http://localhost/vulnerabilities/csp/",
+                "http://localhost/vulnerabilities/upload/",
+                "http://localhost/instructions.php",
+                "http://localhost/vulnerabilities/weak_id/",
+                "http://localhost/vulnerabilities/csrf/",
+                "http://localhost/vulnerabilities/exec/",
+                "http://localhost/vulnerabilities/brute/",
+                "http://localhost/security.php",
+                "http://localhost/vulnerabilities/captcha/"
+            ],
+            "forms_on_page": [
+                {
+                    "action": "#",
+                    "method": "get",
+                    "inputs": [
+                        {
+                            "tag": "input",
+                            "type": "text",
+                            "name": "username",
+                            "value": null
+                        },
+                        {
+                            "tag": "input",
+                            "type": "password",
+                            "name": "password",
+                            "value": null
+                        }
+                    ],
+                    "buttons": [
+                        {
+                            "tag": "input",
+                            "type": "submit",
+                            "name": "Login",
+                            "value": "Login"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "url": "http://localhost/vulnerabilities/exec/",
+            "links_on_page": [
+                "http://localhost/setup.php",
+                "http://localhost/vulnerabilities/sqli_blind/",
+                "http://localhost/vulnerabilities/xss_s/",
+                "http://localhost/",
+                "http://localhost/logout.php",
+                "http://localhost/vulnerabilities/xss_d/",
+                "http://localhost/phpinfo.php",
+                "http://localhost/vulnerabilities/fi/?page=include.php",
+                "http://localhost/vulnerabilities/sqli/",
+                "http://localhost/vulnerabilities/xss_r/",
+                "http://localhost/about.php",
+                "http://localhost/vulnerabilities/javascript/",
+                "http://localhost/vulnerabilities/csp/",
+                "http://localhost/vulnerabilities/upload/",
+                "http://localhost/instructions.php",
+                "http://localhost/vulnerabilities/weak_id/",
+                "http://localhost/vulnerabilities/csrf/",
+                "http://localhost/vulnerabilities/exec/",
+                "http://localhost/vulnerabilities/brute/",
+                "http://localhost/security.php",
+                "http://localhost/vulnerabilities/captcha/"
+            ],
+            "forms_on_page": [
+                {
+                    "action": "#",
+                    "method": "post",
+                    "inputs": [
+                        {
+                            "tag": "input",
+                            "type": "text",
+                            "name": "ip",
+                            "value": null
+                        }
+                    ],
+                    "buttons": [
+                        {
+                            "tag": "input",
+                            "type": "submit",
+                            "name": "Submit",
+                            "value": "Submit"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "url": "http://localhost/vulnerabilities/csrf/",
+            "links_on_page": [
+                "http://localhost/setup.php",
+                "http://localhost/vulnerabilities/sqli_blind/",
+                "http://localhost/vulnerabilities/xss_s/",
+                "http://localhost/",
+                "http://localhost/logout.php",
+                "http://localhost/vulnerabilities/xss_d/",
+                "http://localhost/phpinfo.php",
+                "http://localhost/vulnerabilities/fi/?page=include.php",
+                "http://localhost/vulnerabilities/sqli/",
+                "http://localhost/vulnerabilities/xss_r/",
+                "http://localhost/about.php",
+                "http://localhost/vulnerabilities/javascript/",
+                "http://localhost/vulnerabilities/csp/",
+                "http://localhost/vulnerabilities/upload/",
+                "http://localhost/instructions.php",
+                "http://localhost/vulnerabilities/weak_id/",
+                "http://localhost/vulnerabilities/csrf/",
+                "http://localhost/vulnerabilities/exec/",
+                "http://localhost/vulnerabilities/brute/",
+                "http://localhost/security.php",
+                "http://localhost/vulnerabilities/captcha/"
+            ],
+            "forms_on_page": [
+                {
+                    "action": "#",
+                    "method": "get",
+                    "inputs": [
+                        {
+                            "tag": "input",
+                            "type": "password",
+                            "name": "password_new",
+                            "value": null
+                        },
+                        {
+                            "tag": "input",
+                            "type": "password",
+                            "name": "password_conf",
+                            "value": null
+                        }
+                    ],
+                    "buttons": [
+                        {
+                            "tag": "input",
+                            "type": "submit",
+                            "name": "Change",
+                            "value": "Change"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "url": "http://localhost/vulnerabilities/fi/?page=include.php",
+            "links_on_page": [
+                "http://localhost/setup.php",
+                "http://localhost/vulnerabilities/sqli_blind/",
+                "http://localhost/vulnerabilities/xss_s/",
+                "http://localhost/vulnerabilities/fi/?page=file2.php",
+                "http://localhost/vulnerabilities/fi/?page=file1.php",
+                "http://localhost/",
+                "http://localhost/logout.php",
+                "http://localhost/vulnerabilities/xss_d/",
+                "http://localhost/phpinfo.php",
+                "http://localhost/vulnerabilities/fi/?page=include.php",
+                "http://localhost/vulnerabilities/sqli/",
+                "http://localhost/vulnerabilities/fi/?page=file3.php",
+                "http://localhost/vulnerabilities/xss_r/",
+                "http://localhost/about.php",
+                "http://localhost/vulnerabilities/javascript/",
+                "http://localhost/vulnerabilities/csp/",
+                "http://localhost/vulnerabilities/upload/",
+                "http://localhost/instructions.php",
+                "http://localhost/vulnerabilities/weak_id/",
+                "http://localhost/vulnerabilities/csrf/",
+                "http://localhost/vulnerabilities/exec/",
+                "http://localhost/vulnerabilities/brute/",
+                "http://localhost/security.php",
+                "http://localhost/vulnerabilities/captcha/"
+            ],
+            "forms_on_page": []
+        },
+        {
+            "url": "http://localhost/vulnerabilities/upload/",
+            "links_on_page": [
+                "http://localhost/setup.php",
+                "http://localhost/vulnerabilities/sqli_blind/",
+                "http://localhost/vulnerabilities/xss_s/",
+                "http://localhost/",
+                "http://localhost/logout.php",
+                "http://localhost/vulnerabilities/xss_d/",
+                "http://localhost/phpinfo.php",
+                "http://localhost/vulnerabilities/fi/?page=include.php",
+                "http://localhost/vulnerabilities/sqli/",
+                "http://localhost/vulnerabilities/xss_r/",
+                "http://localhost/about.php",
+                "http://localhost/vulnerabilities/javascript/",
+                "http://localhost/vulnerabilities/csp/",
+                "http://localhost/vulnerabilities/upload/",
+                "http://localhost/instructions.php",
+                "http://localhost/vulnerabilities/weak_id/",
+                "http://localhost/vulnerabilities/csrf/",
+                "http://localhost/vulnerabilities/exec/",
+                "http://localhost/vulnerabilities/brute/",
+                "http://localhost/security.php",
+                "http://localhost/vulnerabilities/captcha/"
+            ],
+            "forms_on_page": [
+                {
+                    "action": "#",
+                    "method": "post",
+                    "inputs": [
+                        {
+                            "tag": "input",
+                            "type": "hidden",
+                            "name": "MAX_FILE_SIZE",
+                            "value": "100000"
+                        },
+                        {
+                            "tag": "input",
+                            "type": "file",
+                            "name": "uploaded",
+                            "value": null
+                        }
+                    ],
+                    "buttons": [
+                        {
+                            "tag": "input",
+                            "type": "submit",
+                            "name": "Upload",
+                            "value": "Upload"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "url": "http://localhost/vulnerabilities/captcha/",
+            "links_on_page": [
+                "http://localhost/setup.php",
+                "http://localhost/vulnerabilities/sqli_blind/",
+                "http://localhost/vulnerabilities/xss_s/",
+                "http://localhost/",
+                "http://localhost/logout.php",
+                "http://localhost/vulnerabilities/xss_d/",
+                "http://localhost/phpinfo.php",
+                "http://localhost/vulnerabilities/fi/?page=include.php",
+                "http://localhost/vulnerabilities/sqli/",
+                "http://localhost/vulnerabilities/xss_r/",
+                "http://localhost/about.php",
+                "http://localhost/vulnerabilities/javascript/",
+                "http://localhost/vulnerabilities/csp/",
+                "http://localhost/vulnerabilities/upload/",
+                "http://localhost/instructions.php",
+                "http://localhost/vulnerabilities/weak_id/",
+                "http://localhost/vulnerabilities/csrf/",
+                "http://localhost/vulnerabilities/exec/",
+                "http://localhost/vulnerabilities/brute/",
+                "http://localhost/security.php",
+                "http://localhost/vulnerabilities/captcha/"
+            ],
+            "forms_on_page": [
+                {
+                    "action": "#",
+                    "method": "post",
+                    "inputs": [
+                        {
+                            "tag": "input",
+                            "type": "hidden",
+                            "name": "step",
+                            "value": "1"
+                        },
+                        {
+                            "tag": "input",
+                            "type": "password",
+                            "name": "password_new",
+                            "value": null
+                        },
+                        {
+                            "tag": "input",
+                            "type": "password",
+                            "name": "password_conf",
+                            "value": null
+                        }
+                    ],
+                    "buttons": [
+                        {
+                            "tag": "input",
+                            "type": "submit",
+                            "name": "Change",
+                            "value": "Change"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "url": "http://localhost/vulnerabilities/sqli/",
+            "links_on_page": [
+                "http://localhost/setup.php",
+                "http://localhost/vulnerabilities/sqli_blind/",
+                "http://localhost/vulnerabilities/xss_s/",
+                "http://localhost/",
+                "http://localhost/logout.php",
+                "http://localhost/vulnerabilities/xss_d/",
+                "http://localhost/phpinfo.php",
+                "http://localhost/vulnerabilities/fi/?page=include.php",
+                "http://localhost/vulnerabilities/sqli/",
+                "http://localhost/vulnerabilities/xss_r/",
+                "http://localhost/about.php",
+                "http://localhost/vulnerabilities/javascript/",
+                "http://localhost/vulnerabilities/csp/",
+                "http://localhost/vulnerabilities/upload/",
+                "http://localhost/instructions.php",
+                "http://localhost/vulnerabilities/weak_id/",
+                "http://localhost/vulnerabilities/csrf/",
+                "http://localhost/vulnerabilities/exec/",
+                "http://localhost/vulnerabilities/brute/",
+                "http://localhost/security.php",
+                "http://localhost/vulnerabilities/captcha/"
+            ],
+            "forms_on_page": [
+                {
+                    "action": "#",
+                    "method": "get",
+                    "inputs": [
+                        {
+                            "tag": "input",
+                            "type": "text",
+                            "name": "id",
+                            "value": null
+                        }
+                    ],
+                    "buttons": [
+                        {
+                            "tag": "input",
+                            "type": "submit",
+                            "name": "Submit",
+                            "value": "Submit"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "url": "http://localhost/vulnerabilities/sqli_blind/",
+            "links_on_page": [
+                "http://localhost/setup.php",
+                "http://localhost/vulnerabilities/sqli_blind/",
+                "http://localhost/vulnerabilities/xss_s/",
+                "http://localhost/",
+                "http://localhost/logout.php",
+                "http://localhost/vulnerabilities/xss_d/",
+                "http://localhost/phpinfo.php",
+                "http://localhost/vulnerabilities/fi/?page=include.php",
+                "http://localhost/vulnerabilities/sqli/",
+                "http://localhost/vulnerabilities/xss_r/",
+                "http://localhost/about.php",
+                "http://localhost/vulnerabilities/javascript/",
+                "http://localhost/vulnerabilities/csp/",
+                "http://localhost/vulnerabilities/upload/",
+                "http://localhost/instructions.php",
+                "http://localhost/vulnerabilities/weak_id/",
+                "http://localhost/vulnerabilities/csrf/",
+                "http://localhost/vulnerabilities/exec/",
+                "http://localhost/vulnerabilities/brute/",
+                "http://localhost/security.php",
+                "http://localhost/vulnerabilities/captcha/"
+            ],
+            "forms_on_page": [
+                {
+                    "action": "#",
+                    "method": "get",
+                    "inputs": [
+                        {
+                            "tag": "input",
+                            "type": "text",
+                            "name": "id",
+                            "value": null
+                        }
+                    ],
+                    "buttons": [
+                        {
+                            "tag": "input",
+                            "type": "submit",
+                            "name": "Submit",
+                            "value": "Submit"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "url": "http://localhost/vulnerabilities/weak_id/",
+            "links_on_page": [
+                "http://localhost/setup.php",
+                "http://localhost/vulnerabilities/sqli_blind/",
+                "http://localhost/vulnerabilities/xss_s/",
+                "http://localhost/",
+                "http://localhost/logout.php",
+                "http://localhost/vulnerabilities/xss_d/",
+                "http://localhost/phpinfo.php",
+                "http://localhost/vulnerabilities/fi/?page=include.php",
+                "http://localhost/vulnerabilities/sqli/",
+                "http://localhost/vulnerabilities/xss_r/",
+                "http://localhost/about.php",
+                "http://localhost/vulnerabilities/javascript/",
+                "http://localhost/vulnerabilities/csp/",
+                "http://localhost/vulnerabilities/upload/",
+                "http://localhost/instructions.php",
+                "http://localhost/vulnerabilities/weak_id/",
+                "http://localhost/vulnerabilities/csrf/",
+                "http://localhost/vulnerabilities/exec/",
+                "http://localhost/vulnerabilities/brute/",
+                "http://localhost/security.php",
+                "http://localhost/vulnerabilities/captcha/"
+            ],
+            "forms_on_page": [
+                {
+                    "action": null,
+                    "method": "post",
+                    "inputs": [],
+                    "buttons": [
+                        {
+                            "tag": "input",
+                            "type": "submit",
+                            "name": null,
+                            "value": "Generate"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "url": "http://localhost/vulnerabilities/xss_d/",
+            "links_on_page": [
+                "http://localhost/setup.php",
+                "http://localhost/vulnerabilities/sqli_blind/",
+                "http://localhost/vulnerabilities/xss_s/",
+                "http://localhost/",
+                "http://localhost/logout.php",
+                "http://localhost/vulnerabilities/xss_d/",
+                "http://localhost/phpinfo.php",
+                "http://localhost/vulnerabilities/fi/?page=include.php",
+                "http://localhost/vulnerabilities/sqli/",
+                "http://localhost/vulnerabilities/xss_r/",
+                "http://localhost/about.php",
+                "http://localhost/vulnerabilities/javascript/",
+                "http://localhost/vulnerabilities/csp/",
+                "http://localhost/vulnerabilities/upload/",
+                "http://localhost/instructions.php",
+                "http://localhost/vulnerabilities/weak_id/",
+                "http://localhost/vulnerabilities/csrf/",
+                "http://localhost/vulnerabilities/exec/",
+                "http://localhost/vulnerabilities/brute/",
+                "http://localhost/security.php",
+                "http://localhost/vulnerabilities/captcha/"
+            ],
+            "forms_on_page": [
+                {
+                    "action": null,
+                    "method": "get",
+                    "inputs": [
+                        {
+                            "tag": "select",
+                            "type": "",
+                            "name": "default",
+                            "value": null
+                        }
+                    ],
+                    "buttons": [
+                        {
+                            "tag": "input",
+                            "type": "submit",
+                            "name": null,
+                            "value": "Select"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "url": "http://localhost/vulnerabilities/xss_r/",
+            "links_on_page": [
+                "http://localhost/setup.php",
+                "http://localhost/vulnerabilities/sqli_blind/",
+                "http://localhost/vulnerabilities/xss_s/",
+                "http://localhost/",
+                "http://localhost/logout.php",
+                "http://localhost/vulnerabilities/xss_d/",
+                "http://localhost/phpinfo.php",
+                "http://localhost/vulnerabilities/fi/?page=include.php",
+                "http://localhost/vulnerabilities/sqli/",
+                "http://localhost/vulnerabilities/xss_r/",
+                "http://localhost/about.php",
+                "http://localhost/vulnerabilities/javascript/",
+                "http://localhost/vulnerabilities/csp/",
+                "http://localhost/vulnerabilities/upload/",
+                "http://localhost/instructions.php",
+                "http://localhost/vulnerabilities/weak_id/",
+                "http://localhost/vulnerabilities/csrf/",
+                "http://localhost/vulnerabilities/exec/",
+                "http://localhost/vulnerabilities/brute/",
+                "http://localhost/security.php",
+                "http://localhost/vulnerabilities/captcha/"
+            ],
+            "forms_on_page": [
+                {
+                    "action": "#",
+                    "method": "get",
+                    "inputs": [
+                        {
+                            "tag": "input",
+                            "type": "text",
+                            "name": "name",
+                            "value": null
+                        }
+                    ],
+                    "buttons": [
+                        {
+                            "tag": "input",
+                            "type": "submit",
+                            "name": null,
+                            "value": "Submit"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "url": "http://localhost/vulnerabilities/xss_s/",
+            "links_on_page": [
+                "http://localhost/setup.php",
+                "http://localhost/vulnerabilities/sqli_blind/",
+                "http://localhost/vulnerabilities/xss_s/",
+                "http://localhost/",
+                "http://localhost/logout.php",
+                "http://localhost/vulnerabilities/xss_d/",
+                "http://localhost/phpinfo.php",
+                "http://localhost/vulnerabilities/fi/?page=include.php",
+                "http://localhost/vulnerabilities/sqli/",
+                "http://localhost/vulnerabilities/xss_r/",
+                "http://localhost/about.php",
+                "http://localhost/vulnerabilities/javascript/",
+                "http://localhost/vulnerabilities/csp/",
+                "http://localhost/vulnerabilities/upload/",
+                "http://localhost/instructions.php",
+                "http://localhost/vulnerabilities/weak_id/",
+                "http://localhost/vulnerabilities/csrf/",
+                "http://localhost/vulnerabilities/exec/",
+                "http://localhost/vulnerabilities/brute/",
+                "http://localhost/security.php",
+                "http://localhost/vulnerabilities/captcha/"
+            ],
+            "forms_on_page": [
+                {
+                    "action": null,
+                    "method": "post",
+                    "inputs": [
+                        {
+                            "tag": "input",
+                            "type": "text",
+                            "name": "txtName",
+                            "value": null
+                        },
+                        {
+                            "tag": "textarea",
+                            "type": "",
+                            "name": "mtxMessage",
+                            "value": null
+                        }
+                    ],
+                    "buttons": [
+                        {
+                            "tag": "input",
+                            "type": "submit",
+                            "name": "btnSign",
+                            "value": "Sign Guestbook"
+                        },
+                        {
+                            "tag": "input",
+                            "type": "submit",
+                            "name": "btnClear",
+                            "value": "Clear Guestbook"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "url": "http://localhost/vulnerabilities/csp/",
+            "links_on_page": [
+                "http://localhost/setup.php",
+                "http://localhost/vulnerabilities/sqli_blind/",
+                "http://localhost/vulnerabilities/xss_s/",
+                "http://localhost/",
+                "http://localhost/logout.php",
+                "http://localhost/vulnerabilities/xss_d/",
+                "http://localhost/phpinfo.php",
+                "http://localhost/vulnerabilities/fi/?page=include.php",
+                "http://localhost/vulnerabilities/sqli/",
+                "http://localhost/vulnerabilities/xss_r/",
+                "http://localhost/about.php",
+                "http://localhost/vulnerabilities/javascript/",
+                "http://localhost/vulnerabilities/csp/",
+                "http://localhost/vulnerabilities/upload/",
+                "http://localhost/instructions.php",
+                "http://localhost/vulnerabilities/weak_id/",
+                "http://localhost/vulnerabilities/csrf/",
+                "http://localhost/vulnerabilities/exec/",
+                "http://localhost/vulnerabilities/brute/",
+                "http://localhost/security.php",
+                "http://localhost/vulnerabilities/captcha/"
+            ],
+            "forms_on_page": [
+                {
+                    "action": null,
+                    "method": "post",
+                    "inputs": [
+                        {
+                            "tag": "input",
+                            "type": "text",
+                            "name": "include",
+                            "value": ""
+                        }
+                    ],
+                    "buttons": [
+                        {
+                            "tag": "input",
+                            "type": "submit",
+                            "name": null,
+                            "value": "Include"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "url": "http://localhost/vulnerabilities/javascript/",
+            "links_on_page": [
+                "http://localhost/setup.php",
+                "http://localhost/vulnerabilities/sqli_blind/",
+                "http://localhost/vulnerabilities/xss_s/",
+                "http://localhost/",
+                "http://localhost/logout.php",
+                "http://localhost/vulnerabilities/xss_d/",
+                "http://localhost/phpinfo.php",
+                "http://localhost/vulnerabilities/fi/?page=include.php",
+                "http://localhost/vulnerabilities/sqli/",
+                "http://localhost/vulnerabilities/xss_r/",
+                "http://localhost/about.php",
+                "http://localhost/vulnerabilities/javascript/",
+                "http://localhost/vulnerabilities/csp/",
+                "http://localhost/vulnerabilities/upload/",
+                "http://localhost/instructions.php",
+                "http://localhost/vulnerabilities/weak_id/",
+                "http://localhost/vulnerabilities/csrf/",
+                "http://localhost/vulnerabilities/exec/",
+                "http://localhost/vulnerabilities/brute/",
+                "http://localhost/security.php",
+                "http://localhost/vulnerabilities/captcha/"
+            ],
+            "forms_on_page": [
+                {
+                    "action": null,
+                    "method": "post",
+                    "inputs": [
+                        {
+                            "tag": "input",
+                            "type": "hidden",
+                            "name": "token",
+                            "value": ""
+                        },
+                        {
+                            "tag": "input",
+                            "type": "text",
+                            "name": "phrase",
+                            "value": "ChangeMe"
+                        }
+                    ],
+                    "buttons": [
+                        {
+                            "tag": "input",
+                            "type": "submit",
+                            "name": "send",
+                            "value": "Submit"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "url": "http://localhost/security.php",
+            "links_on_page": [
+                "http://localhost/setup.php",
+                "http://localhost/vulnerabilities/sqli_blind/",
+                "http://localhost/vulnerabilities/xss_s/",
+                "http://localhost/ids_log.php",
+                "http://localhost/",
+                "http://localhost/logout.php",
+                "http://localhost/vulnerabilities/xss_d/",
+                "http://localhost/phpinfo.php",
+                "http://localhost/vulnerabilities/fi/?page=include.php",
+                "http://localhost/vulnerabilities/sqli/",
+                "http://localhost/vulnerabilities/xss_r/",
+                "http://localhost/about.php",
+                "http://localhost/vulnerabilities/javascript/",
+                "http://localhost/security.php?phpids=on",
+                "http://localhost/vulnerabilities/csp/",
+                "http://localhost/vulnerabilities/upload/",
+                "http://localhost/instructions.php",
+                "http://localhost/vulnerabilities/weak_id/",
+                "http://localhost/vulnerabilities/csrf/",
+                "http://localhost/vulnerabilities/exec/",
+                "http://localhost/vulnerabilities/brute/",
+                "http://localhost/security.php",
+                "http://localhost/vulnerabilities/captcha/",
+                "http://localhost/security.php?test=%22><script>eval(window.name)</script>"
+            ],
+            "forms_on_page": [
+                {
+                    "action": "#",
+                    "method": "post",
+                    "inputs": [
+                        {
+                            "tag": "select",
+                            "type": "",
+                            "name": "security",
+                            "value": null
+                        },
+                        {
+                            "tag": "input",
+                            "type": "hidden",
+                            "name": "user_token",
+                            "value": "d20465ff78b7282903fc4ce608464cac"
+                        }
+                    ],
+                    "buttons": [
+                        {
+                            "tag": "input",
+                            "type": "submit",
+                            "name": "seclev_submit",
+                            "value": "Submit"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "url": "http://localhost/phpinfo.php",
+            "links_on_page": [],
+            "forms_on_page": []
+        },
+        {
+            "url": "http://localhost/about.php",
+            "links_on_page": [
+                "http://localhost/setup.php",
+                "http://localhost/vulnerabilities/sqli_blind/",
+                "http://localhost/vulnerabilities/xss_s/",
+                "http://localhost/",
+                "http://localhost/logout.php",
+                "http://localhost/vulnerabilities/xss_d/",
+                "http://localhost/phpinfo.php",
+                "http://localhost/vulnerabilities/fi/?page=include.php",
+                "http://localhost/vulnerabilities/sqli/",
+                "http://localhost/vulnerabilities/xss_r/",
+                "http://localhost/about.php",
+                "http://localhost/vulnerabilities/javascript/",
+                "http://localhost/vulnerabilities/csp/",
+                "http://localhost/vulnerabilities/upload/",
+                "http://localhost/instructions.php",
+                "http://localhost/instructions.php?doc=PHPIDS-license",
+                "http://localhost/vulnerabilities/weak_id/",
+                "http://localhost/vulnerabilities/csrf/",
+                "http://localhost/vulnerabilities/exec/",
+                "http://localhost/docs/DVWA_v1.3.pdf",
+                "http://localhost/vulnerabilities/brute/",
+                "http://localhost/security.php",
+                "http://localhost/vulnerabilities/captcha/"
+            ],
+            "forms_on_page": []
+        },
+        {
+            "url": "http://localhost/logout.php",
+            "links_on_page": [],
+            "forms_on_page": [
+                {
+                    "action": "login.php",
+                    "method": "post",
+                    "inputs": [
+                        {
+                            "tag": "input",
+                            "type": "text",
+                            "name": "username",
+                            "value": null
+                        },
+                        {
+                            "tag": "input",
+                            "type": "password",
+                            "name": "password",
+                            "value": null
+                        },
+                        {
+                            "tag": "input",
+                            "type": "hidden",
+                            "name": "user_token",
+                            "value": "6864c728657fa879f5a6fa55d7543614"
+                        }
+                    ],
+                    "buttons": [
+                        {
+                            "tag": "input",
+                            "type": "submit",
+                            "name": "Login",
+                            "value": "Login"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "url": "http://localhost/instructions.php?doc=readme",
+            "links_on_page": [
+                "http://localhost/about.php",
+                "http://localhost/setup.php",
+                "http://localhost/instructions.php?doc=readme",
+                "http://localhost/instructions.php",
+                "http://localhost/instructions.php?doc=PHPIDS-license",
+                "http://localhost/instructions.php?doc=copying",
+                "http://localhost/instructions.php?doc=changelog",
+                "http://localhost/instructions.php?doc=PDF"
+            ],
+            "forms_on_page": []
+        },
+        {
+            "url": "http://localhost/instructions.php?doc=PDF",
+            "links_on_page": [
+                "http://localhost/about.php",
+                "http://localhost/setup.php",
+                "http://localhost/instructions.php?doc=readme",
+                "http://localhost/docs/DVWA_v1.3.pdf",
+                "http://localhost/instructions.php",
+                "http://localhost/instructions.php?doc=PHPIDS-license",
+                "http://localhost/instructions.php?doc=copying",
+                "http://localhost/instructions.php?doc=changelog",
+                "http://localhost/instructions.php?doc=PDF"
+            ],
+            "forms_on_page": []
+        },
+        {
+            "url": "http://localhost/instructions.php?doc=changelog",
+            "links_on_page": [
+                "http://localhost/about.php",
+                "http://localhost/setup.php",
+                "http://localhost/instructions.php?doc=readme",
+                "http://localhost/instructions.php",
+                "http://localhost/instructions.php?doc=PHPIDS-license",
+                "http://localhost/instructions.php?doc=copying",
+                "http://localhost/instructions.php?doc=changelog",
+                "http://localhost/instructions.php?doc=PDF"
+            ],
+            "forms_on_page": []
+        },
+        {
+            "url": "http://localhost/instructions.php?doc=copying",
+            "links_on_page": [
+                "http://localhost/about.php",
+                "http://localhost/setup.php",
+                "http://localhost/instructions.php?doc=readme",
+                "http://localhost/instructions.php",
+                "http://localhost/instructions.php?doc=PHPIDS-license",
+                "http://localhost/instructions.php?doc=copying",
+                "http://localhost/instructions.php?doc=changelog",
+                "http://localhost/instructions.php?doc=PDF"
+            ],
+            "forms_on_page": []
+        },
+        {
+            "url": "http://localhost/instructions.php?doc=PHPIDS-license",
+            "links_on_page": [
+                "http://localhost/about.php",
+                "http://localhost/setup.php",
+                "http://localhost/instructions.php?doc=readme",
+                "http://localhost/instructions.php",
+                "http://localhost/instructions.php?doc=PHPIDS-license",
+                "http://localhost/instructions.php?doc=copying",
+                "http://localhost/instructions.php?doc=changelog",
+                "http://localhost/instructions.php?doc=PDF"
+            ],
+            "forms_on_page": []
+        },
+        {
+            "url": "http://localhost/vulnerabilities/fi/?page=file1.php",
+            "links_on_page": [],
+            "forms_on_page": [
+                {
+                    "action": "login.php",
+                    "method": "post",
+                    "inputs": [
+                        {
+                            "tag": "input",
+                            "type": "text",
+                            "name": "username",
+                            "value": null
+                        },
+                        {
+                            "tag": "input",
+                            "type": "password",
+                            "name": "password",
+                            "value": null
+                        },
+                        {
+                            "tag": "input",
+                            "type": "hidden",
+                            "name": "user_token",
+                            "value": "4684438a84faf4bb5cd816c8b7938185"
+                        }
+                    ],
+                    "buttons": [
+                        {
+                            "tag": "input",
+                            "type": "submit",
+                            "name": "Login",
+                            "value": "Login"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "url": "http://localhost/vulnerabilities/fi/?page=file2.php",
+            "links_on_page": [],
+            "forms_on_page": [
+                {
+                    "action": "login.php",
+                    "method": "post",
+                    "inputs": [
+                        {
+                            "tag": "input",
+                            "type": "text",
+                            "name": "username",
+                            "value": null
+                        },
+                        {
+                            "tag": "input",
+                            "type": "password",
+                            "name": "password",
+                            "value": null
+                        },
+                        {
+                            "tag": "input",
+                            "type": "hidden",
+                            "name": "user_token",
+                            "value": "0adcb83a55150b34ae62665f59e7f5ac"
+                        }
+                    ],
+                    "buttons": [
+                        {
+                            "tag": "input",
+                            "type": "submit",
+                            "name": "Login",
+                            "value": "Login"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "url": "http://localhost/vulnerabilities/fi/?page=file3.php",
+            "links_on_page": [],
+            "forms_on_page": [
+                {
+                    "action": "login.php",
+                    "method": "post",
+                    "inputs": [
+                        {
+                            "tag": "input",
+                            "type": "text",
+                            "name": "username",
+                            "value": null
+                        },
+                        {
+                            "tag": "input",
+                            "type": "password",
+                            "name": "password",
+                            "value": null
+                        },
+                        {
+                            "tag": "input",
+                            "type": "hidden",
+                            "name": "user_token",
+                            "value": "7384cdac4e32e48ac978acd178cd6a02"
+                        }
+                    ],
+                    "buttons": [
+                        {
+                            "tag": "input",
+                            "type": "submit",
+                            "name": "Login",
+                            "value": "Login"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "url": "http://localhost/security.php?phpids=on",
+            "links_on_page": [],
+            "forms_on_page": [
+                {
+                    "action": "login.php",
+                    "method": "post",
+                    "inputs": [
+                        {
+                            "tag": "input",
+                            "type": "text",
+                            "name": "username",
+                            "value": null
+                        },
+                        {
+                            "tag": "input",
+                            "type": "password",
+                            "name": "password",
+                            "value": null
+                        },
+                        {
+                            "tag": "input",
+                            "type": "hidden",
+                            "name": "user_token",
+                            "value": "28620beeaee01e366b3d12c68f151c14"
+                        }
+                    ],
+                    "buttons": [
+                        {
+                            "tag": "input",
+                            "type": "submit",
+                            "name": "Login",
+                            "value": "Login"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "url": "http://localhost/security.php?test=%22><script>eval(window.name)</script>",
+            "links_on_page": [],
+            "forms_on_page": [
+                {
+                    "action": "login.php",
+                    "method": "post",
+                    "inputs": [
+                        {
+                            "tag": "input",
+                            "type": "text",
+                            "name": "username",
+                            "value": null
+                        },
+                        {
+                            "tag": "input",
+                            "type": "password",
+                            "name": "password",
+                            "value": null
+                        },
+                        {
+                            "tag": "input",
+                            "type": "hidden",
+                            "name": "user_token",
+                            "value": "6e9363c6a59c6f747cc11be78844825f"
+                        }
+                    ],
+                    "buttons": [
+                        {
+                            "tag": "input",
+                            "type": "submit",
+                            "name": "Login",
+                            "value": "Login"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "url": "http://localhost/ids_log.php",
+            "links_on_page": [],
+            "forms_on_page": [
+                {
+                    "action": "login.php",
+                    "method": "post",
+                    "inputs": [
+                        {
+                            "tag": "input",
+                            "type": "text",
+                            "name": "username",
+                            "value": null
+                        },
+                        {
+                            "tag": "input",
+                            "type": "password",
+                            "name": "password",
+                            "value": null
+                        },
+                        {
+                            "tag": "input",
+                            "type": "hidden",
+                            "name": "user_token",
+                            "value": "67554373031296f5a104a735c8e0c6e4"
+                        }
+                    ],
+                    "buttons": [
+                        {
+                            "tag": "input",
+                            "type": "submit",
+                            "name": "Login",
+                            "value": "Login"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "url": "http://localhost/docs/DVWA_v1.3.pdf",
+            "links_on_page": [],
+            "forms_on_page": []
+        }
+    ]
+}

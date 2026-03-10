@@ -1,0 +1,182 @@
+[
+    {
+        "page": "http://localhost/vulnerabilities/brute/",
+        "action": "http://localhost/vulnerabilities/brute/",
+        "method": "get",
+        "vulnerable_input": "username",
+        "payload": "'",
+        "error": "SQL error detected",
+        "remediation": "Use parameterized queries (prepared statements)"
+    },
+    {
+        "page": "http://localhost/vulnerabilities/brute/",
+        "action": "http://localhost/vulnerabilities/brute/",
+        "method": "get",
+        "vulnerable_input": "username",
+        "payload": "' OR 1=1--",
+        "error": "SQL error detected",
+        "remediation": "Use parameterized queries (prepared statements)"
+    },
+    {
+        "page": "http://localhost/vulnerabilities/brute/",
+        "action": "http://localhost/vulnerabilities/brute/",
+        "method": "get",
+        "vulnerable_input": "username",
+        "payload": "' OR '1'='1'--",
+        "error": "SQL error detected",
+        "remediation": "Use parameterized queries (prepared statements)"
+    },
+    {
+        "page": "http://localhost/vulnerabilities/brute/",
+        "action": "http://localhost/vulnerabilities/brute/",
+        "method": "get",
+        "vulnerable_input": "username",
+        "payload": "' AND 1=1--",
+        "error": "SQL error detected",
+        "remediation": "Use parameterized queries (prepared statements)"
+    },
+    {
+        "page": "http://localhost/vulnerabilities/brute/",
+        "action": "http://localhost/vulnerabilities/brute/",
+        "method": "get",
+        "vulnerable_input": "username",
+        "payload": "' AND 1=2--",
+        "error": "SQL error detected",
+        "remediation": "Use parameterized queries (prepared statements)"
+    },
+    {
+        "page": "http://localhost/vulnerabilities/brute/",
+        "action": "http://localhost/vulnerabilities/brute/",
+        "method": "get",
+        "vulnerable_input": "username",
+        "payload": "' UNION SELECT null,null--",
+        "error": "SQL error detected",
+        "remediation": "Use parameterized queries (prepared statements)"
+    },
+    {
+        "page": "http://localhost/vulnerabilities/brute/",
+        "action": "http://localhost/vulnerabilities/brute/",
+        "method": "get",
+        "vulnerable_input": "username",
+        "payload": "' UNION SELECT null,database()--",
+        "error": "SQL error detected",
+        "remediation": "Use parameterized queries (prepared statements)"
+    },
+    {
+        "page": "http://localhost/vulnerabilities/brute/",
+        "action": "http://localhost/vulnerabilities/brute/",
+        "method": "get",
+        "vulnerable_input": "username",
+        "payload": "' UNION SELECT null,user()--",
+        "error": "SQL error detected",
+        "remediation": "Use parameterized queries (prepared statements)"
+    },
+    {
+        "page": "http://localhost/vulnerabilities/brute/",
+        "action": "http://localhost/vulnerabilities/brute/",
+        "method": "get",
+        "vulnerable_input": "username",
+        "payload": "' OR SLEEP(5)--",
+        "error": "SQL error detected",
+        "remediation": "Use parameterized queries (prepared statements)"
+    },
+    {
+        "page": "http://localhost/vulnerabilities/brute/",
+        "action": "http://localhost/vulnerabilities/brute/",
+        "method": "get",
+        "vulnerable_input": "username",
+        "payload": "' OR BENCHMARK(1000000,MD5(1))--",
+        "error": "SQL error detected",
+        "remediation": "Use parameterized queries (prepared statements)"
+    },
+    {
+        "page": "http://localhost/vulnerabilities/sqli/",
+        "action": "http://localhost/vulnerabilities/sqli/",
+        "method": "get",
+        "vulnerable_input": "id",
+        "payload": "'",
+        "error": "SQL error detected",
+        "remediation": "Use parameterized queries (prepared statements)"
+    },
+    {
+        "page": "http://localhost/vulnerabilities/sqli/",
+        "action": "http://localhost/vulnerabilities/sqli/",
+        "method": "get",
+        "vulnerable_input": "id",
+        "payload": "' OR 1=1--",
+        "error": "SQL error detected",
+        "remediation": "Use parameterized queries (prepared statements)"
+    },
+    {
+        "page": "http://localhost/vulnerabilities/sqli/",
+        "action": "http://localhost/vulnerabilities/sqli/",
+        "method": "get",
+        "vulnerable_input": "id",
+        "payload": "' OR '1'='1'--",
+        "error": "SQL error detected",
+        "remediation": "Use parameterized queries (prepared statements)"
+    },
+    {
+        "page": "http://localhost/vulnerabilities/sqli/",
+        "action": "http://localhost/vulnerabilities/sqli/",
+        "method": "get",
+        "vulnerable_input": "id",
+        "payload": "' AND 1=1--",
+        "error": "SQL error detected",
+        "remediation": "Use parameterized queries (prepared statements)"
+    },
+    {
+        "page": "http://localhost/vulnerabilities/sqli/",
+        "action": "http://localhost/vulnerabilities/sqli/",
+        "method": "get",
+        "vulnerable_input": "id",
+        "payload": "' AND 1=2--",
+        "error": "SQL error detected",
+        "remediation": "Use parameterized queries (prepared statements)"
+    },
+    {
+        "page": "http://localhost/vulnerabilities/sqli/",
+        "action": "http://localhost/vulnerabilities/sqli/",
+        "method": "get",
+        "vulnerable_input": "id",
+        "payload": "' UNION SELECT null,null--",
+        "error": "SQL error detected",
+        "remediation": "Use parameterized queries (prepared statements)"
+    },
+    {
+        "page": "http://localhost/vulnerabilities/sqli/",
+        "action": "http://localhost/vulnerabilities/sqli/",
+        "method": "get",
+        "vulnerable_input": "id",
+        "payload": "' UNION SELECT null,database()--",
+        "error": "SQL error detected",
+        "remediation": "Use parameterized queries (prepared statements)"
+    },
+    {
+        "page": "http://localhost/vulnerabilities/sqli/",
+        "action": "http://localhost/vulnerabilities/sqli/",
+        "method": "get",
+        "vulnerable_input": "id",
+        "payload": "' UNION SELECT null,user()--",
+        "error": "SQL error detected",
+        "remediation": "Use parameterized queries (prepared statements)"
+    },
+    {
+        "page": "http://localhost/vulnerabilities/sqli/",
+        "action": "http://localhost/vulnerabilities/sqli/",
+        "method": "get",
+        "vulnerable_input": "id",
+        "payload": "' OR SLEEP(5)--",
+        "error": "SQL error detected",
+        "remediation": "Use parameterized queries (prepared statements)"
+    },
+    {
+        "page": "http://localhost/vulnerabilities/sqli/",
+        "action": "http://localhost/vulnerabilities/sqli/",
+        "method": "get",
+        "vulnerable_input": "id",
+        "payload": "' OR BENCHMARK(1000000,MD5(1))--",
+        "error": "SQL error detected",
+        "remediation": "Use parameterized queries (prepared statements)"
+    }
+]

