@@ -1,1 +1,20 @@
-[]
+[
+    {
+        "url": "http://localhost/vulnerabilities/brute/",
+        "form_action": "http://localhost/vulnerabilities/brute/",
+        "method": "get",
+        "vulnerable_input": "username",
+        "payload": "'",
+        "error_detected": "Database error message found in response",
+        "remediation": "Use parameterized queries (prepared statements) instead of string concatenation.\n\nExample in PHP with PDO:\n$stmt = $pdo->prepare('SELECT * FROM users WHERE id = ?');\n$stmt->execute([$id]);"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/brute/",
+        "form_action": "http://localhost/vulnerabilities/brute/",
+        "method": "get",
+        "vulnerable_input": "username",
+        "payload": "' AND 1=0 UNION SELECT username, password FROM users --",
+        "error_detected": "Database error message found in response",
+        "remediation": "Use parameterized queries (prepared statements) instead of string concatenation.\n\nExample in PHP with PDO:\n$stmt = $pdo->prepare('SELECT * FROM users WHERE id = ?');\n$stmt->execute([$id]);"
+    }
+]

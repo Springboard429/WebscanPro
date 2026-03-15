@@ -1,4 +1,155 @@
 {
+    "http://localhost/vulnerabilities/upload/": [
+        {
+            "action": "#",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "MAX_FILE_SIZE",
+                    "type": "hidden",
+                    "value": "100000"
+                },
+                {
+                    "name": "uploaded",
+                    "type": "file",
+                    "value": ""
+                },
+                {
+                    "name": "Upload",
+                    "type": "submit",
+                    "value": "Upload"
+                }
+            ]
+        }
+    ],
+    "http://localhost/vulnerabilities/csrf/": [
+        {
+            "action": "#",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "password_new",
+                    "type": "password",
+                    "value": ""
+                },
+                {
+                    "name": "password_conf",
+                    "type": "password",
+                    "value": ""
+                },
+                {
+                    "name": "Change",
+                    "type": "submit",
+                    "value": "Change"
+                }
+            ]
+        }
+    ],
+    "http://localhost/vulnerabilities/sqli/": [
+        {
+            "action": "#",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "id",
+                    "type": "text",
+                    "value": ""
+                },
+                {
+                    "name": "Submit",
+                    "type": "submit",
+                    "value": "Submit"
+                }
+            ]
+        }
+    ],
+    "http://localhost/vulnerabilities/csp/": [
+        {
+            "action": "",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "include",
+                    "type": "text",
+                    "value": ""
+                },
+                {
+                    "name": "",
+                    "type": "submit",
+                    "value": "Include"
+                }
+            ]
+        }
+    ],
+    "http://localhost/vulnerabilities/sqli_blind/": [
+        {
+            "action": "#",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "id",
+                    "type": "text",
+                    "value": ""
+                },
+                {
+                    "name": "Submit",
+                    "type": "submit",
+                    "value": "Submit"
+                }
+            ]
+        }
+    ],
+    "http://localhost/security.php": [
+        {
+            "action": "#",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "security",
+                    "type": "select",
+                    "value": ""
+                },
+                {
+                    "name": "seclev_submit",
+                    "type": "submit",
+                    "value": "Submit"
+                },
+                {
+                    "name": "user_token",
+                    "type": "hidden",
+                    "value": "2b6f03ec7aa4110ae49c7eaad9c6618e"
+                }
+            ]
+        }
+    ],
+    "http://localhost/vulnerabilities/captcha/": [
+        {
+            "action": "#",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "step",
+                    "type": "hidden",
+                    "value": "1"
+                },
+                {
+                    "name": "password_new",
+                    "type": "password",
+                    "value": ""
+                },
+                {
+                    "name": "password_conf",
+                    "type": "password",
+                    "value": ""
+                },
+                {
+                    "name": "Change",
+                    "type": "submit",
+                    "value": "Change"
+                }
+            ]
+        }
+    ],
     "http://localhost/vulnerabilities/xss_r/": [
         {
             "action": "#",
@@ -40,6 +191,24 @@
             ]
         }
     ],
+    "http://localhost/vulnerabilities/exec/": [
+        {
+            "action": "#",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "ip",
+                    "type": "text",
+                    "value": ""
+                },
+                {
+                    "name": "Submit",
+                    "type": "submit",
+                    "value": "Submit"
+                }
+            ]
+        }
+    ],
     "http://localhost/vulnerabilities/brute/": [
         {
             "action": "#",
@@ -59,119 +228,6 @@
                     "name": "Login",
                     "type": "submit",
                     "value": "Login"
-                }
-            ]
-        }
-    ],
-    "http://localhost/vulnerabilities/sqli_blind/": [
-        {
-            "action": "#",
-            "method": "get",
-            "inputs": [
-                {
-                    "name": "id",
-                    "type": "text",
-                    "value": ""
-                },
-                {
-                    "name": "Submit",
-                    "type": "submit",
-                    "value": "Submit"
-                }
-            ]
-        }
-    ],
-    "http://localhost/vulnerabilities/csp/": [
-        {
-            "action": "",
-            "method": "post",
-            "inputs": [
-                {
-                    "name": "include",
-                    "type": "text",
-                    "value": ""
-                },
-                {
-                    "name": "",
-                    "type": "submit",
-                    "value": "Include"
-                }
-            ]
-        }
-    ],
-    "http://localhost/vulnerabilities/csrf/": [
-        {
-            "action": "#",
-            "method": "get",
-            "inputs": [
-                {
-                    "name": "password_new",
-                    "type": "password",
-                    "value": ""
-                },
-                {
-                    "name": "password_conf",
-                    "type": "password",
-                    "value": ""
-                },
-                {
-                    "name": "Change",
-                    "type": "submit",
-                    "value": "Change"
-                }
-            ]
-        }
-    ],
-    "http://localhost/security.php": [
-        {
-            "action": "#",
-            "method": "post",
-            "inputs": [
-                {
-                    "name": "security",
-                    "type": "select",
-                    "value": ""
-                },
-                {
-                    "name": "seclev_submit",
-                    "type": "submit",
-                    "value": "Submit"
-                },
-                {
-                    "name": "user_token",
-                    "type": "hidden",
-                    "value": "f11b125b9bf9ae358fbe3bd1d0c50f97"
-                }
-            ]
-        }
-    ],
-    "http://localhost/vulnerabilities/weak_id/": [
-        {
-            "action": "",
-            "method": "post",
-            "inputs": [
-                {
-                    "name": "",
-                    "type": "submit",
-                    "value": "Generate"
-                }
-            ]
-        }
-    ],
-    "http://localhost/vulnerabilities/exec/": [
-        {
-            "action": "#",
-            "method": "post",
-            "inputs": [
-                {
-                    "name": "ip",
-                    "type": "text",
-                    "value": ""
-                },
-                {
-                    "name": "Submit",
-                    "type": "submit",
-                    "value": "Submit"
                 }
             ]
         }
@@ -222,71 +278,15 @@
             ]
         }
     ],
-    "http://localhost/vulnerabilities/sqli/": [
+    "http://localhost/vulnerabilities/weak_id/": [
         {
-            "action": "#",
-            "method": "get",
-            "inputs": [
-                {
-                    "name": "id",
-                    "type": "text",
-                    "value": ""
-                },
-                {
-                    "name": "Submit",
-                    "type": "submit",
-                    "value": "Submit"
-                }
-            ]
-        }
-    ],
-    "http://localhost/vulnerabilities/upload/": [
-        {
-            "action": "#",
+            "action": "",
             "method": "post",
             "inputs": [
                 {
-                    "name": "MAX_FILE_SIZE",
-                    "type": "hidden",
-                    "value": "100000"
-                },
-                {
-                    "name": "uploaded",
-                    "type": "file",
-                    "value": ""
-                },
-                {
-                    "name": "Upload",
+                    "name": "",
                     "type": "submit",
-                    "value": "Upload"
-                }
-            ]
-        }
-    ],
-    "http://localhost/vulnerabilities/captcha/": [
-        {
-            "action": "#",
-            "method": "post",
-            "inputs": [
-                {
-                    "name": "step",
-                    "type": "hidden",
-                    "value": "1"
-                },
-                {
-                    "name": "password_new",
-                    "type": "password",
-                    "value": ""
-                },
-                {
-                    "name": "password_conf",
-                    "type": "password",
-                    "value": ""
-                },
-                {
-                    "name": "Change",
-                    "type": "submit",
-                    "value": "Change"
+                    "value": "Generate"
                 }
             ]
         }
