@@ -1,6 +1,6 @@
 # WebScanPro - Advanced Web Application Security Scanner
 
-(https://via.placeholder.com/150x50?text=WebScanPro) [![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/downloads/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)]()
+ [![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/downloads/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)]()
 
 WebScanPro is a powerful and comprehensive web application security scanner designed to help security professionals and developers identify vulnerabilities in web applications. It combines automated scanning with advanced testing techniques to detect security issues across various layers of a web application.
 
