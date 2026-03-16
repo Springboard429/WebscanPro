@@ -1,0 +1,14 @@
+{
+  "scan_id": "scan_1772113459",
+  "status": "FAILED",
+  "target_url": "https://www.perplexity.ai/?login-source=oneTapHome&login-new=false",
+  "start_time": 1772113459.864339,
+  "end_time": null,
+  "elapsed_time": null,
+  "pages_crawled": 0,
+  "vulnerabilities_found": 0,
+  "vulnerabilities": [],
+  "report_generated": "2026-02-26T19:14:20.176857",
+  "report_version": "1.0.0",
+  "report_format": "json"
+}

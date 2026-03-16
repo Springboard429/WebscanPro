@@ -1,0 +1,25 @@
+{
+  "scan_id": "scan_1772109180",
+  "status": "COMPLETED",
+  "target_url": "http://testphp.vulnweb.com/artists.php?artist=1",
+  "start_time": 1772109181.1444082,
+  "end_time": 1772109184.7189589,
+  "elapsed_time": 3.5745506286621094,
+  "pages_crawled": 1,
+  "vulnerabilities_found": 1,
+  "vulnerabilities": [
+    {
+      "type": "SQL Injection",
+      "url": "http://testphp.vulnweb.com/artists.php?artist=%27",
+      "parameter": "artist",
+      "payload": "'",
+      "method": "GET",
+      "severity": "High",
+      "description": "SQL injection vulnerability in artist parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    }
+  ],
+  "report_generated": "2026-02-26T18:03:04.723459",
+  "report_version": "1.0.0",
+  "report_format": "json"
+}

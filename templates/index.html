@@ -1,0 +1,1700 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebScanPro - Advanced Vulnerability Scanner</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            text-align: center;
+            flex: 1;
+        }
+        
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .theme-toggle {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            color: white;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .theme-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        body.dark-mode {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e0e0e0;
+        }
+        
+        body.dark-mode .main-card {
+            background: #2d3748;
+            color: #e0e0e0;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        body.dark-mode .input-group input,
+        body.dark-mode .input-group select {
+            background: #4a5568;
+            color: #e0e0e0;
+            border-color: #718096;
+        }
+        
+        body.dark-mode .input-group input:focus,
+        body.dark-mode .input-group select:focus {
+            border-color: #667eea;
+            background: #4a5568;
+        }
+        
+        body.dark-mode .form-group label {
+            color: #e0e0e0;
+        }
+        
+        body.dark-mode .stat-card {
+            background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+            color: #e0e0e0;
+        }
+        
+        body.dark-mode .vulnerability-card {
+            background: #4a5568;
+            color: #e0e0e0;
+            border-left-color: #667eea;
+        }
+        
+        body.dark-mode .detail-label {
+            color: #a0aec0;
+        }
+        
+        body.dark-mode .detail-value {
+            color: #e0e0e0;
+        }
+        
+        body.dark-mode .payload-code {
+            background: #2d3748;
+            color: #e91e63;
+        }
+        
+        body.dark-mode .log-container {
+            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+        }
+        
+        body.dark-mode .log-entries {
+            background: #1a202c;
+            border-color: #4a5568;
+        }
+        
+        body.dark-mode .log-message {
+            color: #e0e0e0;
+        }
+        
+        body.dark-mode .modal-content {
+            background: #2d3748;
+            color: #e0e0e0;
+        }
+        
+        body.dark-mode .history-item {
+            background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+            color: #e0e0e0;
+        }
+        
+        body.dark-mode .history-url {
+            color: #e0e0e0;
+        }
+        
+        body.dark-mode .history-stat {
+            color: #a0aec0;
+        }
+        
+        .header h1 {
+            color: white;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1em;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .main-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 40px;
+            animation: slideUp 0.6s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .scan-form {
+            display: grid;
+            gap: 30px;
+        }
+        
+        .form-group {
+            position: relative;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #555;
+            font-size: 1.1em;
+        }
+        
+        .input-wrapper {
+            position: relative;
+        }
+        
+        .input-wrapper i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+        }
+        
+        input[type="text"] {
+            width: 100%;
+            padding: 15px 15px 15px 45px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+        
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .scan-type-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .radio-card {
+            flex: 1;
+            min-width: 150px;
+            position: relative;
+        }
+        
+        .radio-card input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+        }
+        
+        .radio-card label {
+            display: block;
+            padding: 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        
+        .radio-card input[type="radio"]:checked + label {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .radio-card label:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+        }
+        
+        .radio-card i {
+            display: block;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        .btn {
+            padding: 15px 40px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-danger {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            box-shadow: 0 5px 15px rgba(245, 87, 108, 0.3);
+        }
+        
+        .btn-danger:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(245, 87, 108, 0.4);
+        }
+        
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .progress-section {
+            margin: 30px 0;
+            display: none;
+        }
+        
+        .progress-container {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .progress-bar-wrapper {
+            background: #e9ecef;
+            border-radius: 10px;
+            height: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            transition: width 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.3),
+                transparent
+            );
+            animation: shimmer 2s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .status-section {
+            margin: 30px 0;
+            display: none;
+        }
+        
+        .status-card {
+            padding: 20px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            animation: slideIn 0.3s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .status-info {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-left: 4px solid #2196f3;
+        }
+        
+        .status-success {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-left: 4px solid #4caf50;
+        }
+        
+        .status-error {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            border-left: 4px solid #f44336;
+        }
+        
+        .status-icon {
+            font-size: 1.5em;
+        }
+        
+        .results-section {
+            margin: 30px 0;
+            display: block !important;
+            visibility: visible !important;
+        }
+        
+        .result-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, #667eea 0%, #667eea 100%);
+            color: white;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .modal {
+            display: block !important;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 20px;
+            width: 80%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            animation: modalSlideIn 0.3s ease-out;
+        }
+        
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        
+        .close:hover {
+            color: #000;
+        }
+        
+        .history-list {
+            display: grid;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .history-item {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s ease;
+        }
+        
+        .history-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .history-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .history-url {
+            font-weight: 600;
+            color: #333;
+            word-break: break-all;
+        }
+        
+        .history-time {
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .history-stats {
+            display: flex;
+            gap: 20px;
+            margin-top: 10px;
+        }
+        
+        .history-stat {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #666;
+        }
+        
+        .history-stat i {
+            color: #667eea;
+        }
+        
+        .empty-history {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+        
+        .scan-log-section {
+            margin: 20px 0;
+            display: block !important;
+        }
+        
+        .log-container {
+            background: linear-gradient(135deg, #667eea 0%, #667eea 100%);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+        
+        .log-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .log-header h3 {
+            color: #e0e0e0;
+            margin: 0;
+            font-size: 1.2em;
+        }
+        
+        .btn-small {
+            padding: 8px 16px;
+            font-size: 0.9em;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-small:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .log-entries {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 15px;
+            max-height: 300px;
+            overflow-y: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            border: 1px solid #667eea;
+        }
+        
+        .log-entry {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+        
+        .log-time {
+            color: #58a6ff;
+            font-weight: bold;
+            min-width: 80px;
+        }
+        
+        .log-message {
+            color: #333333;
+            flex: 1;
+            word-break: break-all;
+        }
+        
+        .log-info {
+            border-left: 3px solid #58a6ff;
+        }
+        
+        .log-success {
+            border-left: 3px solid #4caf50;
+        }
+        
+        .log-warning {
+            border-left: 3px solid #ff9800;
+        }
+        
+        .log-error {
+            border-left: 3px solid #f44336;
+        }
+        
+        .log-vulnerability {
+            border-left: 3px solid #e91e63;
+            background: rgba(233, 30, 99, 0.1);
+        }
+        
+        /* Scrollbar styling */
+        .log-entries::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .log-entries::-webkit-scrollbar-track {
+            background: #1a1a2e;
+        }
+        
+        .log-entries::-webkit-scrollbar-thumb {
+            background: #667eea;
+            border-radius: 4px;
+        }
+        
+        .log-entries::-webkit-scrollbar-thumb:hover {
+            background: #764ba2;
+        }
+        
+        .results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .results-header h2 {
+            color: #333;
+            font-size: 1.8em;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        
+        .stat-label {
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .vulnerability-list {
+            display: grid;
+            gap: 20px;
+        }
+        
+        .vulnerability-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 15px;
+            padding: 25px;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.5s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .vulnerability-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .vulnerability-card.high::before {
+            background: linear-gradient(135deg, #f44336 0%, #e91e63 100%);
+        }
+        
+        .vulnerability-card.medium::before {
+            background: linear-gradient(135deg, #ff9800 0%, #ffc107 100%);
+        }
+        
+        .vulnerability-card.low::before {
+            background: linear-gradient(135deg, #4caf50 0%, #8bc34a 100%);
+        }
+        
+        .vulnerability-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .vulnerability-type {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .severity-badge {
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .severity-high {
+            background: linear-gradient(135deg, #f44336 0%, #e91e63 100%);
+            color: white;
+        }
+        
+        .severity-medium {
+            background: linear-gradient(135deg, #ff9800 0%, #ffc107 100%);
+            color: white;
+        }
+        
+        .severity-low {
+            background: linear-gradient(135deg, #4caf50 0%, #8bc34a 100%);
+            color: white;
+        }
+        
+        .vulnerability-details {
+            display: grid;
+            gap: 10px;
+        }
+        
+        .detail-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .detail-label {
+            font-weight: 600;
+            color: #666;
+            min-width: 100px;
+        }
+        
+        .detail-value {
+            color: #333;
+            word-break: break-all;
+        }
+        
+        .payload-code {
+            background: #f8f9fa;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            color: #e91e63;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #666;
+        }
+        
+        .empty-state i {
+            font-size: 4em;
+            color: #ddd;
+            margin-bottom: 20px;
+        }
+        
+        .empty-state h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .main-card {
+                padding: 25px;
+            }
+            
+            .scan-type-group {
+                flex-direction: column;
+            }
+            
+            .button-group {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="logo">
+                <h1><i class="fas fa-shield-alt"></i> WebScanPro</h1>
+                <p>Advanced Web Application Vulnerability Scanner</p>
+            </div>
+            <div class="header-actions">
+                <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Dark Mode">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="main-card">
+            <form id="scanForm" class="scan-form" onsubmit="startScan(); return false;">
+                <div class="form-group">
+                    <label for="url">Target URL</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-globe"></i>
+                        <input type="text" id="url" value="http://testphp.vulnweb.com/artists.php?artist=1" required placeholder="Enter target URL...">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Authentication (Optional)</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="username" placeholder="Username (e.g., admin for DVWA)">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" placeholder="Password (e.g., password for DVWA)">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Scan Type</label>
+                    <div class="scan-type-group">
+                        <div class="radio-card">
+                            <input type="radio" id="scanAll" name="scanType" value="all" checked>
+                            <label for="scanAll">
+                                <i class="fas fa-search"></i>
+                                <div>All Scans</div>
+                            </label>
+                        </div>
+                        <div class="radio-card">
+                            <input type="radio" id="scanXSS" name="scanType" value="xss">
+                            <label for="scanXSS">
+                                <i class="fas fa-code"></i>
+                                <div>XSS Only</div>
+                            </label>
+                        </div>
+                        <div class="radio-card">
+                            <input type="radio" id="scanSQL" name="scanType" value="sqli">
+                            <label for="scanSQL">
+                                <i class="fas fa-database"></i>
+                                <div>SQLi Only</div>
+                            </label>
+                        </div>
+                        <div class="radio-card">
+                            <input type="radio" id="scanQuick" name="scanType" value="quick">
+                            <label for="scanQuick">
+                                <i class="fas fa-bolt"></i>
+                                <div>Quick Scan</div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="button-group">
+                    <button type="submit" id="scanButton" class="btn btn-primary">
+                        <i class="fas fa-play"></i> Start Scan
+                    </button>
+                    <button type="button" id="cancelBtn" class="btn btn-danger" style="display: none;">
+                        <i class="fas fa-stop"></i> Cancel Scan
+                    </button>
+                </div>
+            </form>
+            
+            <div class="progress-section" id="progressSection">
+                <div class="progress-container">
+                    <div class="progress-header">
+                        <span><i class="fas fa-spinner fa-spin"></i> Scanning in progress...</span>
+                        <span id="progressPercent">0%</span>
+                    </div>
+                    <div class="progress-bar-wrapper">
+                        <div class="progress-bar" id="progressBar"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scan-log-section" id="scanLogSection" style="display: none;">
+                <div class="log-container">
+                    <div class="log-header">
+                        <h3><i class="fas fa-terminal"></i> Real-time Scan Log</h3>
+                        <button class="btn btn-small" onclick="toggleLog()">
+                            <i class="fas fa-chevron-up" id="logToggleIcon"></i>
+                        </button>
+                    </div>
+                    <div class="log-entries" id="logEntries"></div>
+                </div>
+            </div>
+            
+            <div class="status-section" id="statusSection">
+                <div class="status-card" id="statusCard">
+                    <div class="status-icon" id="statusIcon"></div>
+                    <div class="status-message" id="statusMessage"></div>
+                </div>
+            </div>
+            
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <div class="results-header">
+                    <h2><i class="fas fa-bug"></i> Scan Results</h2>
+                    <div class="result-actions">
+                        <button class="btn btn-primary" onclick="exportResults()">
+                            <i class="fas fa-download"></i> Export JSON
+                        </button>
+                        <button class="btn btn-secondary" onclick="exportToPDF()">
+                            <i class="fas fa-file-pdf"></i> Export PDF
+                        </button>
+                        <button class="btn btn-secondary" onclick="showScanHistory()">
+                            <i class="fas fa-history"></i> History
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="stats-grid" id="statsGrid">
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalVulns">0</div>
+                        <div class="stat-label">Total Vulnerabilities</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="highVulns">0</div>
+                        <div class="stat-label">High Severity</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="mediumVulns">0</div>
+                        <div class="stat-label">Medium Severity</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="scanTime">0s</div>
+                        <div class="stat-label">Scan Time</div>
+                    </div>
+                </div>
+                
+                <div class="vulnerability-list" id="vulnerabilityList"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let scanInProgress = false;
+        let currentRequest = null;
+        let scanStartTime = null;
+        let scanLog = [];
+        let logContainer = null;
+        let logVisible = true;
+        let darkMode = localStorage.getItem('darkMode') === 'true';
+
+        // Initialize theme on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            if (darkMode) {
+                document.body.classList.add('dark-mode');
+                document.getElementById('themeIcon').className = 'fas fa-sun';
+            }
+        });
+
+        function toggleTheme() {
+            darkMode = !darkMode;
+            document.body.classList.toggle('dark-mode');
+            
+            const themeIcon = document.getElementById('themeIcon');
+            if (darkMode) {
+                themeIcon.className = 'fas fa-sun';
+                localStorage.setItem('darkMode', 'true');
+            } else {
+                themeIcon.className = 'fas fa-moon';
+                localStorage.setItem('darkMode', 'false');
+            }
+        }
+
+        function addLogEntry(message, type = 'info') {
+            const entry = {
+                timestamp: new Date().toLocaleTimeString(),
+                message,
+                type
+            };
+            scanLog.push(entry);
+            updateLogDisplay();
+        }
+
+        function updateLogDisplay() {
+            if (!logContainer) {
+                logContainer = document.getElementById('logEntries');
+            }
+            
+            if (!logContainer) return;
+            
+            logContainer.innerHTML = scanLog.map(entry => `
+                <div class="log-entry log-${entry.type}">
+                    <span class="log-time">${entry.timestamp}</span>
+                    <span class="log-message">${entry.message}</span>
+                </div>
+            `).join('');
+            
+            // Auto-scroll to bottom
+            logContainer.scrollTop = logContainer.scrollHeight;
+        }
+
+        function toggleLog() {
+            const logSection = document.getElementById('scanLogSection');
+            const logEntries = document.getElementById('logEntries');
+            const toggleIcon = document.getElementById('logToggleIcon');
+            
+            logVisible = !logVisible;
+            
+            if (logVisible) {
+                logEntries.style.maxHeight = '300px';
+                toggleIcon.className = 'fas fa-chevron-down';
+            } else {
+                logEntries.style.maxHeight = '0px';
+                toggleIcon.className = 'fas fa-chevron-up';
+            }
+        }
+
+        function updateStatus(message, type = 'info') {
+            const statusSection = document.getElementById('statusSection');
+            const statusCard = document.getElementById('statusCard');
+            const statusIcon = document.getElementById('statusIcon');
+            const statusMessage = document.getElementById('statusMessage');
+            
+            statusSection.style.display = 'block';
+            statusCard.className = 'status-card status-' + type;
+            
+            const icons = {
+                'info': 'fas fa-info-circle',
+                'success': 'fas fa-check-circle',
+                'error': 'fas fa-exclamation-circle',
+                'scanning': 'fas fa-spinner fa-spin'
+            };
+            
+            statusIcon.className = 'status-icon ' + icons[type] || icons.info;
+            statusMessage.innerHTML = message;
+        }
+
+        function updateProgress(percent) {
+            const progressBar = document.getElementById('progressBar');
+            const progressPercent = document.getElementById('progressPercent');
+            const progressSection = document.getElementById('progressSection');
+            
+            progressBar.style.width = percent + '%';
+            progressPercent.textContent = percent + '%';
+            progressSection.style.display = 'block';
+        }
+
+        function getSeverityClass(severity) {
+            const s = severity.toLowerCase();
+            if (s.includes('high')) return 'high';
+            if (s.includes('medium')) return 'medium';
+            return 'low';
+        }
+
+        function addVulnerability(vuln) {
+            console.log('[DEBUG] Adding vulnerability:', vuln);
+            
+            const vulnerabilityList = document.getElementById('vulnerabilityList');
+            
+            // Handle different data structures
+            let vulnerabilityData = {};
+            
+            if (typeof vuln === 'string') {
+                // Parse HTML string format
+                const div = document.createElement('div');
+                div.innerHTML = vuln;
+                const details = div.querySelectorAll('strong');
+                const codeElement = div.querySelector('code');
+                
+                vulnerabilityData = {
+                    type: details[0] ? details[0].textContent : 'Unknown',
+                    url: details[1] ? details[1].textContent : 'N/A',
+                    description: details[2] ? details[2].textContent : 'No description',
+                    severity: details[3] ? details[3].textContent : 'Medium',
+                    payload: codeElement ? codeElement.textContent : 'N/A'
+                };
+            } else if (typeof vuln === 'object') {
+                // Use object directly
+                vulnerabilityData = {
+                    type: vuln.type || 'Unknown',
+                    url: vuln.url || 'N/A',
+                    description: vuln.description || 'No description',
+                    severity: vuln.severity || 'Medium',
+                    payload: vuln.payload || 'N/A'
+                };
+            } else {
+                console.log('[DEBUG] Unexpected vulnerability data type:', typeof vuln, vuln);
+                return;
+            }
+            
+            console.log('[DEBUG] Parsed vulnerability data:', vulnerabilityData);
+            
+            const severityClass = getSeverityClass(vulnerabilityData.severity);
+            
+            const card = document.createElement('div');
+            card.className = `vulnerability-card ${severityClass}`;
+            card.innerHTML = `
+                <div class="vulnerability-header">
+                    <div class="vulnerability-type">${vulnerabilityData.type}</div>
+                    <div class="severity-badge severity-${severityClass}">${vulnerabilityData.severity}</div>
+                </div>
+                <div class="vulnerability-details">
+                    <div class="detail-row">
+                        <div class="detail-label"><i class="fas fa-link"></i> URL:</div>
+                        <div class="detail-value">${vulnerabilityData.url}</div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label"><i class="fas fa-exclamation-triangle"></i> Description:</div>
+                        <div class="detail-value">${vulnerabilityData.description}</div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label"><i class="fas fa-code"></i> Payload:</div>
+                        <div class="detail-value"><span class="payload-code">${vulnerabilityData.payload}</span></div>
+                    </div>
+                </div>
+            `;
+            
+            vulnerabilityList.appendChild(card);
+            console.log('[DEBUG] Vulnerability card added to DOM');
+        }
+
+        function updateStats(vulnerabilities, scanTime) {
+            const totalVulns = document.getElementById('totalVulns');
+            const highVulns = document.getElementById('highVulns');
+            const mediumVulns = document.getElementById('mediumVulns');
+            const scanTimeEl = document.getElementById('scanTime');
+            
+            totalVulns.textContent = vulnerabilities.length;
+            
+            // Count severities properly - handle both string and object formats
+            let highCount = 0;
+            let mediumCount = 0;
+            
+            vulnerabilities.forEach(vuln => {
+                let severity = 'Medium'; // default
+                
+                if (typeof vuln === 'string') {
+                    // Parse HTML string to get severity
+                    const div = document.createElement('div');
+                    div.innerHTML = vuln;
+                    const details = div.querySelectorAll('strong');
+                    if (details[3]) {
+                        severity = details[3].textContent;
+                    }
+                } else if (typeof vuln === 'object' && vuln.severity) {
+                    severity = vuln.severity;
+                }
+                
+                const severityClass = getSeverityClass(severity);
+                if (severityClass === 'high') highCount++;
+                else if (severityClass === 'medium') mediumCount++;
+            });
+            
+            highVulns.textContent = highCount;
+            mediumVulns.textContent = mediumCount;
+            scanTimeEl.textContent = scanTime + 's';
+        }
+
+        function resetUI() {
+            document.getElementById('scanButton').disabled = false;
+            document.getElementById('scanButton').innerHTML = '<i class="fas fa-play"></i> Start Scan';
+            document.getElementById('cancelBtn').style.display = 'none';
+            document.getElementById('progressSection').style.display = 'none';
+            document.getElementById('statusSection').style.display = 'none';
+            // Don't hide chart section - keep it visible for user to see results
+            // document.getElementById('resultsSection').style.display = 'none';
+            // document.getElementById('chartSection').style.display = 'none';
+            if (currentRequest) {
+                currentRequest.abort();
+                currentRequest = null;
+            }
+            scanInProgress = false;
+        }
+
+        function showScanHistory() {
+            console.log('[DEBUG] History button clicked!');
+            alert('History button clicked!'); // Debug alert
+            
+            // Fetch scan history from backend
+            fetch('/scan_history')
+                .then(response => response.json())
+                .then(data => {
+                    console.log('[DEBUG] History data received:', data);
+                    
+                    if (data.error) {
+                        updateStatus('Error loading scan history: ' + data.error, 'error');
+                        return;
+                    }
+                    
+                    // Create modal
+                    const modal = document.createElement('div');
+                    modal.className = 'modal';
+                    modal.innerHTML = `
+                        <div class="modal-content">
+                            <span class="close" onclick="this.parentElement.remove()">&times;</span>
+                            <h2><i class="fas fa-history"></i> Scan History</h2>
+                            <div class="history-list">
+                    `;
+                    
+                    if (data.history && data.history.length > 0) {
+                        data.history.forEach((scan, index) => {
+                            const date = new Date(scan.timestamp).toLocaleString();
+                            const timeAgo = getTimeAgo(scan.timestamp);
+                            
+                            modal.querySelector('.history-list').innerHTML += `
+                                <div class="history-item">
+                                    <div class="history-header">
+                                        <div class="history-url">${scan.target_url}</div>
+                                        <div class="history-time">${date}</div>
+                                    </div>
+                                    <div class="history-stats">
+                                        <div class="history-stat">
+                                            <i class="fas fa-bug"></i>
+                                            <div class="history-value">${scan.vulnerabilities_count}</div>
+                                        </div>
+                                        <div class="history-stat">
+                                            <i class="fas fa-clock"></i>
+                                            <div class="history-value">${scan.scan_time}s</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                        });
+                    } else {
+                        modal.querySelector('.history-list').innerHTML = `
+                            <div class="empty-history">
+                                <i class="fas fa-history"></i>
+                                <h3>No Scan History</h3>
+                                <p>No previous scans found.</p>
+                            </div>
+                        `;
+                    }
+                    
+                    document.body.appendChild(modal);
+                })
+                .catch(error => {
+                    console.log('[DEBUG] Error fetching history:', error);
+                    updateStatus('Error loading scan history: ' + error.message, 'error');
+                });
+        }
+
+        function getTimeAgo(timestamp) {
+            const seconds = Math.floor((Date.now() - timestamp) / 1000);
+            const minutes = Math.floor(seconds / 60);
+            const hours = Math.floor(minutes / 60);
+            const days = Math.floor(hours / 24);
+            
+            if (days > 0) {
+                return `${days} days ago`;
+            } else if (hours > 0) {
+                return `${hours} hours ago`;
+            } else if (minutes > 0) {
+                return `${minutes} minutes ago`;
+            } else {
+                return 'Just now';
+            }
+        }
+
+        function exportToPDF() {
+            console.log('[DEBUG] PDF export started');
+            
+            try {
+                const { jsPDF } = window.jspdf;
+                const doc = new jsPDF();
+                
+                // Get vulnerability data
+                const vulnerabilities = Array.from(document.querySelectorAll('.vulnerability-card')).map(card => {
+                    const type = card.querySelector('.vulnerability-type').textContent;
+                    const severity = card.querySelector('.severity-badge').textContent;
+                    const details = card.querySelectorAll('.detail-value');
+                    return {
+                        type,
+                        severity,
+                        url: details[0].textContent,
+                        description: details[1].textContent,
+                        payload: details[2].textContent
+                    };
+                });
+                
+                // PDF Header
+                doc.setFontSize(20);
+                doc.setTextColor(102, 126, 234);
+                doc.text('WebScanPro Vulnerability Report', 20, 25);
+                
+                doc.setFontSize(12);
+                doc.setTextColor(100, 100, 100);
+                doc.text('Advanced Web Application Security Scanner', 20, 35);
+                
+                // Scan Information
+                doc.setFontSize(14);
+                doc.setTextColor(50, 50, 50);
+                doc.text('Scan Information', 20, 55);
+                
+                doc.setFontSize(11);
+                doc.setTextColor(80, 80, 80);
+                doc.text(`Target URL: ${document.getElementById('url').value}`, 20, 65);
+                doc.text(`Scan Date: ${new Date().toLocaleString()}`, 20, 72);
+                doc.text(`Scan Type: ${document.querySelector('input[name="scanType"]:checked').value.toUpperCase()}`, 20, 79);
+                doc.text(`Total Vulnerabilities: ${vulnerabilities.length}`, 20, 86);
+                
+                // Vulnerability Summary
+                doc.setFontSize(14);
+                doc.setTextColor(50, 50, 50);
+                doc.text('Vulnerability Summary', 20, 105);
+                
+                const highCount = vulnerabilities.filter(v => v.severity.toLowerCase().includes('high')).length;
+                const mediumCount = vulnerabilities.filter(v => v.severity.toLowerCase().includes('medium')).length;
+                const lowCount = vulnerabilities.filter(v => v.severity.toLowerCase().includes('low')).length;
+                
+                doc.setFontSize(11);
+                doc.setTextColor(80, 80, 80);
+                doc.text(`High Severity: ${highCount}`, 20, 115);
+                doc.text(`Medium Severity: ${mediumCount}`, 20, 122);
+                doc.text(`Low Severity: ${lowCount}`, 20, 129);
+                
+                // Vulnerability Details
+                if (vulnerabilities.length > 0) {
+                    doc.setFontSize(14);
+                    doc.setTextColor(50, 50, 50);
+                    doc.text('Vulnerability Details', 20, 150);
+                    
+                    let yPosition = 165;
+                    vulnerabilities.forEach((vuln, index) => {
+                        // Check if we need a new page
+                        if (yPosition > 250) {
+                            doc.addPage();
+                            yPosition = 25;
+                        }
+                        
+                        // Vulnerability header
+                        doc.setFontSize(12);
+                        doc.setTextColor(102, 126, 234);
+                        doc.text(`${index + 1}. ${vuln.type}`, 20, yPosition);
+                        
+                        // Severity badge
+                        const severityColor = vuln.severity.toLowerCase().includes('high') ? [244, 67, 54] :
+                                           vuln.severity.toLowerCase().includes('medium') ? [255, 152, 0] : [76, 175, 80];
+                        doc.setTextColor(...severityColor);
+                        doc.text(`[${vuln.severity}]`, 150, yPosition);
+                        
+                        // Details
+                        doc.setFontSize(10);
+                        doc.setTextColor(80, 80, 80);
+                        yPosition += 8;
+                        
+                        // URL (word wrap if needed)
+                        const urlLines = doc.splitTextToSize(`URL: ${vuln.url}`, 170);
+                        urlLines.forEach(line => {
+                            doc.text(line, 20, yPosition);
+                            yPosition += 6;
+                        });
+                        
+                        // Description (word wrap if needed)
+                        const descLines = doc.splitTextToSize(`Description: ${vuln.description}`, 170);
+                        descLines.forEach(line => {
+                            doc.text(line, 20, yPosition);
+                            yPosition += 6;
+                        });
+                        
+                        // Payload
+                        doc.text(`Payload: ${vuln.payload}`, 20, yPosition);
+                        yPosition += 12;
+                        
+                        // Add separator line
+                        doc.setDrawColor(200, 200, 200);
+                        doc.line(20, yPosition, 190, yPosition);
+                        yPosition += 8;
+                    });
+                }
+                
+                // Footer
+                const pageCount = doc.internal.getNumberOfPages();
+                for (let i = 1; i <= pageCount; i++) {
+                    doc.setPage(i);
+                    doc.setFontSize(10);
+                    doc.setTextColor(150, 150, 150);
+                    doc.text(`Page ${i} of ${pageCount}`, 105, 285, { align: 'center' });
+                    doc.text('Generated by WebScanPro - Professional Security Scanner', 105, 290, { align: 'center' });
+                }
+                
+                // Save the PDF
+                const fileName = `webscanpro_report_${new Date().toISOString().slice(0, 19).replace(/[:-]/g, '')}.pdf`;
+                doc.save(fileName);
+                
+                console.log('[DEBUG] PDF export completed successfully');
+                updateStatus('PDF report generated successfully!', 'success');
+                
+            } catch (error) {
+                console.error('[DEBUG] PDF export error:', error);
+                updateStatus('Error generating PDF: ' + error.message, 'error');
+            }
+        }
+
+        function exportResults() {
+            const vulnerabilities = Array.from(document.querySelectorAll('.vulnerability-card')).map(card => {
+                const type = card.querySelector('.vulnerability-type').textContent;
+                const severity = card.querySelector('.severity-badge').textContent;
+                const details = card.querySelectorAll('.detail-value');
+                return {
+                    type,
+                    severity,
+                    url: details[0].textContent,
+                    description: details[1].textContent,
+                    payload: details[2].textContent
+                };
+            });
+            
+            const data = {
+                scanDate: new Date().toISOString(),
+                targetUrl: document.getElementById('url').value,
+                scanType: document.querySelector('input[name="scanType"]:checked').value,
+                vulnerabilities
+            };
+            
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `webscanpro_report_${Date.now()}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function startScan() {
+            if (scanInProgress) return;
+            
+            const url = document.getElementById('url').value;
+            const scanType = document.querySelector('input[name="scanType"]:checked').value;
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const scanButton = document.getElementById('scanButton');
+            const cancelBtn = document.getElementById('cancelBtn');
+            const vulnerabilityList = document.getElementById('vulnerabilityList');
+            
+            // Initialize scan log
+            scanLog = [];
+            addLogEntry(`Starting scan for ${url}`, 'info');
+            addLogEntry(`Scan type: ${scanType.toUpperCase()}`, 'info');
+            addLogEntry(`Username: ${username || 'None'}`, 'info');
+            addLogEntry(`Password: ${password ? '***' : 'None'}`, 'info');
+            
+            // Reset UI
+            vulnerabilityList.innerHTML = '';
+            updateStatus('Initializing scan...', 'scanning');
+            addLogEntry('Initializing scanner components...', 'info');
+            
+            scanButton.disabled = true;
+            scanButton.innerHTML = '<span class="spinner"></span> Scanning...';
+            cancelBtn.style.display = 'inline-block';
+            document.getElementById('progressSection').style.display = 'block';
+            document.getElementById('scanLogSection').style.display = 'block';
+            updateProgress(0);
+            
+            scanInProgress = true;
+            scanStartTime = Date.now();
+            let progress = 0;
+            const progressInterval = setInterval(() => {
+                if (!scanInProgress) {
+                    clearInterval(progressInterval);
+                    return;
+                }
+                progress = Math.min(progress + Math.random() * 5, 90);
+                updateProgress(Math.floor(progress));
+            }, 500);
+            
+            // Create a new AbortController for the fetch request
+            const controller = new AbortController();
+            currentRequest = controller;
+            
+            addLogEntry('Sending scan request to server...', 'info');
+            
+            fetch('/scan', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ 
+                    url: url, 
+                    scan_type: scanType,
+                    username: username,
+                    password: password
+                }),
+                signal: controller.signal
+            })
+            .then(response => {
+                addLogEntry('Server response received', 'info');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                clearInterval(progressInterval);
+                updateProgress(100);
+                
+                addLogEntry('Processing scan results...', 'info');
+                
+                if (data.status === 'completed') {
+                    const scanTime = Math.floor((Date.now() - scanStartTime) / 1000);
+                    addLogEntry(`Scan completed in ${scanTime} seconds`, 'success');
+                    addLogEntry(`Found ${data.vulnerabilities.length} vulnerabilities`, 'vulnerability');
+                    
+                    updateStatus(`Scan completed successfully! Found ${data.vulnerabilities.length} vulnerabilities.`, 'success');
+                    
+                    // Display results
+                    document.getElementById('resultsSection').style.display = 'block';
+                    document.getElementById('resultsSection').style.visibility = 'visible';
+                    document.getElementById('resultsSection').style.opacity = '1';
+                    document.getElementById('resultsSection').style.height = 'auto';
+                    document.getElementById('resultsSection').style.overflow = 'visible';
+                    
+                    // Add a temporary background color to make it visible
+                    document.getElementById('resultsSection').style.backgroundColor = 'yellow';
+                    document.getElementById('resultsSection').style.border = '2px solid red';
+                    
+                    console.log('[DEBUG] Results section made visible with forced styles');
+                    
+                    // Check if results section is actually visible
+                    const resultsSection = document.getElementById('resultsSection');
+                    console.log('[DEBUG] Results section element:', resultsSection);
+                    console.log('[DEBUG] Results section computed style:', window.getComputedStyle(resultsSection));
+                    console.log('[DEBUG] Results section offsetHeight:', resultsSection.offsetHeight);
+                    console.log('[DEBUG] Results section clientHeight:', resultsSection.clientHeight);
+                    
+                    updateStats(data.vulnerabilities, scanTime);
+                    
+                    if (data.vulnerabilities.length > 0) {
+                        addLogEntry('Displaying vulnerability cards...', 'info');
+                        data.vulnerabilities.forEach(vuln => addVulnerability(vuln));
+                        
+                        // Check if cards were added
+                        setTimeout(() => {
+                            const cards = document.querySelectorAll('.vulnerability-card');
+                            console.log('[DEBUG] Vulnerability cards in DOM:', cards.length);
+                            
+                            const vulnerabilityList = document.getElementById('vulnerabilityList');
+                            console.log('[DEBUG] Vulnerability list element:', vulnerabilityList);
+                            console.log('[DEBUG] Vulnerability list children:', vulnerabilityList.children.length);
+                            console.log('[DEBUG] Vulnerability list innerHTML:', vulnerabilityList.innerHTML.substring(0, 200));
+                            
+                            // Check if vulnerability list is visible
+                            console.log('[DEBUG] Vulnerability list display style:', window.getComputedStyle(vulnerabilityList).display);
+                            console.log('[DEBUG] Vulnerability list visibility:', window.getComputedStyle(vulnerabilityList).visibility);
+                        }, 100);
+                    } else {
+                        addLogEntry('No vulnerabilities found - target appears secure', 'success');
+                        document.getElementById('vulnerabilityList').innerHTML = `
+                            <div class="empty-state">
+                                <i class="fas fa-shield-alt"></i>
+                                <h3>No Vulnerabilities Found</h3>
+                                <p>Great! The target appears to be secure.</p>
+                            </div>
+                        `;
+                    }
+                } else {
+                    addLogEntry(`Scan failed: ${data.message || 'Unknown error'}`, 'error');
+                    console.log('[DEBUG] Scan failed:', data);
+                    updateStatus('Error: ' + (data.message || 'Unknown error occurred'), 'error');
+                    if (data.output) {
+                        document.getElementById('vulnerabilityList').innerHTML = `
+                            <div class="vulnerability-card">
+                                <div class="vulnerability-details">
+                                    <pre>${data.output}</pre>
+                                </div>
+                            </div>
+                        `;
+                        document.getElementById('resultsSection').style.display = 'block';
+                    }
+                }
+            })
+            .catch(error => {
+                clearInterval(progressInterval);
+                if (error.name === 'AbortError') {
+                    addLogEntry('Scan was cancelled by user', 'warning');
+                    updateStatus('Scan was cancelled', 'error');
+                } else {
+                    addLogEntry(`Network error: ${error.message}`, 'error');
+                    updateStatus('Error: ' + (error.message || 'An error occurred'), 'error');
+                    console.error('Error:', error);
+                }
+            })
+            .finally(() => {
+                resetUI();
+                addLogEntry('Scan process completed', 'info');
+                
+                // Show results section but keep chart visible
+                document.getElementById('resultsSection').style.display = 'block';
+                document.getElementById('chartSection').style.display = 'block';
+            });
+            
+            // Add cancel button handler
+            cancelBtn.onclick = function() {
+                addLogEntry('Cancelling scan...', 'warning');
+                clearInterval(progressInterval);
+                controller.abort();
+                updateStatus('Cancelling scan...', 'error');
+                resetUI();
+                fetch('/cancel_scan', {
+                    method: 'POST'
+                });
+            };
+        }
+    </script>
+</body>
+</html>

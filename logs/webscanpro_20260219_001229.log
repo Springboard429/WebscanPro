@@ -1,0 +1,32 @@
+2026-02-19 00:12:29 - webscanpro - INFO - Starting WebScanPro scan for http://testphp.vulnweb.com
+2026-02-19 00:12:29 - webscanpro - INFO - Scan type: all
+2026-02-19 00:12:29 - webscanpro - INFO - Starting website crawling...
+2026-02-19 00:12:35 - webscanpro - INFO - Found 13 URLs to scan
+2026-02-19 00:12:35 - webscanpro - INFO - Starting security scan...
+2026-02-19 00:12:35 - ScanController - INFO - Starting scan scan_1771440149 for http://testphp.vulnweb.com
+2026-02-19 00:12:35 - ScanController - INFO - Crawling target website...
+2026-02-19 00:12:44 - ScanController - INFO - Running SQL Injection scan...
+2026-02-19 00:12:45 - ScanController - ERROR - Scan failed: name 're' is not defined
+Traceback (most recent call last):
+  File "C:\Users\win10\Desktop\WebScanPro\core\scan_controller.py", line 85, in start_scan
+    form_vulns = self.sql_scanner.scan_forms(page['forms'])
+  File "C:\Users\win10\Desktop\WebScanPro\modules\sql_injection.py", line 83, in scan_forms
+    if self._is_vulnerable(response):
+  File "C:\Users\win10\Desktop\WebScanPro\modules\sql_injection.py", line 168, in _is_vulnerable
+    return any(re.search(pattern, content, re.IGNORECASE) for pattern in error_patterns)
+  File "C:\Users\win10\Desktop\WebScanPro\modules\sql_injection.py", line 168, in <genexpr>
+    return any(re.search(pattern, content, re.IGNORECASE) for pattern in error_patterns)
+NameError: name 're' is not defined
+2026-02-19 00:12:45 - webscanpro - ERROR - An error occurred: name 're' is not defined
+Traceback (most recent call last):
+  File "C:\Users\win10\Desktop\WebScanPro\main.py", line 140, in main
+    scan_results = scanner.start_scan()
+  File "C:\Users\win10\Desktop\WebScanPro\core\scan_controller.py", line 85, in start_scan
+    form_vulns = self.sql_scanner.scan_forms(page['forms'])
+  File "C:\Users\win10\Desktop\WebScanPro\modules\sql_injection.py", line 83, in scan_forms
+    if self._is_vulnerable(response):
+  File "C:\Users\win10\Desktop\WebScanPro\modules\sql_injection.py", line 168, in _is_vulnerable
+    return any(re.search(pattern, content, re.IGNORECASE) for pattern in error_patterns)
+  File "C:\Users\win10\Desktop\WebScanPro\modules\sql_injection.py", line 168, in <genexpr>
+    return any(re.search(pattern, content, re.IGNORECASE) for pattern in error_patterns)
+NameError: name 're' is not defined

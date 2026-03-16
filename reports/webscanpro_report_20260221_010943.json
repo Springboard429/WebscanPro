@@ -1,0 +1,35 @@
+{
+  "scan_id": "scan_1771616370",
+  "status": "COMPLETED",
+  "target_url": "http://testphp.vulnweb.com/artists.php?artist=1",
+  "start_time": 1771616371.27532,
+  "end_time": 1771616383.676672,
+  "elapsed_time": 12.401351928710938,
+  "pages_crawled": 1,
+  "vulnerabilities_found": 2,
+  "vulnerabilities": [
+    {
+      "type": "Cross-Site Scripting (XSS)",
+      "url": "http://testphp.vulnweb.com/artists.php",
+      "parameter": "searchFor",
+      "payload": "<script>alert('XSS')</script>",
+      "method": "POST",
+      "severity": "High",
+      "description": "XSS vulnerability in searchFor parameter",
+      "recommendation": "Implement proper input validation and output encoding"
+    },
+    {
+      "type": "Cross-Site Scripting (XSS)",
+      "url": "http://testphp.vulnweb.com/artists.php",
+      "parameter": "goButton",
+      "payload": "<script>alert('XSS')</script>",
+      "method": "POST",
+      "severity": "High",
+      "description": "XSS vulnerability in goButton parameter",
+      "recommendation": "Implement proper input validation and output encoding"
+    }
+  ],
+  "report_generated": "2026-02-21T01:09:43.946833",
+  "report_version": "1.0.0",
+  "report_format": "json"
+}

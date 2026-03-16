@@ -1,0 +1,35 @@
+{
+  "scan_id": "scan_1772113230",
+  "status": "COMPLETED",
+  "target_url": "http://localhost:45/",
+  "start_time": 1772113230.2494533,
+  "end_time": 1772113253.6922386,
+  "elapsed_time": 23.442785263061523,
+  "pages_crawled": 21,
+  "vulnerabilities_found": 2,
+  "vulnerabilities": [
+    {
+      "type": "Cross-Site Scripting (XSS)",
+      "url": "http://localhost:45/setup.php",
+      "parameter": "create_db",
+      "payload": "<script>alert('XSS')</script>",
+      "method": "POST",
+      "severity": "High",
+      "description": "XSS vulnerability in create_db parameter",
+      "recommendation": "Implement proper input validation and output encoding"
+    },
+    {
+      "type": "Cross-Site Scripting (XSS)",
+      "url": "http://localhost:45/setup.php",
+      "parameter": "user_token",
+      "payload": "<script>alert('XSS')</script>",
+      "method": "POST",
+      "severity": "High",
+      "description": "XSS vulnerability in user_token parameter",
+      "recommendation": "Implement proper input validation and output encoding"
+    }
+  ],
+  "report_generated": "2026-02-26T19:10:53.698055",
+  "report_version": "1.0.0",
+  "report_format": "json"
+}

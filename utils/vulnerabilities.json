@@ -1,0 +1,133 @@
+{
+  "version": "1.0",
+  "last_updated": "2026-02-18T17:28:00+05:30",
+  "vulnerabilities": [
+    {
+      "id": "vuln_001",
+      "type": "SQL Injection",
+      "severity": "High",
+      "status": "open",
+      "target": "https://example.com/search",
+      "parameter": "q",
+      "method": "GET",
+      "payload": "' OR '1'='1",
+      "discovered_at": "2026-02-18T10:02:15+05:30",
+      "reported_at": "2026-02-18T10:02:30+05:30",
+      "description": "SQL injection vulnerability found in the search parameter. The application is vulnerable to boolean-based blind SQL injection.",
+      "impact": "An attacker could extract sensitive information from the database, modify database queries, or potentially gain unauthorized access to the system.",
+      "remediation": "Use parameterized queries or prepared statements to prevent SQL injection. Input validation and output encoding should also be implemented.",
+      "cvss_score": 8.8,
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "references": [
+        "https://owasp.org/www-community/attacks/SQL_Injection",
+        "https://portswigger.net/web-security/sql-injection"
+      ],
+      "evidence": {
+        "request": "GET /search?q=%27+OR+%271%27%3D%271 HTTP/1.1",
+        "response_code": 200,
+        "response_body_snippet": "Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1'' at line 1"
+      }
+    },
+    {
+      "id": "vuln_002",
+      "type": "Cross-Site Scripting (XSS)",
+      "severity": "Medium",
+      "status": "open",
+      "target": "https://example.com/contact",
+      "parameter": "message",
+      "method": "POST",
+      "payload": "<script>alert('XSS')</script>",
+      "discovered_at": "2026-02-18T10:03:45+05:30",
+      "reported_at": "2026-02-18T10:04:00+05:30",
+      "description": "Reflected Cross-Site Scripting (XSS) vulnerability found in the message parameter. The application does not properly sanitize user input in the contact form.",
+      "impact": "An attacker could execute arbitrary JavaScript code in the context of the victim's browser, potentially leading to session hijacking, defacement, or redirection to malicious sites.",
+      "remediation": "Implement proper input validation and output encoding. Use Content Security Policy (CSP) headers to mitigate the impact of XSS vulnerabilities.",
+      "cvss_score": 6.1,
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+      "references": [
+        "https://owasp.org/www-community/attacks/xss/",
+        "https://portswigger.net/web-security/cross-site-scripting"
+      ],
+      "evidence": {
+        "request": "POST /contact HTTP/1.1\nContent-Type: application/x-www-form-urlencoded\n\nname=test&email=test@example.com&message=%3Cscript%3Ealert%28%27XSS%27%29%3C%2Fscript%3E",
+        "response_code": 200,
+        "response_body_snippet": "<div class=\"message\"><script>alert('XSS')</script></div>"
+      }
+    },
+    {
+      "id": "vuln_003",
+      "type": "Insecure Direct Object Reference (IDOR)",
+      "severity": "Medium",
+      "status": "open",
+      "target": "https://example.com/profile/view/123",
+      "parameter": "user_id",
+      "method": "GET",
+      "payload": "456",
+      "discovered_at": "2026-02-18T10:05:15+05:30",
+      "reported_at": "2026-02-18T10:05:30+05:30",
+      "description": "Insecure Direct Object Reference (IDOR) vulnerability found in the user profile view. The application does not properly verify if the user is authorized to access the requested resource.",
+      "impact": "An attacker could access or modify sensitive information belonging to other users by manipulating the user_id parameter.",
+      "remediation": "Implement proper access control checks to ensure users can only access resources they are authorized to view. Use indirect object references or access control lists (ACLs) to prevent unauthorized access.",
+      "cvss_score": 5.3,
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+      "references": [
+        "https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/05-Authorization_Testing/04-Testing_for_Insecure_Direct_Object_References"
+      ],
+      "evidence": {
+        "request": "GET /profile/view/456 HTTP/1.1",
+        "response_code": 200,
+        "response_body_snippet": "<h1>User Profile: anotheruser@example.com</h1>"
+      }
+    },
+    {
+      "id": "vuln_004",
+      "type": "Broken Authentication",
+      "severity": "High",
+      "status": "open",
+      "target": "https://example.com/login",
+      "parameter": "password",
+      "method": "POST",
+      "payload": "N/A",
+      "discovered_at": "2026-02-18T10:06:45+05:30",
+      "reported_at": "2026-02-18T10:07:00+05:30",
+      "description": "The application does not implement account lockout after multiple failed login attempts, making it vulnerable to brute force attacks.",
+      "impact": "An attacker could perform brute force or credential stuffing attacks to gain unauthorized access to user accounts.",
+      "remediation": "Implement account lockout after a certain number of failed login attempts. Consider implementing multi-factor authentication (MFA) and rate limiting for login attempts.",
+      "cvss_score": 7.5,
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "references": [
+        "https://owasp.org/www-project-top-ten/2017/A2_2017-Broken_Authentication"
+      ],
+      "evidence": {
+        "request": "POST /login HTTP/1.1\nContent-Type: application/x-www-form-urlencoded\n\nusername=admin&password=password123",
+        "response_code": 200,
+        "response_body_snippet": "Invalid username or password"
+      }
+    },
+    {
+      "id": "vuln_005",
+      "type": "Security Misconfiguration",
+      "severity": "Low",
+      "status": "open",
+      "target": "https://example.com/.git/HEAD",
+      "parameter": "N/A",
+      "method": "GET",
+      "payload": "N/A",
+      "discovered_at": "2026-02-18T10:08:15+05:30",
+      "reported_at": "2026-02-18T10:08:30+05:30",
+      "description": "The .git directory is accessible in the web root, potentially exposing sensitive version control information.",
+      "impact": "An attacker could access the .git directory and download the entire source code, including sensitive information like database credentials and API keys.",
+      "remediation": "Prevent access to the .git directory by configuring the web server to deny access to it. Remove the .git directory from production environments or ensure it's not accessible via the web server.",
+      "cvss_score": 5.3,
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+      "references": [
+        "https://en.internetwache.org/dont-publicly-expose-git-or-how-we-downloaded-your-websites-sourcecode-an-analysis-of-alexas-1m-28-07-2015/"
+      ],
+      "evidence": {
+        "request": "GET /.git/HEAD HTTP/1.1",
+        "response_code": 200,
+        "response_body_snippet": "ref: refs/heads/main"
+      }
+    }
+  ]
+}

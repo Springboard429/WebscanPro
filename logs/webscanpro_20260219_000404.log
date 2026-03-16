@@ -1,0 +1,10 @@
+2026-02-19 00:04:04 - webscanpro - INFO - Starting WebScanPro scan for https://example.com
+2026-02-19 00:04:04 - webscanpro - INFO - Scan type: all
+2026-02-19 00:04:04 - webscanpro - INFO - Starting website crawling...
+2026-02-19 00:04:04 - webscanpro - INFO - Found 1 URLs to scan
+2026-02-19 00:04:04 - webscanpro - INFO - Starting security scan...
+2026-02-19 00:04:04 - webscanpro - ERROR - An error occurred: 'ScanController' object has no attribute 'scan'
+Traceback (most recent call last):
+  File "C:\Users\win10\Desktop\WebScanPro\main.py", line 140, in main
+    scan_results = scanner.scan(urls)
+AttributeError: 'ScanController' object has no attribute 'scan'

@@ -1,0 +1,24 @@
+2026-02-26 18:45:18 - webscanpro - INFO - Starting WebScanPro scan for http://localhost:45/
+2026-02-26 18:45:18 - webscanpro - INFO - Scan type: sqli
+2026-02-26 18:45:18 - webscanpro - ERROR - An error occurred: 'charmap' codec can't encode character '\u274c' in position 0: character maps to <undefined>
+Traceback (most recent call last):
+  File "C:\Users\win10\Desktop\WebScanPro\core\crawler.py", line 83, in _authenticate
+    print(f"✅ Found CSRF token: {token_value}")
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2705' in position 0: character maps to <undefined>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\win10\Desktop\WebScanPro\main.py", line 142, in main
+    scanner = ScanController(
+  File "C:\Users\win10\Desktop\WebScanPro\core\scan_controller.py", line 53, in __init__
+    self.crawler = WebCrawler(target_url, username, password)
+  File "C:\Users\win10\Desktop\WebScanPro\core\crawler.py", line 47, in __init__
+    self._authenticate(username, password)
+  File "C:\Users\win10\Desktop\WebScanPro\core\crawler.py", line 106, in _authenticate
+    print(f"❌ Authentication error: {str(e)}")
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+UnicodeEncodeError: 'charmap' codec can't encode character '\u274c' in position 0: character maps to <undefined>

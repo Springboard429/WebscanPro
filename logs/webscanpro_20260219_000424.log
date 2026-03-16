@@ -1,0 +1,24 @@
+2026-02-19 00:04:24 - webscanpro - INFO - Starting WebScanPro scan for https://example.com
+2026-02-19 00:04:24 - webscanpro - INFO - Scan type: all
+2026-02-19 00:04:24 - webscanpro - INFO - Starting website crawling...
+2026-02-19 00:04:24 - webscanpro - INFO - Found 1 URLs to scan
+2026-02-19 00:04:24 - webscanpro - INFO - Starting security scan...
+2026-02-19 00:04:24 - ScanController - INFO - Starting scan scan_1771439664 for https://example.com
+2026-02-19 00:04:24 - ScanController - INFO - Crawling target website...
+2026-02-19 00:04:24 - ScanController - INFO - Running SQL Injection scan...
+2026-02-19 00:04:24 - ScanController - INFO - Running XSS scan...
+2026-02-19 00:04:24 - ScanController - INFO - Scan completed. Found 0 vulnerabilities
+2026-02-19 00:04:24 - webscanpro - INFO - Generating reports...
+2026-02-19 00:04:24 - webscanpro - ERROR - An error occurred: expected str, bytes or os.PathLike object, not dict
+Traceback (most recent call last):
+  File "C:\Users\win10\Desktop\WebScanPro\main.py", line 144, in main
+    report_gen = ReportGenerator(scan_results)
+  File "C:\Users\win10\Desktop\WebScanPro\reports\report_generator.py", line 28, in __init__
+    self.output_dir = Path(output_dir)
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\pathlib.py", line 960, in __new__
+    self = cls._from_parts(args)
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\pathlib.py", line 594, in _from_parts
+    drv, root, parts = self._parse_args(args)
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\pathlib.py", line 578, in _parse_args
+    a = os.fspath(a)
+TypeError: expected str, bytes or os.PathLike object, not dict

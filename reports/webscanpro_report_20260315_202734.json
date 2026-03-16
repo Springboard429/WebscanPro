@@ -1,0 +1,55 @@
+{
+  "scan_id": "scan_1773586643",
+  "status": "COMPLETED",
+  "target_url": "http://localhost:45/index.php",
+  "start_time": 1773586643.7248027,
+  "end_time": 1773586654.5240436,
+  "elapsed_time": 10.799240827560425,
+  "pages_crawled": 15,
+  "vulnerabilities_found": 4,
+  "vulnerabilities": [
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/brute/?username=%27&password=&Login=Login",
+      "parameter": "username",
+      "payload": "'",
+      "method": "GET",
+      "severity": "High",
+      "description": "SQL injection vulnerability in username parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/sqli/?id=%27&Submit=Submit",
+      "parameter": "id",
+      "payload": "'",
+      "method": "GET",
+      "severity": "High",
+      "description": "SQL injection vulnerability in id parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "Cross-Site Scripting (XSS)",
+      "url": "http://localhost:45/setup.php",
+      "parameter": "create_db",
+      "payload": "<script>alert('XSS')</script>",
+      "method": "POST",
+      "severity": "High",
+      "description": "XSS vulnerability in create_db parameter",
+      "recommendation": "Implement proper input validation and output encoding"
+    },
+    {
+      "type": "Cross-Site Scripting (XSS)",
+      "url": "http://localhost:45/setup.php",
+      "parameter": "user_token",
+      "payload": "<script>alert('XSS')</script>",
+      "method": "POST",
+      "severity": "High",
+      "description": "XSS vulnerability in user_token parameter",
+      "recommendation": "Implement proper input validation and output encoding"
+    }
+  ],
+  "report_generated": "2026-03-15T20:27:34.526796",
+  "report_version": "1.0.0",
+  "report_format": "json"
+}

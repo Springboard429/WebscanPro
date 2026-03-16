@@ -1,0 +1,55 @@
+{
+  "scan_id": "scan_1772084373",
+  "status": "COMPLETED",
+  "target_url": "http://testphp.vulnweb.com/artists.php?artist=1",
+  "start_time": 1772084373.8806367,
+  "end_time": 1772084381.2525601,
+  "elapsed_time": 7.371923446655273,
+  "pages_crawled": 1,
+  "vulnerabilities_found": 4,
+  "vulnerabilities": [
+    {
+      "type": "SQL Injection",
+      "url": "http://testphp.vulnweb.com/artists.php?artist=%27",
+      "parameter": "artist",
+      "payload": "'",
+      "method": "GET",
+      "severity": "High",
+      "description": "SQL injection vulnerability in artist parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "Cross-Site Scripting (XSS)",
+      "url": "http://testphp.vulnweb.com/artists.php?artist=%3Cscript%3Ealert%28%27XSS%27%29%3C%2Fscript%3E",
+      "parameter": "artist",
+      "payload": "<script>alert('XSS')</script>",
+      "method": "GET",
+      "severity": "High",
+      "description": "XSS vulnerability in artist parameter",
+      "recommendation": "Implement proper input validation and output encoding"
+    },
+    {
+      "type": "Cross-Site Scripting (XSS)",
+      "url": "http://testphp.vulnweb.com/artists.php",
+      "parameter": "searchFor",
+      "payload": "<script>alert('XSS')</script>",
+      "method": "POST",
+      "severity": "High",
+      "description": "XSS vulnerability in searchFor parameter",
+      "recommendation": "Implement proper input validation and output encoding"
+    },
+    {
+      "type": "Cross-Site Scripting (XSS)",
+      "url": "http://testphp.vulnweb.com/artists.php",
+      "parameter": "goButton",
+      "payload": "<script>alert('XSS')</script>",
+      "method": "POST",
+      "severity": "High",
+      "description": "XSS vulnerability in goButton parameter",
+      "recommendation": "Implement proper input validation and output encoding"
+    }
+  ],
+  "report_generated": "2026-02-26T11:09:41.259548",
+  "report_version": "1.0.0",
+  "report_format": "json"
+}

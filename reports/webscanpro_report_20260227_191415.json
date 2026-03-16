@@ -1,0 +1,85 @@
+{
+  "scan_id": "scan_1772199809",
+  "status": "COMPLETED",
+  "target_url": "http://localhost:45/index.php",
+  "start_time": 1772199809.2378962,
+  "end_time": 1772199855.0960417,
+  "elapsed_time": 45.85814547538757,
+  "pages_crawled": 22,
+  "vulnerabilities_found": 7,
+  "vulnerabilities": [
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/xss_r/?name=%27&None=Submit",
+      "parameter": "name",
+      "payload": "'",
+      "method": "GET",
+      "severity": "High",
+      "description": "SQL injection vulnerability in name parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/sqli/?id=%27",
+      "parameter": "id",
+      "payload": "'",
+      "method": "GET",
+      "severity": "High",
+      "description": "SQL injection vulnerability in id parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/sqli/?Submit=%27",
+      "parameter": "Submit",
+      "payload": "'",
+      "method": "GET",
+      "severity": "High",
+      "description": "SQL injection vulnerability in Submit parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/sqli/?id=%27&Submit=Submit",
+      "parameter": "id",
+      "payload": "'",
+      "method": "GET",
+      "severity": "High",
+      "description": "SQL injection vulnerability in id parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/brute/?username=%27&password=&Login=Login",
+      "parameter": "username",
+      "payload": "'",
+      "method": "GET",
+      "severity": "High",
+      "description": "SQL injection vulnerability in username parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "Cross-Site Scripting (XSS)",
+      "url": "http://localhost:45/setup.php",
+      "parameter": "create_db",
+      "payload": "<script>alert('XSS')</script>",
+      "method": "POST",
+      "severity": "High",
+      "description": "XSS vulnerability in create_db parameter",
+      "recommendation": "Implement proper input validation and output encoding"
+    },
+    {
+      "type": "Cross-Site Scripting (XSS)",
+      "url": "http://localhost:45/setup.php",
+      "parameter": "user_token",
+      "payload": "<script>alert('XSS')</script>",
+      "method": "POST",
+      "severity": "High",
+      "description": "XSS vulnerability in user_token parameter",
+      "recommendation": "Implement proper input validation and output encoding"
+    }
+  ],
+  "report_generated": "2026-02-27T19:14:15.102687",
+  "report_version": "1.0.0",
+  "report_format": "json"
+}

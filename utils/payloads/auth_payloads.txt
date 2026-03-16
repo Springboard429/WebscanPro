@@ -1,0 +1,13 @@
+admin:admin
+admin:password
+admin:123456
+admin:qwerty
+admin:admin123
+admin:letmein
+root:root
+root:password
+root:123456
+root:toor
+administrator:password
+administrator:admin
+administrator:123456

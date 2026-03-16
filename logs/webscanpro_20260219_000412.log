@@ -1,0 +1,20 @@
+2026-02-19 00:04:12 - webscanpro - INFO - Starting WebScanPro scan for https://example.com
+2026-02-19 00:04:12 - webscanpro - INFO - Scan type: all
+2026-02-19 00:04:12 - webscanpro - INFO - Starting website crawling...
+2026-02-19 00:04:12 - webscanpro - INFO - Found 1 URLs to scan
+2026-02-19 00:04:12 - webscanpro - INFO - Starting security scan...
+2026-02-19 00:04:12 - ScanController - INFO - Starting scan scan_1771439652 for https://example.com
+2026-02-19 00:04:12 - ScanController - INFO - Crawling target website...
+2026-02-19 00:04:13 - ScanController - INFO - Running SQL Injection scan...
+2026-02-19 00:04:13 - ScanController - ERROR - Scan failed: 'SQLInjectionScanner' object has no attribute 'scan'
+Traceback (most recent call last):
+  File "C:\Users\win10\Desktop\WebScanPro\core\scan_controller.py", line 77, in start_scan
+    sql_vulns = self.sql_scanner.scan(pages)
+AttributeError: 'SQLInjectionScanner' object has no attribute 'scan'
+2026-02-19 00:04:13 - webscanpro - ERROR - An error occurred: 'SQLInjectionScanner' object has no attribute 'scan'
+Traceback (most recent call last):
+  File "C:\Users\win10\Desktop\WebScanPro\main.py", line 140, in main
+    scan_results = scanner.start_scan()
+  File "C:\Users\win10\Desktop\WebScanPro\core\scan_controller.py", line 77, in start_scan
+    sql_vulns = self.sql_scanner.scan(pages)
+AttributeError: 'SQLInjectionScanner' object has no attribute 'scan'

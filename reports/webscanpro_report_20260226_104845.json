@@ -1,0 +1,14 @@
+{
+  "scan_id": "scan_1772083123",
+  "status": "COMPLETED",
+  "target_url": "http://localhost:45/vulnerabilities/sqli/",
+  "start_time": 1772083123.430528,
+  "end_time": 1772083125.979522,
+  "elapsed_time": 2.5489940643310547,
+  "pages_crawled": 1,
+  "vulnerabilities_found": 0,
+  "vulnerabilities": [],
+  "report_generated": "2026-02-26T10:48:45.979522",
+  "report_version": "1.0.0",
+  "report_format": "json"
+}

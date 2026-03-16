@@ -1,0 +1,275 @@
+{
+  "scan_id": "scan_1773588633",
+  "status": "COMPLETED",
+  "target_url": "http://localhost:45/index.php",
+  "start_time": 1773588635.872719,
+  "end_time": 1773588651.9328225,
+  "elapsed_time": 16.06010341644287,
+  "pages_crawled": 15,
+  "vulnerabilities_found": 26,
+  "vulnerabilities": [
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/javascript/",
+      "parameter": "token",
+      "payload": "3. UNION SELECT table_name FROM information_schema.tables",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in token parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/javascript/",
+      "parameter": "token",
+      "payload": "2. UNION SELECT database()",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in token parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/javascript/",
+      "parameter": "token",
+      "payload": "'",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in token parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/javascript/",
+      "parameter": "token",
+      "payload": "1' UNION SELECT null--",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in token parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/javascript/",
+      "parameter": "token",
+      "payload": "5. DROP TABLE users;",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in token parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/javascript/",
+      "parameter": "token",
+      "payload": "4. AND 1=0 UNION SELECT user,password FROM users",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in token parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/javascript/",
+      "parameter": "token",
+      "payload": "1. ' OR '1'='1",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in token parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/javascript/",
+      "parameter": "token",
+      "payload": "' OR '1'='1",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in token parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/javascript/",
+      "parameter": "phrase",
+      "payload": "3. UNION SELECT table_name FROM information_schema.tables",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in phrase parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/javascript/",
+      "parameter": "phrase",
+      "payload": "2. UNION SELECT database()",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in phrase parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/javascript/",
+      "parameter": "phrase",
+      "payload": "'",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in phrase parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/javascript/",
+      "parameter": "phrase",
+      "payload": "1' UNION SELECT null--",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in phrase parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/javascript/",
+      "parameter": "phrase",
+      "payload": "5. DROP TABLE users;",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in phrase parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/javascript/",
+      "parameter": "phrase",
+      "payload": "4. AND 1=0 UNION SELECT user,password FROM users",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in phrase parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/javascript/",
+      "parameter": "phrase",
+      "payload": "1. ' OR '1'='1",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in phrase parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/javascript/",
+      "parameter": "phrase",
+      "payload": "' OR '1'='1",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in phrase parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/javascript/",
+      "parameter": "send",
+      "payload": "3. UNION SELECT table_name FROM information_schema.tables",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in send parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/javascript/",
+      "parameter": "send",
+      "payload": "2. UNION SELECT database()",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in send parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/javascript/",
+      "parameter": "send",
+      "payload": "'",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in send parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/javascript/",
+      "parameter": "send",
+      "payload": "1' UNION SELECT null--",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in send parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/javascript/",
+      "parameter": "send",
+      "payload": "5. DROP TABLE users;",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in send parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/javascript/",
+      "parameter": "send",
+      "payload": "4. AND 1=0 UNION SELECT user,password FROM users",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in send parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/javascript/",
+      "parameter": "send",
+      "payload": "1. ' OR '1'='1",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in send parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/javascript/",
+      "parameter": "send",
+      "payload": "' OR '1'='1",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in send parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "Cross-Site Scripting (XSS)",
+      "url": "http://localhost:45/setup.php",
+      "parameter": "create_db",
+      "payload": "<script>alert('XSS')</script>",
+      "method": "POST",
+      "severity": "High",
+      "description": "XSS vulnerability in create_db parameter",
+      "recommendation": "Implement proper input validation and output encoding"
+    },
+    {
+      "type": "Cross-Site Scripting (XSS)",
+      "url": "http://localhost:45/setup.php",
+      "parameter": "user_token",
+      "payload": "<script>alert('XSS')</script>",
+      "method": "POST",
+      "severity": "High",
+      "description": "XSS vulnerability in user_token parameter",
+      "recommendation": "Implement proper input validation and output encoding"
+    }
+  ],
+  "report_generated": "2026-03-15T21:00:51.939724",
+  "report_version": "1.0.0",
+  "report_format": "json"
+}

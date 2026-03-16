@@ -1,0 +1,4 @@
+2026-02-19 00:10:51 - webscanpro - INFO - Starting WebScanPro scan for https://www.owasp.org
+2026-02-19 00:10:51 - webscanpro - INFO - Scan type: all
+2026-02-19 00:10:51 - webscanpro - INFO - Starting website crawling...
+2026-02-19 00:11:00 - webscanpro - WARNING - Scan interrupted by user

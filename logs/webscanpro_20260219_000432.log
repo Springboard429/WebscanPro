@@ -1,0 +1,27 @@
+2026-02-19 00:04:32 - webscanpro - INFO - Starting WebScanPro scan for https://example.com
+2026-02-19 00:04:32 - webscanpro - INFO - Scan type: all
+2026-02-19 00:04:32 - webscanpro - INFO - Starting website crawling...
+2026-02-19 00:04:32 - webscanpro - INFO - Found 1 URLs to scan
+2026-02-19 00:04:32 - webscanpro - INFO - Starting security scan...
+2026-02-19 00:04:32 - ScanController - INFO - Starting scan scan_1771439672 for https://example.com
+2026-02-19 00:04:32 - ScanController - INFO - Crawling target website...
+2026-02-19 00:04:33 - ScanController - INFO - Running SQL Injection scan...
+2026-02-19 00:04:33 - ScanController - INFO - Running XSS scan...
+2026-02-19 00:04:33 - ScanController - INFO - Scan completed. Found 0 vulnerabilities
+2026-02-19 00:04:33 - webscanpro - INFO - Generating reports...
+2026-02-19 00:04:33 - webscanpro.html_report - ERROR - Error generating HTML report: '\n            background-color'
+Traceback (most recent call last):
+  File "C:\Users\win10\Desktop\WebScanPro\reports\html_report.py", line 312, in generate
+    html_content = HTML_TEMPLATE.format(
+KeyError: '\n            background-color'
+2026-02-19 00:04:33 - webscanpro - ERROR - An error occurred: '\n            background-color'
+Traceback (most recent call last):
+  File "C:\Users\win10\Desktop\WebScanPro\main.py", line 147, in main
+    html_report = report_gen.generate_report(scan_results, "html")
+  File "C:\Users\win10\Desktop\WebScanPro\reports\report_generator.py", line 59, in generate_report
+    report_methods[report_type](scan_results, str(report_path), **kwargs)
+  File "C:\Users\win10\Desktop\WebScanPro\reports\report_generator.py", line 73, in generate_html_report
+    html_report.generate(scan_results, output_path, **kwargs)
+  File "C:\Users\win10\Desktop\WebScanPro\reports\html_report.py", line 312, in generate
+    html_content = HTML_TEMPLATE.format(
+KeyError: '\n            background-color'

@@ -1,0 +1,177 @@
+Metadata-Version: 2.1
+Name: webscanpro
+Version: 0.1.0
+Summary: Advanced Web Application Security Scanner
+Home-page: https://github.com/yourusername/WebScanPro
+Author: Your Name
+Author-email: your.email@example.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+# WebScanPro - Advanced Web Application Security Scanner
+
+![WebScanPro Logo](https://via.placeholder.com/150x50?text=WebScanPro) [![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/downloads/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Build Status](https://img.shields.io/badge/build-passing-brightgreen)]()
+
+
+WebScanPro is a powerful and comprehensive web application security scanner designed to help security professionals and developers identify vulnerabilities in web applications. It combines automated scanning with advanced testing techniques to detect security issues across various layers of a web application.
+ 
+
+## ðŸ“‹ Table of Contents
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [System Architecture](#-system-architecture)
+- [Installation](#-installation)
+- [Usage](#-usage)
+- [Project Structure](#-project-structure)
+- [Security Modules](#-security-modules)
+- [Report Features](#-report-features)
+- [Configuration](#-configuration)
+- [Performance Considerations](#-performance-considerations)
+- [Security Best Practices](#-security-best-practices)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Acknowledgments](#-acknowledgments)
+
+## ðŸŒŸ Features
+
+### Core Capabilities
+- **Comprehensive Vulnerability Detection**: 50+ security checks across OWASP Top 10 vulnerabilities
+- **Intelligent Crawling**: JavaScript-aware crawling with headless browser support
+- **Authentication Testing**: Support for various authentication mechanisms
+- **API Security**: Automated API endpoint testing with OpenAPI/Swagger support
+- **CI/CD Integration**: Seamless integration with popular CI/CD pipelines
+
+### Advanced Features
+- **Machine Learning**: Anomaly detection for zero-day vulnerabilities
+- **Fingerprinting**: Advanced web technology detection
+- **Custom Payloads**: Extensible payload system with community-contributed payloads
+- **Rate Limiting**: Smart rate limiting to avoid service disruption
+- **False Positive Reduction**: Advanced heuristics to minimize false positives
+
+## ðŸ›  Tech Stack
+
+### Core Technologies
+- **Python 3.8+**: Core programming language
+- **asyncio**: Asynchronous I/O for high-performance scanning
+- **aiohttp/httpx**: High-performance HTTP client libraries
+- **BeautifulSoup4/lxml**: HTML/XML parsing
+- **SQLAlchemy**: Database abstraction layer
+- **Jinja2**: HTML report templating
+
+### Security Libraries
+- **OWASP ZAP API**: Integration with OWASP ZAP for advanced scanning
+- **sqlmap API**: Integration with sqlmap for advanced SQLi detection
+- **nmap**: Port scanning and service detection
+- **cryptography**: Secure handling of sensitive data
+
+### Data Processing
+- **pandas**: Data analysis and manipulation
+- **numpy**: Numerical operations for ML components
+- **scikit-learn**: Machine learning for anomaly detection
+
+### Frontend (Reports)
+- **HTML5/CSS3**: Modern, responsive report interface
+- **JavaScript/ES6+**: Interactive report features
+- **Chart.js**: Data visualization
+- **Bootstrap 5**: Responsive design framework
+- **Prism.js**: Syntax highlighting for code samples
+
+### Development Tools
+- **pytest**: Unit and integration testing
+- **black**: Code formatting
+- **mypy**: Static type checking
+- **flake8**: Code linting
+- **Docker**: Containerization
+- **GitHub Actions**: CI/CD pipeline
+
+
+### Project Structure
+WebScanPro/
+â”œâ”€â”€ core/                  # Core functionality
+â”‚   â”œâ”€â”€ __init__.py
+â”‚   â”œâ”€â”€ scanner.py         # Main scanner logic
+â”‚   â”œâ”€â”€ crawler.py         # Web crawler
+â”‚   â”œâ”€â”€ request_handler.py # HTTP request handling
+â”‚   â””â”€â”€ report_generator.py# Report generation
+â”‚
+â”œâ”€â”€ modules/               # Security testing modules
+â”‚   â”œâ”€â”€ __init__.py
+â”‚   â”œâ”€â”€ sql_injection.py
+â”‚   â”œâ”€â”€ xss_scanner.py
+â”‚   â”œâ”€â”€ auth_tester.py
+â”‚   â””â”€â”€ ...
+â”‚
+â”œâ”€â”€ utils/                 # Utility functions
+â”‚   â”œâ”€â”€ __init__.py
+â”‚   â”œâ”€â”€ logger.py
+â”‚   â”œâ”€â”€ helpers.py
+â”‚   â””â”€â”€ file_utils.py
+â”‚
+â”œâ”€â”€ reports/               # Report templates
+â”‚   â”œâ”€â”€ templates/
+â”‚   â”‚   â”œâ”€â”€ report_template.html
+â”‚   â”‚   â””â”€â”€ style.css
+â”‚   â””â”€â”€ __init__.py
+â”‚
+â”œâ”€â”€ data/                  # Data files
+â”‚   â”œâ”€â”€ payloads/          # Attack payloads
+â”‚   â””â”€â”€ wordlists/         # Wordlists for brute-forcing
+â”‚
+â”œâ”€â”€ config.py             # Configuration settings
+â”œâ”€â”€ main.py               # Entry point
+â”œâ”€â”€ requirements.txt      # Dependencies
+â””â”€â”€ README.md            # This file
+
+
+### Component Architecture
+1. **Orchestrator Layer**
+   - Manages scan workflows
+   - Coordinates between different modules
+   - Handles error recovery
+
+2. **Crawler Engine**
+   - Recursive crawling with configurable depth
+   - JavaScript rendering support
+   - Form submission handling
+
+3. **Security Testing Modules**
+   - Independent, pluggable modules
+   - Common interface for all test cases
+   - Support for both active and passive testing
+
+4. **Reporting Engine**
+   - Template-based report generation
+   - Multiple output formats
+   - Customizable report templates
+
+5. **Persistence Layer**
+   - SQLite/PostgreSQL for scan results
+   - File system for evidence storage
+   - Caching mechanism for performance
+
+## ðŸš€ Installation
+
+### Prerequisites
+- Python 3.8 or higher
+- 4GB RAM minimum (8GB recommended)
+- 1GB free disk space
+- Network connectivity to target systems
+
+### Quick Start
+```bash
+# Clone the repository
+git clone [https://github.com/yourusername/WebScanPro.git](https://github.com/yourusername/WebScanPro.git)
+cd WebScanPro
+
+# Create and activate virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run with default settings
+python main.py -u [https://example.com](https://example.com)

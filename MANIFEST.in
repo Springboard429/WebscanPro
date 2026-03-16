@@ -1,0 +1,6 @@
+include README.md
+include requirements.txt
+include LICENSE
+include config.py
+recursive-include data *
+recursive-include reports/templates *

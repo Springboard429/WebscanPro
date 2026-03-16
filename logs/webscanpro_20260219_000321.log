@@ -1,0 +1,7 @@
+2026-02-19 00:03:21 - webscanpro - INFO - Starting WebScanPro scan for https://example.com
+2026-02-19 00:03:21 - webscanpro - INFO - Scan type: all
+2026-02-19 00:03:21 - webscanpro - ERROR - An error occurred: WebCrawler.__init__() got an unexpected keyword argument 'max_depth'
+Traceback (most recent call last):
+  File "C:\Users\win10\Desktop\WebScanPro\main.py", line 130, in main
+    crawler = WebCrawler(base_url=args.url, max_depth=args.crawl_depth)
+TypeError: WebCrawler.__init__() got an unexpected keyword argument 'max_depth'

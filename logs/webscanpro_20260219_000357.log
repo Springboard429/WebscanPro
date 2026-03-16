@@ -1,0 +1,7 @@
+2026-02-19 00:03:57 - webscanpro - INFO - Starting WebScanPro scan for https://example.com
+2026-02-19 00:03:57 - webscanpro - INFO - Scan type: all
+2026-02-19 00:03:57 - webscanpro - ERROR - An error occurred: ScanController.__init__() got an unexpected keyword argument 'scan_type'
+Traceback (most recent call last):
+  File "C:\Users\win10\Desktop\WebScanPro\main.py", line 132, in main
+    scanner = ScanController(
+TypeError: ScanController.__init__() got an unexpected keyword argument 'scan_type'

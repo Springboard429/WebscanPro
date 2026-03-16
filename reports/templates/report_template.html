@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebScanPro Security Report - {{ scan_target }}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-light.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/http.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/sql.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/javascript.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body>
+    <div class="container">
+        <header class="report-header">
+            <div class="logo">
+                <h1>WebScanPro</h1>
+                <span class="version">v{{ version }}</span>
+            </div>
+            <div class="report-meta">
+                <div class="report-title">Security Assessment Report</div>
+                <div class="report-date">Generated on: {{ generated_date }}</div>
+            </div>
+        </header>
+
+        <div class="executive-summary">
+            <h2>Executive Summary</h2>
+            <div class="summary-cards">
+                <div class="card">
+                    <div class="card-value">{{ vulnerabilities|length }}</div>
+                    <div class="card-label">Total Vulnerabilities</div>
+                </div>
+                <div class="card critical">
+                    <div class="card-value">{{ severity_counts.high }}</div>
+                    <div class="card-label">High Severity</div>
+                </div>
+                <div class="card high">
+                    <div class="card-value">{{ severity_counts.medium }}</div>
+                    <div class="card-label">Medium Severity</div>
+                </div>
+                <div class="card medium">
+                    <div class="card-value">{{ severity_counts.low }}</div>
+                    <div class="card-label">Low Severity</div>
+                </div>
+                <div class="card low">
+                    <div class="card-value">{{ severity_counts.info }}</div>
+                    <div class="card-label">Informational</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scan-details">
+            <h2>Scan Details</h2>
+            <div class="details-grid">
+                <div class="detail-item">
+                    <span class="detail-label">Target URL:</span>
+                    <span class="detail-value">{{ scan_target }}</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Scan ID:</span>
+                    <span class="detail-value">{{ scan_id }}</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Start Time:</span>
+                    <span class="detail-value">{{ start_time }}</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">End Time:</span>
+                    <span class="detail-value">{{ end_time }}</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Status:</span>
+                    <span class="detail-value status-{{ status|lower }}">{{ status|upper }}</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Duration:</span>
+                    <span class="detail-value">{{ duration }}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="vulnerabilities">
+            <h2>Vulnerability Details</h2>
+            {% if vulnerabilities %}
+                <div class="vulnerability-filters">
+                    <button class="filter-btn active" data-filter="all">All ({{ vulnerabilities|length }})</button>
+                    <button class="filter-btn" data-filter="high">High ({{ severity_counts.high }})</button>
+                    <button class="filter-btn" data-filter="medium">Medium ({{ severity_counts.medium }})</button>
+                    <button class="filter-btn" data-filter="low">Low ({{ severity_counts.low }})</button>
+                    <button class="filter-btn" data-filter="info">Info ({{ severity_counts.info }})</button>
+                </div>
+
+                {% for vuln in vulnerabilities %}
+                <div class="vulnerability severity-{{ vuln.severity|lower }}" data-severity="{{ vuln.severity|lower }}">
+                    <div class="vulnerability-header">
+                        <div class="severity-badge severity-{{ vuln.severity|lower }}">
+                            {{ vuln.severity|upper }}
+                        </div>
+                        <h3>{{ vuln.type }} - {{ vuln.name }}</h3>
+                        <button class="toggle-details" aria-label="Toggle details">
+                            <span class="toggle-icon">+</span>
+                        </button>
+                    </div>
+                    <div class="vulnerability-details">
+                        <div class="detail-section">
+                            <h4>Description</h4>
+                            <p>{{ vuln.description }}</p>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h4>Impact</h4>
+                            <p>{{ vuln.impact }}</p>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h4>Remediation</h4>
+                            <p>{{ vuln.remediation }}</p>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h4>Technical Details</h4>
+                            <div class="technical-details">
+                                <div class="detail-row">
+                                    <span class="detail-label">URL:</span>
+                                    <a href="{{ vuln.url }}" target="_blank" class="detail-value">{{ vuln.url }}</a>
+                                </div>
+                                {% if vuln.parameter %}
+                                <div class="detail-row">
+                                    <span class="detail-label">Parameter:</span>
+                                    <span class="detail-value">{{ vuln.parameter }}</span>
+                                </div>
+                                {% endif %}
+                                <div class="detail-row">
+                                    <span class="detail-label">HTTP Method:</span>
+                                    <span class="detail-value">{{ vuln.method|default('GET') }}</span>
+                                </div>
+                                {% if vuln.cvss_score is defined %}
+                                <div class="detail-row">
+                                    <span class="detail-label">CVSS Score:</span>
+                                    <span class="detail-value">{{ '%.1f'|format(vuln.cvss_score) }} ({{ vuln.cvss_severity }})</span>
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        
+                        {% if vuln.evidence %}
+                        <div class="detail-section">
+                            <h4>Evidence</h4>
+                            <div class="evidence-tabs">
+                                <button class="tab-btn active" data-tab="request-{{ loop.index }}">Request</button>
+                                <button class="tab-btn" data-tab="response-{{ loop.index }}">Response</button>
+                            </div>
+                            
+                            <div class="tab-content" id="request-{{ loop.index }}" style="display: block;">
+                                <pre><code class="language-http">{{ vuln.evidence.request }}</code></pre>
+                            </div>
+                            
+                            <div class="tab-content" id="response-{{ loop.index }}">
+                                <div class="response-meta">
+                                    <span class="status-code">Status: {{ vuln.evidence.response_code }}</span>
+                                </div>
+                                <pre><code class="language-{{ vuln.evidence.response_type|default('html') }}">{{ vuln.evidence.response_body }}</code></pre>
+                            </div>
+                        </div>
+                        {% endif %}
+                        
+                        {% if vuln.references %}
+                        <div class="detail-section">
+                            <h4>References</h4>
+                            <ul class="references">
+                                {% for ref in vuln.references %}
+                                <li><a href="{{ ref }}" target="_blank">{{ ref }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <div class="no-vulnerabilities">
+                    <p>No vulnerabilities were found during the scan.</p>
+                </div>
+            {% endif %}
+        </div>
+
+        <footer class="report-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>WebScanPro</h4>
+                    <p>Automated Web Application Security Scanner</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Report Information</h4>
+                    <p>Generated on: {{ generated_date }}</p>
+                    <p>Report ID: {{ report_id }}</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Confidentiality</h4>
+                    <p>This report is confidential and intended for authorized personnel only.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{ current_year }} WebScanPro. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Toggle vulnerability details
+        document.querySelectorAll('.toggle-details').forEach(button => {
+            button.addEventListener('click', function() {
+                const details = this.closest('.vulnerability').querySelector('.vulnerability-details');
+                const icon = this.querySelector('.toggle-icon');
+                
+                if (details.style.maxHeight) {
+                    details.style.maxHeight = null;
+                    icon.textContent = '+';
+                } else {
+                    details.style.maxHeight = details.scrollHeight + 'px';
+                    icon.textContent = '−';
+                }
+            });
+        });
+
+        // Tab switching
+        document.querySelectorAll('.tab-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const tabId = this.getAttribute('data-tab');
+                const tabContent = document.getElementById(tabId);
+                const tabContainer = this.closest('.detail-section');
+                
+                // Hide all tab contents in this section
+                tabContainer.querySelectorAll('.tab-content').forEach(content => {
+                    content.style.display = 'none';
+                });
+                
+                // Deactivate all tab buttons in this section
+                tabContainer.querySelectorAll('.tab-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Show the selected tab content and activate the button
+                tabContent.style.display = 'block';
+                this.classList.add('active');
+            });
+        });
+
+        // Filter vulnerabilities by severity
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const filter = this.getAttribute('data-filter');
+                
+                // Update active filter button
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                this.classList.add('active');
+                
+                // Show/hide vulnerabilities based on filter
+                document.querySelectorAll('.vulnerability').forEach(vuln => {
+                    if (filter === 'all' || vuln.getAttribute('data-severity') === filter) {
+                        vuln.style.display = 'block';
+                    } else {
+                        vuln.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Expand all/collapse all functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Auto-expand the first vulnerability
+            const firstVuln = document.querySelector('.vulnerability');
+            if (firstVuln) {
+                const details = firstVuln.querySelector('.vulnerability-details');
+                const icon = firstVuln.querySelector('.toggle-icon');
+                details.style.maxHeight = details.scrollHeight + 'px';
+                icon.textContent = '−';
+            }
+            
+            // Add copy to clipboard functionality for code blocks
+            document.querySelectorAll('pre code').forEach(block => {
+                const pre = block.parentElement;
+                const wrapper = document.createElement('div');
+                wrapper.className = 'code-block-wrapper';
+                pre.parentNode.insertBefore(wrapper, pre);
+                wrapper.appendChild(pre);
+                
+                const copyButton = document.createElement('button');
+                copyButton.className = 'copy-button';
+                copyButton.title = 'Copy to clipboard';
+                copyButton.innerHTML = '📋';
+                
+                copyButton.addEventListener('click', function() {
+                    const textToCopy = block.textContent;
+                    navigator.clipboard.writeText(textToCopy).then(() => {
+                        copyButton.textContent = '✓';
+                        setTimeout(() => {
+                            copyButton.innerHTML = '📋';
+                        }, 2000);
+                    }).catch(err => {
+                        console.error('Failed to copy text: ', err);
+                    });
+                });
+                
+                wrapper.appendChild(copyButton);
+            });
+        });
+    </script>
+</body>
+</html>

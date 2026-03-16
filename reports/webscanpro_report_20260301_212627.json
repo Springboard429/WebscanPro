@@ -1,0 +1,405 @@
+{
+  "scan_id": "scan_1772380522",
+  "status": "COMPLETED",
+  "target_url": "http://testphp.vulnweb.com/artists.php?artist=1",
+  "start_time": 1772380522.30077,
+  "end_time": 1772380587.5077796,
+  "elapsed_time": 65.2070095539093,
+  "pages_crawled": 12,
+  "vulnerabilities_found": 39,
+  "vulnerabilities": [
+    {
+      "type": "SQL Injection",
+      "url": "http://testphp.vulnweb.com/artists.php?artist=1&artist=%27",
+      "parameter": "artist",
+      "payload": "'",
+      "method": "GET",
+      "severity": "High",
+      "description": "SQL injection vulnerability in artist parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://testphp.vulnweb.com/userinfo.php",
+      "parameter": "uname",
+      "payload": "'",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in uname parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://testphp.vulnweb.com/userinfo.php",
+      "parameter": "pass",
+      "payload": "'",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in pass parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://testphp.vulnweb.com/search.php?test=query&test=%27",
+      "parameter": "test",
+      "payload": "'",
+      "method": "GET",
+      "severity": "High",
+      "description": "SQL injection vulnerability in test parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://testphp.vulnweb.com/search.php?test=query",
+      "parameter": "searchFor",
+      "payload": "'",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in searchFor parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://testphp.vulnweb.com/guestbook.php",
+      "parameter": "name",
+      "payload": "1' UNION SELECT null--",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in name parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://testphp.vulnweb.com/guestbook.php",
+      "parameter": "text",
+      "payload": "1' UNION SELECT null--",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in text parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://testphp.vulnweb.com/listproducts.php?artist=1&artist=%27",
+      "parameter": "artist",
+      "payload": "'",
+      "method": "GET",
+      "severity": "High",
+      "description": "SQL injection vulnerability in artist parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://testphp.vulnweb.com/listproducts.php?artist=1",
+      "parameter": "searchFor",
+      "payload": "'",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in searchFor parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://testphp.vulnweb.com/listproducts.php?artist=1",
+      "parameter": "goButton",
+      "payload": "'",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in goButton parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "Cross-Site Scripting (XSS)",
+      "url": "http://testphp.vulnweb.com/artists.php?artist=1",
+      "parameter": "searchFor",
+      "payload": "<script>alert('XSS')</script>",
+      "method": "POST",
+      "severity": "High",
+      "description": "XSS vulnerability in searchFor parameter",
+      "recommendation": "Implement proper input validation and output encoding"
+    },
+    {
+      "type": "Cross-Site Scripting (XSS)",
+      "url": "http://testphp.vulnweb.com/artists.php?artist=1",
+      "parameter": "goButton",
+      "payload": "<script>alert('XSS')</script>",
+      "method": "POST",
+      "severity": "High",
+      "description": "XSS vulnerability in goButton parameter",
+      "recommendation": "Implement proper input validation and output encoding"
+    },
+    {
+      "type": "Cross-Site Scripting (XSS)",
+      "url": "http://testphp.vulnweb.com/login.php",
+      "parameter": "searchFor",
+      "payload": "<script>alert('XSS')</script>",
+      "method": "POST",
+      "severity": "High",
+      "description": "XSS vulnerability in searchFor parameter",
+      "recommendation": "Implement proper input validation and output encoding"
+    },
+    {
+      "type": "Cross-Site Scripting (XSS)",
+      "url": "http://testphp.vulnweb.com/login.php",
+      "parameter": "goButton",
+      "payload": "<script>alert('XSS')</script>",
+      "method": "POST",
+      "severity": "High",
+      "description": "XSS vulnerability in goButton parameter",
+      "recommendation": "Implement proper input validation and output encoding"
+    },
+    {
+      "type": "Cross-Site Scripting (XSS)",
+      "url": "http://testphp.vulnweb.com/search.php?test=query&test=%3Cscript%3Ealert%28%27XSS%27%29%3C%2Fscript%3E",
+      "parameter": "test",
+      "payload": "<script>alert('XSS')</script>",
+      "method": "GET",
+      "severity": "High",
+      "description": "XSS vulnerability in test parameter",
+      "recommendation": "Implement proper input validation and output encoding"
+    },
+    {
+      "type": "Cross-Site Scripting (XSS)",
+      "url": "http://testphp.vulnweb.com/search.php?test=query",
+      "parameter": "searchFor",
+      "payload": "<script>alert('XSS')</script>",
+      "method": "POST",
+      "severity": "High",
+      "description": "XSS vulnerability in searchFor parameter",
+      "recommendation": "Implement proper input validation and output encoding"
+    },
+    {
+      "type": "Cross-Site Scripting (XSS)",
+      "url": "http://testphp.vulnweb.com/search.php?test=query",
+      "parameter": "goButton",
+      "payload": "<script>alert('XSS')</script>",
+      "method": "POST",
+      "severity": "High",
+      "description": "XSS vulnerability in goButton parameter",
+      "recommendation": "Implement proper input validation and output encoding"
+    },
+    {
+      "type": "Cross-Site Scripting (XSS)",
+      "url": "http://testphp.vulnweb.com/guestbook.php",
+      "parameter": "name",
+      "payload": "<script>alert('XSS')</script>",
+      "method": "POST",
+      "severity": "High",
+      "description": "XSS vulnerability in name parameter",
+      "recommendation": "Implement proper input validation and output encoding"
+    },
+    {
+      "type": "Cross-Site Scripting (XSS)",
+      "url": "http://testphp.vulnweb.com/guestbook.php",
+      "parameter": "text",
+      "payload": "<script>alert('XSS')</script>",
+      "method": "POST",
+      "severity": "High",
+      "description": "XSS vulnerability in text parameter",
+      "recommendation": "Implement proper input validation and output encoding"
+    },
+    {
+      "type": "Cross-Site Scripting (XSS)",
+      "url": "http://testphp.vulnweb.com/guestbook.php",
+      "parameter": "submit",
+      "payload": "<script>alert('XSS')</script>",
+      "method": "POST",
+      "severity": "High",
+      "description": "XSS vulnerability in submit parameter",
+      "recommendation": "Implement proper input validation and output encoding"
+    },
+    {
+      "type": "Cross-Site Scripting (XSS)",
+      "url": "http://testphp.vulnweb.com/guestbook.php",
+      "parameter": "searchFor",
+      "payload": "<script>alert('XSS')</script>",
+      "method": "POST",
+      "severity": "High",
+      "description": "XSS vulnerability in searchFor parameter",
+      "recommendation": "Implement proper input validation and output encoding"
+    },
+    {
+      "type": "Cross-Site Scripting (XSS)",
+      "url": "http://testphp.vulnweb.com/guestbook.php",
+      "parameter": "goButton",
+      "payload": "<script>alert('XSS')</script>",
+      "method": "POST",
+      "severity": "High",
+      "description": "XSS vulnerability in goButton parameter",
+      "recommendation": "Implement proper input validation and output encoding"
+    },
+    {
+      "type": "Cross-Site Scripting (XSS)",
+      "url": "http://testphp.vulnweb.com/listproducts.php?artist=1&artist=%3Cscript%3Ealert%28%27XSS%27%29%3C%2Fscript%3E",
+      "parameter": "artist",
+      "payload": "<script>alert('XSS')</script>",
+      "method": "GET",
+      "severity": "High",
+      "description": "XSS vulnerability in artist parameter",
+      "recommendation": "Implement proper input validation and output encoding"
+    },
+    {
+      "type": "Cross-Site Scripting (XSS)",
+      "url": "http://testphp.vulnweb.com/listproducts.php?artist=1",
+      "parameter": "searchFor",
+      "payload": "<script>alert('XSS')</script>",
+      "method": "POST",
+      "severity": "High",
+      "description": "XSS vulnerability in searchFor parameter",
+      "recommendation": "Implement proper input validation and output encoding"
+    },
+    {
+      "type": "Cross-Site Scripting (XSS)",
+      "url": "http://testphp.vulnweb.com/listproducts.php?artist=1",
+      "parameter": "goButton",
+      "payload": "<script>alert('XSS')</script>",
+      "method": "POST",
+      "severity": "High",
+      "description": "XSS vulnerability in goButton parameter",
+      "recommendation": "Implement proper input validation and output encoding"
+    },
+    {
+      "type": "Cross-Site Scripting (XSS)",
+      "url": "http://testphp.vulnweb.com/categories.php",
+      "parameter": "searchFor",
+      "payload": "<script>alert('XSS')</script>",
+      "method": "POST",
+      "severity": "High",
+      "description": "XSS vulnerability in searchFor parameter",
+      "recommendation": "Implement proper input validation and output encoding"
+    },
+    {
+      "type": "Cross-Site Scripting (XSS)",
+      "url": "http://testphp.vulnweb.com/categories.php",
+      "parameter": "goButton",
+      "payload": "<script>alert('XSS')</script>",
+      "method": "POST",
+      "severity": "High",
+      "description": "XSS vulnerability in goButton parameter",
+      "recommendation": "Implement proper input validation and output encoding"
+    },
+    {
+      "type": "Cross-Site Scripting (XSS)",
+      "url": "http://testphp.vulnweb.com/artists.php",
+      "parameter": "searchFor",
+      "payload": "<script>alert('XSS')</script>",
+      "method": "POST",
+      "severity": "High",
+      "description": "XSS vulnerability in searchFor parameter",
+      "recommendation": "Implement proper input validation and output encoding"
+    },
+    {
+      "type": "Cross-Site Scripting (XSS)",
+      "url": "http://testphp.vulnweb.com/artists.php",
+      "parameter": "goButton",
+      "payload": "<script>alert('XSS')</script>",
+      "method": "POST",
+      "severity": "High",
+      "description": "XSS vulnerability in goButton parameter",
+      "recommendation": "Implement proper input validation and output encoding"
+    },
+    {
+      "type": "Cross-Site Scripting (XSS)",
+      "url": "http://testphp.vulnweb.com/cart.php",
+      "parameter": "searchFor",
+      "payload": "<script>alert('XSS')</script>",
+      "method": "POST",
+      "severity": "High",
+      "description": "XSS vulnerability in searchFor parameter",
+      "recommendation": "Implement proper input validation and output encoding"
+    },
+    {
+      "type": "Cross-Site Scripting (XSS)",
+      "url": "http://testphp.vulnweb.com/cart.php",
+      "parameter": "goButton",
+      "payload": "<script>alert('XSS')</script>",
+      "method": "POST",
+      "severity": "High",
+      "description": "XSS vulnerability in goButton parameter",
+      "recommendation": "Implement proper input validation and output encoding"
+    },
+    {
+      "type": "Cross-Site Scripting (XSS)",
+      "url": "http://testphp.vulnweb.com/disclaimer.php",
+      "parameter": "searchFor",
+      "payload": "<script>alert('XSS')</script>",
+      "method": "POST",
+      "severity": "High",
+      "description": "XSS vulnerability in searchFor parameter",
+      "recommendation": "Implement proper input validation and output encoding"
+    },
+    {
+      "type": "Cross-Site Scripting (XSS)",
+      "url": "http://testphp.vulnweb.com/disclaimer.php",
+      "parameter": "goButton",
+      "payload": "<script>alert('XSS')</script>",
+      "method": "POST",
+      "severity": "High",
+      "description": "XSS vulnerability in goButton parameter",
+      "recommendation": "Implement proper input validation and output encoding"
+    },
+    {
+      "type": "Cross-Site Scripting (XSS)",
+      "url": "http://testphp.vulnweb.com/login.php",
+      "parameter": "uname",
+      "payload": "<script>alert('XSS')</script>",
+      "method": "POST",
+      "severity": "High",
+      "description": "XSS vulnerability in uname parameter",
+      "recommendation": "Implement proper input validation and output encoding"
+    },
+    {
+      "type": "Cross-Site Scripting (XSS)",
+      "url": "http://testphp.vulnweb.com/login.php",
+      "parameter": "pass",
+      "payload": "<script>alert('XSS')</script>",
+      "method": "POST",
+      "severity": "High",
+      "description": "XSS vulnerability in pass parameter",
+      "recommendation": "Implement proper input validation and output encoding"
+    },
+    {
+      "type": "Cross-Site Scripting (XSS)",
+      "url": "http://testphp.vulnweb.com/login.php",
+      "parameter": "searchFor",
+      "payload": "<script>alert('XSS')</script>",
+      "method": "POST",
+      "severity": "High",
+      "description": "XSS vulnerability in searchFor parameter",
+      "recommendation": "Implement proper input validation and output encoding"
+    },
+    {
+      "type": "Cross-Site Scripting (XSS)",
+      "url": "http://testphp.vulnweb.com/login.php",
+      "parameter": "goButton",
+      "payload": "<script>alert('XSS')</script>",
+      "method": "POST",
+      "severity": "High",
+      "description": "XSS vulnerability in goButton parameter",
+      "recommendation": "Implement proper input validation and output encoding"
+    },
+    {
+      "type": "Cross-Site Scripting (XSS)",
+      "url": "http://testphp.vulnweb.com/index.php",
+      "parameter": "searchFor",
+      "payload": "<script>alert('XSS')</script>",
+      "method": "POST",
+      "severity": "High",
+      "description": "XSS vulnerability in searchFor parameter",
+      "recommendation": "Implement proper input validation and output encoding"
+    },
+    {
+      "type": "Cross-Site Scripting (XSS)",
+      "url": "http://testphp.vulnweb.com/index.php",
+      "parameter": "goButton",
+      "payload": "<script>alert('XSS')</script>",
+      "method": "POST",
+      "severity": "High",
+      "description": "XSS vulnerability in goButton parameter",
+      "recommendation": "Implement proper input validation and output encoding"
+    }
+  ],
+  "report_generated": "2026-03-01T21:26:27.510768",
+  "report_version": "1.0.0",
+  "report_format": "json"
+}

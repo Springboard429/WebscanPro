@@ -1,0 +1,130 @@
+2026-02-26 19:32:04 - webscanpro - INFO - Starting WebScanPro scan for http://demo.testfire.net/bank/login.aspx
+2026-02-26 19:32:04 - webscanpro - INFO - Scan type: sqli
+2026-02-26 19:32:04 - webscanpro - INFO - Starting security scan...
+2026-02-26 19:32:04 - ScanController - INFO - Starting scan scan_1772114524 for http://demo.testfire.net/bank/login.aspx
+2026-02-26 19:32:04 - ScanController - INFO - Crawling target website...
+2026-02-26 19:32:30 - ScanController - INFO - Running SQL Injection scan...
+2026-02-26 19:32:38 - ScanController - ERROR - Scan failed: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+Traceback (most recent call last):
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 516, in getresponse
+    httplib_response = super().getresponse()
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 1375, in getresponse
+    response.begin()
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 279, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\socket.py", line 705, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\adapters.py", line 644, in send
+    resp = conn.urlopen(
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\retry.py", line 474, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 516, in getresponse
+    httplib_response = super().getresponse()
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 1375, in getresponse
+    response.begin()
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 279, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\socket.py", line 705, in readinto
+    return self._sock.recv_into(b)
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\win10\Desktop\WebScanPro\core\scan_controller.py", line 89, in start_scan
+    form_vulns = self.sql_scanner.scan_forms(page['forms'], crawler=self.crawler)
+  File "C:\Users\win10\Desktop\WebScanPro\modules\sql_injection.py", line 66, in scan_forms
+    original_response = crawler.session.post(url, data=original_data) if method == 'post' else crawler.session.get(url, params=original_data)
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\adapters.py", line 659, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2026-02-26 19:32:38 - webscanpro - ERROR - An error occurred: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+Traceback (most recent call last):
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 516, in getresponse
+    httplib_response = super().getresponse()
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 1375, in getresponse
+    response.begin()
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 279, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\socket.py", line 705, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\adapters.py", line 644, in send
+    resp = conn.urlopen(
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\retry.py", line 474, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 516, in getresponse
+    httplib_response = super().getresponse()
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 1375, in getresponse
+    response.begin()
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 279, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\socket.py", line 705, in readinto
+    return self._sock.recv_into(b)
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\win10\Desktop\WebScanPro\main.py", line 151, in main
+    scan_results = scanner.start_scan()
+  File "C:\Users\win10\Desktop\WebScanPro\core\scan_controller.py", line 89, in start_scan
+    form_vulns = self.sql_scanner.scan_forms(page['forms'], crawler=self.crawler)
+  File "C:\Users\win10\Desktop\WebScanPro\modules\sql_injection.py", line 66, in scan_forms
+    original_response = crawler.session.post(url, data=original_data) if method == 'post' else crawler.session.get(url, params=original_data)
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\win10\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\adapters.py", line 659, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))

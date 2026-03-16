@@ -1,0 +1,35 @@
+{
+  "scan_id": "scan_1773586708",
+  "status": "COMPLETED",
+  "target_url": "http://localhost:45/index.php",
+  "start_time": 1773586708.9641523,
+  "end_time": 1773586728.2720366,
+  "elapsed_time": 19.307884216308594,
+  "pages_crawled": 15,
+  "vulnerabilities_found": 2,
+  "vulnerabilities": [
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/sqli/?id=%27&Submit=Submit",
+      "parameter": "id",
+      "payload": "'",
+      "method": "GET",
+      "severity": "High",
+      "description": "SQL injection vulnerability in id parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    },
+    {
+      "type": "SQL Injection",
+      "url": "http://localhost:45/vulnerabilities/xss_r/?name=1%27+UNION+SELECT+null--&None=Submit",
+      "parameter": "name",
+      "payload": "1' UNION SELECT null--",
+      "method": "GET",
+      "severity": "High",
+      "description": "SQL injection vulnerability in name parameter",
+      "recommendation": "Use parameterized queries or prepared statements"
+    }
+  ],
+  "report_generated": "2026-03-15T20:28:48.293597",
+  "report_version": "1.0.0",
+  "report_format": "json"
+}

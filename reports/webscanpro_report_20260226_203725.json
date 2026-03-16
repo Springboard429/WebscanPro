@@ -1,0 +1,14 @@
+{
+  "scan_id": "scan_1772118433",
+  "status": "COMPLETED",
+  "target_url": "http://localhost:45/",
+  "start_time": 1772118433.562414,
+  "end_time": 1772118445.5809834,
+  "elapsed_time": 12.018569469451904,
+  "pages_crawled": 2,
+  "vulnerabilities_found": 0,
+  "vulnerabilities": [],
+  "report_generated": "2026-02-26T20:37:25.585718",
+  "report_version": "1.0.0",
+  "report_format": "json"
+}
