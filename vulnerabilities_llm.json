@@ -1,0 +1,92 @@
+[
+    {
+        "url": "http://localhost/vulnerabilities/brute/",
+        "form_action": "http://localhost/vulnerabilities/brute/",
+        "method": "get",
+        "vulnerable_input": "username",
+        "payload": "1 AND '1'=1--",
+        "error_detected": "Database error message found",
+        "remediation": "Use parameterized queries (prepared statements)."
+    },
+    {
+        "url": "http://localhost/vulnerabilities/brute/",
+        "form_action": "http://localhost/vulnerabilities/brute/",
+        "method": "get",
+        "vulnerable_input": "username",
+        "payload": "1' UNION SELECT NULL, NULL--",
+        "error_detected": "Database error message found",
+        "remediation": "Use parameterized queries (prepared statements)."
+    },
+    {
+        "url": "http://localhost/vulnerabilities/brute/",
+        "form_action": "http://localhost/vulnerabilities/brute/",
+        "method": "get",
+        "vulnerable_input": "username",
+        "payload": "1' AND '1'=1--",
+        "error_detected": "Database error message found",
+        "remediation": "Use parameterized queries (prepared statements)."
+    },
+    {
+        "url": "http://localhost/vulnerabilities/brute/",
+        "form_action": "http://localhost/vulnerabilities/brute/",
+        "method": "get",
+        "vulnerable_input": "username",
+        "payload": "1' OR 1=1 /*",
+        "error_detected": "Database error message found",
+        "remediation": "Use parameterized queries (prepared statements)."
+    },
+    {
+        "url": "http://localhost/vulnerabilities/brute/",
+        "form_action": "http://localhost/vulnerabilities/brute/",
+        "method": "get",
+        "vulnerable_input": "username",
+        "payload": "1 AND '1'='1'/*",
+        "error_detected": "Database error message found",
+        "remediation": "Use parameterized queries (prepared statements)."
+    },
+    {
+        "url": "http://localhost/vulnerabilities/sqli/",
+        "form_action": "http://localhost/vulnerabilities/sqli/",
+        "method": "get",
+        "vulnerable_input": "id",
+        "payload": "1 AND '1'=1--",
+        "error_detected": "Database error message found",
+        "remediation": "Use parameterized queries (prepared statements)."
+    },
+    {
+        "url": "http://localhost/vulnerabilities/sqli/",
+        "form_action": "http://localhost/vulnerabilities/sqli/",
+        "method": "get",
+        "vulnerable_input": "id",
+        "payload": "1' UNION SELECT NULL, NULL--",
+        "error_detected": "Database error message found",
+        "remediation": "Use parameterized queries (prepared statements)."
+    },
+    {
+        "url": "http://localhost/vulnerabilities/sqli/",
+        "form_action": "http://localhost/vulnerabilities/sqli/",
+        "method": "get",
+        "vulnerable_input": "id",
+        "payload": "1' AND '1'=1--",
+        "error_detected": "Database error message found",
+        "remediation": "Use parameterized queries (prepared statements)."
+    },
+    {
+        "url": "http://localhost/vulnerabilities/sqli/",
+        "form_action": "http://localhost/vulnerabilities/sqli/",
+        "method": "get",
+        "vulnerable_input": "id",
+        "payload": "1' OR 1=1 /*",
+        "error_detected": "Database error message found",
+        "remediation": "Use parameterized queries (prepared statements)."
+    },
+    {
+        "url": "http://localhost/vulnerabilities/sqli/",
+        "form_action": "http://localhost/vulnerabilities/sqli/",
+        "method": "get",
+        "vulnerable_input": "id",
+        "payload": "1 AND '1'='1'/*",
+        "error_detected": "Database error message found",
+        "remediation": "Use parameterized queries (prepared statements)."
+    }
+]
