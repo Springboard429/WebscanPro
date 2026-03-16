@@ -1,0 +1,38 @@
+[
+    {
+        "url": "http://localhost:8080/vulnerabilities/brute/",
+        "form_action": "http://localhost:8080/vulnerabilities/brute/",
+        "method": "get",
+        "vulnerable_input": "username",
+        "payload": "'",
+        "error_detected": "Database error message found",
+        "remediation": "Use parameterized queries (prepared statements)."
+    },
+    {
+        "url": "http://localhost:8080/vulnerabilities/brute/",
+        "form_action": "http://localhost:8080/vulnerabilities/brute/",
+        "method": "get",
+        "vulnerable_input": "username",
+        "payload": "' UNION SELECT null,database()--",
+        "error_detected": "Database error message found",
+        "remediation": "Use parameterized queries (prepared statements)."
+    },
+    {
+        "url": "http://localhost:8080/vulnerabilities/sqli/",
+        "form_action": "http://localhost:8080/vulnerabilities/sqli/",
+        "method": "get",
+        "vulnerable_input": "id",
+        "payload": "'",
+        "error_detected": "Database error message found",
+        "remediation": "Use parameterized queries (prepared statements)."
+    },
+    {
+        "url": "http://localhost:8080/vulnerabilities/sqli/",
+        "form_action": "http://localhost:8080/vulnerabilities/sqli/",
+        "method": "get",
+        "vulnerable_input": "id",
+        "payload": "' UNION SELECT null,database()--",
+        "error_detected": "Database error message found",
+        "remediation": "Use parameterized queries (prepared statements)."
+    }
+]
