@@ -1,0 +1,29 @@
+[
+    {
+        "url": "http://localhost:8080/vulnerabilities/sqli/",
+        "form_action": "http://localhost:8080/vulnerabilities/sqli/",
+        "method": "GET",
+        "vulnerable_input": "id",
+        "payload": "' OR '1'='1",
+        "error_detected": "Database error message found",
+        "remediation": "Use parameterized queries (prepared statements)."
+    },
+    {
+        "url": "http://localhost:8080/vulnerabilities/sqli/",
+        "form_action": "http://localhost:8080/vulnerabilities/sqli/",
+        "method": "GET",
+        "vulnerable_input": "id",
+        "payload": "' UNION SELECT null,database()--",
+        "error_detected": "Database error message found",
+        "remediation": "Use parameterized queries (prepared statements)."
+    },
+    {
+        "url": "http://localhost:8080/vulnerabilities/sqli/",
+        "form_action": "http://localhost:8080/vulnerabilities/sqli/",
+        "method": "GET",
+        "vulnerable_input": "id",
+        "payload": "' OR SLEEP(5)--",
+        "error_detected": "Database error message found",
+        "remediation": "Use parameterized queries (prepared statements)."
+    }
+]
