@@ -453,6 +453,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **DVWA Project**: Damn Vulnerable Web Application for testing
 - **Open Source Community**: Various security tools and libraries
 
+## 👨‍💻 Author
+
+**Prakrati Mishra**
+- GitHub: [https://github.com/prakrati3331]
+- LinkedIn: [https://www.linkedin.com/in/prakrati-mishra-19122b291/]
+
 ## 📞 Support
 
 For support and questions:
