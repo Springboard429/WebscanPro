@@ -1,0 +1,74 @@
+[
+    {
+        "url": "http://localhost/vulnerabilities/xss_r/",
+        "form_action": "http://localhost/vulnerabilities/xss_r/",
+        "method": "get",
+        "vulnerable_input": [
+            "name"
+        ],
+        "payload": "<a href=\"javascript:alert(1)\">Click</a>",
+        "evidence": "Reflected or stored payload detected",
+        "severity": "High"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_s/",
+        "form_action": "http://localhost/vulnerabilities/xss_s/",
+        "method": "post",
+        "vulnerable_input": [
+            "txtName"
+        ],
+        "payload": "<a href=\"javascript:alert(1)\">Click</a>",
+        "evidence": "Reflected or stored payload detected",
+        "severity": "High"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_s/",
+        "form_action": "http://localhost/vulnerabilities/xss_s/",
+        "method": "post",
+        "vulnerable_input": [
+            "txtName",
+            "mtxMessage"
+        ],
+        "payload": "<a href=\"javascript:alert(1)\">Click</a>",
+        "evidence": "Reflected or stored payload detected",
+        "severity": "High"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_s/",
+        "form_action": "http://localhost/vulnerabilities/xss_s/",
+        "method": "post",
+        "vulnerable_input": [
+            "txtName",
+            "mtxMessage",
+            "btnSign"
+        ],
+        "payload": "<a href=\"javascript:alert(1)\">Click</a>",
+        "evidence": "Reflected or stored payload detected",
+        "severity": "High"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_s/",
+        "form_action": "http://localhost/vulnerabilities/xss_s/",
+        "method": "post",
+        "vulnerable_input": [
+            "txtName",
+            "mtxMessage",
+            "btnSign",
+            "btnClear"
+        ],
+        "payload": "<a href=\"javascript:alert(1)\">Click</a>",
+        "evidence": "Reflected or stored payload detected",
+        "severity": "High"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_d/",
+        "form_action": "http://localhost/vulnerabilities/xss_d/",
+        "method": "get",
+        "vulnerable_input": [
+            "default"
+        ],
+        "payload": "<a href=\"javascript:alert(1)\">Click</a>",
+        "evidence": "Reflected or stored payload detected",
+        "severity": "High"
+    }
+]
