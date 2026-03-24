@@ -1,0 +1,326 @@
+[
+    {
+        "url": "http://localhost/vulnerabilities/xss_r/",
+        "form_action": "http://localhost/vulnerabilities/xss_r/",
+        "method": "GET",
+        "vulnerable_input": "name",
+        "payload": "<script>alert('WebScanPro_XSS')</script>",
+        "error_detected": "Payload reflected in response (possible XSS)",
+        "remediation": "Use input validation and output encoding (e.g., htmlspecialchars in PHP)"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_r/",
+        "form_action": "http://localhost/vulnerabilities/xss_r/",
+        "method": "GET",
+        "vulnerable_input": "name",
+        "payload": "<script>alert('WebScanPro_XSS')</script>",
+        "error_detected": "Payload reflected in response (possible XSS)",
+        "remediation": "Use input validation and output encoding (e.g., htmlspecialchars in PHP)"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_r/",
+        "form_action": "http://localhost/vulnerabilities/xss_r/",
+        "method": "GET",
+        "vulnerable_input": "name",
+        "payload": "\"><script>alert('WebScanPro_XSS')</script>",
+        "error_detected": "Payload reflected in response (possible XSS)",
+        "remediation": "Use input validation and output encoding (e.g., htmlspecialchars in PHP)"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_r/",
+        "form_action": "http://localhost/vulnerabilities/xss_r/",
+        "method": "GET",
+        "vulnerable_input": "name",
+        "payload": "\"><script>alert('WebScanPro_XSS')</script>",
+        "error_detected": "Payload reflected in response (possible XSS)",
+        "remediation": "Use input validation and output encoding (e.g., htmlspecialchars in PHP)"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_r/",
+        "form_action": "http://localhost/vulnerabilities/xss_r/",
+        "method": "GET",
+        "vulnerable_input": "name",
+        "payload": "<img src=\"x\" onerror=\"alert('WebScanPro_XSS')\">",
+        "error_detected": "Payload reflected in response (possible XSS)",
+        "remediation": "Use input validation and output encoding (e.g., htmlspecialchars in PHP)"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_r/",
+        "form_action": "http://localhost/vulnerabilities/xss_r/",
+        "method": "GET",
+        "vulnerable_input": "name",
+        "payload": "<img src=\"x\" onerror=\"alert('WebScanPro_XSS')\">",
+        "error_detected": "Payload reflected in response (possible XSS)",
+        "remediation": "Use input validation and output encoding (e.g., htmlspecialchars in PHP)"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_r/",
+        "form_action": "http://localhost/vulnerabilities/xss_r/",
+        "method": "GET",
+        "vulnerable_input": "name",
+        "payload": "\"><img src=\"x\" onerror=\"alert('WebScanPro_XSS')\">",
+        "error_detected": "Payload reflected in response (possible XSS)",
+        "remediation": "Use input validation and output encoding (e.g., htmlspecialchars in PHP)"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_r/",
+        "form_action": "http://localhost/vulnerabilities/xss_r/",
+        "method": "GET",
+        "vulnerable_input": "name",
+        "payload": "\"><img src=\"x\" onerror=\"alert('WebScanPro_XSS')\">",
+        "error_detected": "Payload reflected in response (possible XSS)",
+        "remediation": "Use input validation and output encoding (e.g., htmlspecialchars in PHP)"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_r/",
+        "form_action": "http://localhost/vulnerabilities/xss_r/",
+        "method": "GET",
+        "vulnerable_input": "name",
+        "payload": "<svg onload=\"alert('WebScanPro_XSS')\"></svg>",
+        "error_detected": "Payload reflected in response (possible XSS)",
+        "remediation": "Use input validation and output encoding (e.g., htmlspecialchars in PHP)"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_r/",
+        "form_action": "http://localhost/vulnerabilities/xss_r/",
+        "method": "GET",
+        "vulnerable_input": "name",
+        "payload": "<svg onload=\"alert('WebScanPro_XSS')\"></svg>",
+        "error_detected": "Payload reflected in response (possible XSS)",
+        "remediation": "Use input validation and output encoding (e.g., htmlspecialchars in PHP)"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_r/",
+        "form_action": "http://localhost/vulnerabilities/xss_r/",
+        "method": "GET",
+        "vulnerable_input": "name",
+        "payload": "</textarea><script>alert('WebScanPro_XSS')</script>",
+        "error_detected": "Payload reflected in response (possible XSS)",
+        "remediation": "Use input validation and output encoding (e.g., htmlspecialchars in PHP)"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_r/",
+        "form_action": "http://localhost/vulnerabilities/xss_r/",
+        "method": "GET",
+        "vulnerable_input": "name",
+        "payload": "</textarea><script>alert('WebScanPro_XSS')</script>",
+        "error_detected": "Payload reflected in response (possible XSS)",
+        "remediation": "Use input validation and output encoding (e.g., htmlspecialchars in PHP)"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_r/",
+        "form_action": "http://localhost/vulnerabilities/xss_r/",
+        "method": "GET",
+        "vulnerable_input": "name",
+        "payload": "<input autofocus onfocus=\"alert('WebScanPro_XSS')\">",
+        "error_detected": "Payload reflected in response (possible XSS)",
+        "remediation": "Use input validation and output encoding (e.g., htmlspecialchars in PHP)"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_r/",
+        "form_action": "http://localhost/vulnerabilities/xss_r/",
+        "method": "GET",
+        "vulnerable_input": "name",
+        "payload": "<input autofocus onfocus=\"alert('WebScanPro_XSS')\">",
+        "error_detected": "Payload reflected in response (possible XSS)",
+        "remediation": "Use input validation and output encoding (e.g., htmlspecialchars in PHP)"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_r/",
+        "form_action": "http://localhost/vulnerabilities/xss_r/",
+        "method": "GET",
+        "vulnerable_input": "name",
+        "payload": "javascript:alert('WebScanPro_XSS')",
+        "error_detected": "Payload reflected in response (possible XSS)",
+        "remediation": "Use input validation and output encoding (e.g., htmlspecialchars in PHP)"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_r/",
+        "form_action": "http://localhost/vulnerabilities/xss_r/",
+        "method": "GET",
+        "vulnerable_input": "name",
+        "payload": "javascript:alert('WebScanPro_XSS')",
+        "error_detected": "Payload reflected in response (possible XSS)",
+        "remediation": "Use input validation and output encoding (e.g., htmlspecialchars in PHP)"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_r/",
+        "form_action": "http://localhost/vulnerabilities/xss_r/",
+        "method": "GET",
+        "vulnerable_input": "name",
+        "payload": "<body onload=\"alert('WebScanPro_XSS')\">",
+        "error_detected": "Payload reflected in response (possible XSS)",
+        "remediation": "Use input validation and output encoding (e.g., htmlspecialchars in PHP)"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_r/",
+        "form_action": "http://localhost/vulnerabilities/xss_r/",
+        "method": "GET",
+        "vulnerable_input": "name",
+        "payload": "<body onload=\"alert('WebScanPro_XSS')\">",
+        "error_detected": "Payload reflected in response (possible XSS)",
+        "remediation": "Use input validation and output encoding (e.g., htmlspecialchars in PHP)"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_s/",
+        "form_action": "http://localhost/vulnerabilities/xss_s/",
+        "method": "POST",
+        "vulnerable_input": "txtName, mtxMessage",
+        "payload": "<script>alert('WebScanPro_XSS')</script>",
+        "error_detected": "Payload stored and executed (Stored XSS)",
+        "remediation": "Sanitize inputs and encode outputs before rendering"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_s/",
+        "form_action": "http://localhost/vulnerabilities/xss_s/",
+        "method": "POST",
+        "vulnerable_input": "txtName, mtxMessage",
+        "payload": "<script>alert('WebScanPro_XSS')</script>",
+        "error_detected": "Payload stored and executed (Stored XSS)",
+        "remediation": "Sanitize inputs and encode outputs before rendering"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_s/",
+        "form_action": "http://localhost/vulnerabilities/xss_s/",
+        "method": "POST",
+        "vulnerable_input": "txtName, mtxMessage",
+        "payload": "\"><script>alert('WebScanPro_XSS')</script>",
+        "error_detected": "Payload stored and executed (Stored XSS)",
+        "remediation": "Sanitize inputs and encode outputs before rendering"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_s/",
+        "form_action": "http://localhost/vulnerabilities/xss_s/",
+        "method": "POST",
+        "vulnerable_input": "txtName, mtxMessage",
+        "payload": "\"><script>alert('WebScanPro_XSS')</script>",
+        "error_detected": "Payload stored and executed (Stored XSS)",
+        "remediation": "Sanitize inputs and encode outputs before rendering"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_s/",
+        "form_action": "http://localhost/vulnerabilities/xss_s/",
+        "method": "POST",
+        "vulnerable_input": "txtName, mtxMessage",
+        "payload": "<img src=\"x\" onerror=\"alert('WebScanPro_XSS')\">",
+        "error_detected": "Payload stored and executed (Stored XSS)",
+        "remediation": "Sanitize inputs and encode outputs before rendering"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_s/",
+        "form_action": "http://localhost/vulnerabilities/xss_s/",
+        "method": "POST",
+        "vulnerable_input": "txtName, mtxMessage",
+        "payload": "<img src=\"x\" onerror=\"alert('WebScanPro_XSS')\">",
+        "error_detected": "Payload stored and executed (Stored XSS)",
+        "remediation": "Sanitize inputs and encode outputs before rendering"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_s/",
+        "form_action": "http://localhost/vulnerabilities/xss_s/",
+        "method": "POST",
+        "vulnerable_input": "txtName, mtxMessage",
+        "payload": "\"><img src=\"x\" onerror=\"alert('WebScanPro_XSS')\">",
+        "error_detected": "Payload stored and executed (Stored XSS)",
+        "remediation": "Sanitize inputs and encode outputs before rendering"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_s/",
+        "form_action": "http://localhost/vulnerabilities/xss_s/",
+        "method": "POST",
+        "vulnerable_input": "txtName, mtxMessage",
+        "payload": "\"><img src=\"x\" onerror=\"alert('WebScanPro_XSS')\">",
+        "error_detected": "Payload stored and executed (Stored XSS)",
+        "remediation": "Sanitize inputs and encode outputs before rendering"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_s/",
+        "form_action": "http://localhost/vulnerabilities/xss_s/",
+        "method": "POST",
+        "vulnerable_input": "txtName, mtxMessage",
+        "payload": "<svg onload=\"alert('WebScanPro_XSS')\"></svg>",
+        "error_detected": "Payload stored and executed (Stored XSS)",
+        "remediation": "Sanitize inputs and encode outputs before rendering"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_s/",
+        "form_action": "http://localhost/vulnerabilities/xss_s/",
+        "method": "POST",
+        "vulnerable_input": "txtName, mtxMessage",
+        "payload": "<svg onload=\"alert('WebScanPro_XSS')\"></svg>",
+        "error_detected": "Payload stored and executed (Stored XSS)",
+        "remediation": "Sanitize inputs and encode outputs before rendering"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_s/",
+        "form_action": "http://localhost/vulnerabilities/xss_s/",
+        "method": "POST",
+        "vulnerable_input": "txtName, mtxMessage",
+        "payload": "</textarea><script>alert('WebScanPro_XSS')</script>",
+        "error_detected": "Payload stored and executed (Stored XSS)",
+        "remediation": "Sanitize inputs and encode outputs before rendering"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_s/",
+        "form_action": "http://localhost/vulnerabilities/xss_s/",
+        "method": "POST",
+        "vulnerable_input": "txtName, mtxMessage",
+        "payload": "</textarea><script>alert('WebScanPro_XSS')</script>",
+        "error_detected": "Payload stored and executed (Stored XSS)",
+        "remediation": "Sanitize inputs and encode outputs before rendering"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_s/",
+        "form_action": "http://localhost/vulnerabilities/xss_s/",
+        "method": "POST",
+        "vulnerable_input": "txtName, mtxMessage",
+        "payload": "<input autofocus onfocus=\"alert('WebScanPro_XSS')\">",
+        "error_detected": "Payload stored and executed (Stored XSS)",
+        "remediation": "Sanitize inputs and encode outputs before rendering"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_s/",
+        "form_action": "http://localhost/vulnerabilities/xss_s/",
+        "method": "POST",
+        "vulnerable_input": "txtName, mtxMessage",
+        "payload": "<input autofocus onfocus=\"alert('WebScanPro_XSS')\">",
+        "error_detected": "Payload stored and executed (Stored XSS)",
+        "remediation": "Sanitize inputs and encode outputs before rendering"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_s/",
+        "form_action": "http://localhost/vulnerabilities/xss_s/",
+        "method": "POST",
+        "vulnerable_input": "txtName, mtxMessage",
+        "payload": "javascript:alert('WebScanPro_XSS')",
+        "error_detected": "Payload stored and executed (Stored XSS)",
+        "remediation": "Sanitize inputs and encode outputs before rendering"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_s/",
+        "form_action": "http://localhost/vulnerabilities/xss_s/",
+        "method": "POST",
+        "vulnerable_input": "txtName, mtxMessage",
+        "payload": "javascript:alert('WebScanPro_XSS')",
+        "error_detected": "Payload stored and executed (Stored XSS)",
+        "remediation": "Sanitize inputs and encode outputs before rendering"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_s/",
+        "form_action": "http://localhost/vulnerabilities/xss_s/",
+        "method": "POST",
+        "vulnerable_input": "txtName, mtxMessage",
+        "payload": "<body onload=\"alert('WebScanPro_XSS')\">",
+        "error_detected": "Payload stored and executed (Stored XSS)",
+        "remediation": "Sanitize inputs and encode outputs before rendering"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_s/",
+        "form_action": "http://localhost/vulnerabilities/xss_s/",
+        "method": "POST",
+        "vulnerable_input": "txtName, mtxMessage",
+        "payload": "<body onload=\"alert('WebScanPro_XSS')\">",
+        "error_detected": "Payload stored and executed (Stored XSS)",
+        "remediation": "Sanitize inputs and encode outputs before rendering"
+    }
+]

