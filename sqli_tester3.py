@@ -22,7 +22,7 @@ client = OpenAI(
 MODEL = "llama-3.1-8b-instant"
 
 INPUT_FILE = "urls_and_forms.json"
-OUTPUT_FILE = "vulnerabilities.json"
+OUTPUT_FILE = "sqli_vulnerabilities.json"
 
 LOGIN_URL = "http://localhost:8080/login.php"
 USERNAME = "admin"
@@ -204,7 +204,7 @@ def main():
 
     urls = data.get("urls", [])
 
-    print("[+] URLs found:", len(urls))
+    print(" URLs found:", len(urls))
 
     print("\n Generating SQL payloads using LLM")
 
