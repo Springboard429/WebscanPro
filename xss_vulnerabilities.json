@@ -1,0 +1,29 @@
+[
+    {
+        "url": "http://localhost:8080/vulnerabilities/xss_r/",
+        "form_action": "http://localhost:8080/vulnerabilities/xss_r/",
+        "method": "get",
+        "vulnerable_input": "name",
+        "payload": "<script>alert('WebScanPro_XSS')</script>",
+        "error_detected": "Payload reflected in HTML response",
+        "remediation": "Use context-aware output encoding (e.g. htmlspecialchars() in PHP)."
+    },
+    {
+        "url": "http://localhost:8080/vulnerabilities/xss_s/",
+        "form_action": "http://localhost:8080/vulnerabilities/xss_s/",
+        "method": "post",
+        "vulnerable_input": "txtName",
+        "payload": "<script>alert('WebScanPro_XSS')</script>",
+        "error_detected": "Payload reflected in HTML response",
+        "remediation": "Use context-aware output encoding (e.g. htmlspecialchars() in PHP)."
+    },
+    {
+        "url": "http://localhost:8080/vulnerabilities/csp/",
+        "form_action": "http://localhost:8080/vulnerabilities/csp/",
+        "method": "post",
+        "vulnerable_input": "include",
+        "payload": "<script>alert('WebScanPro_XSS')</script>",
+        "error_detected": "Payload reflected in HTML response",
+        "remediation": "Use context-aware output encoding (e.g. htmlspecialchars() in PHP)."
+    }
+]
