@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 import json
 
-BASE = "http://localhost/"
+BASE = "http://localhost:8080/"
 LOGIN_URL = urljoin(BASE, "login.php")
 START_URL = urljoin(BASE, "index.php")
 

@@ -1,7 +1,7 @@
 [
     {
-        "page": "http://localhost/setup.php",
-        "action": "http://localhost/",
+        "page": "http://localhost:8080/setup.php",
+        "action": "http://localhost:8080/",
         "method": "post",
         "inputs": [
             {
@@ -15,8 +15,8 @@
         ]
     },
     {
-        "page": "http://localhost/vulnerabilities/brute/",
-        "action": "http://localhost/",
+        "page": "http://localhost:8080/vulnerabilities/brute/",
+        "action": "http://localhost:8080/",
         "method": "get",
         "inputs": [
             {
@@ -34,8 +34,8 @@
         ]
     },
     {
-        "page": "http://localhost/vulnerabilities/exec/",
-        "action": "http://localhost/",
+        "page": "http://localhost:8080/vulnerabilities/exec/",
+        "action": "http://localhost:8080/",
         "method": "post",
         "inputs": [
             {
@@ -49,8 +49,8 @@
         ]
     },
     {
-        "page": "http://localhost/vulnerabilities/csrf/",
-        "action": "http://localhost/",
+        "page": "http://localhost:8080/vulnerabilities/csrf/",
+        "action": "http://localhost:8080/",
         "method": "get",
         "inputs": [
             {
@@ -68,8 +68,8 @@
         ]
     },
     {
-        "page": "http://localhost/vulnerabilities/upload/",
-        "action": "http://localhost/",
+        "page": "http://localhost:8080/vulnerabilities/upload/",
+        "action": "http://localhost:8080/",
         "method": "post",
         "inputs": [
             {
@@ -87,8 +87,8 @@
         ]
     },
     {
-        "page": "http://localhost/vulnerabilities/captcha/",
-        "action": "http://localhost/",
+        "page": "http://localhost:8080/vulnerabilities/captcha/",
+        "action": "http://localhost:8080/",
         "method": "post",
         "inputs": [
             {
@@ -110,8 +110,8 @@
         ]
     },
     {
-        "page": "http://localhost/vulnerabilities/sqli/",
-        "action": "http://localhost/",
+        "page": "http://localhost:8080/vulnerabilities/sqli/",
+        "action": "http://localhost:8080/",
         "method": "get",
         "inputs": [
             {
@@ -125,8 +125,8 @@
         ]
     },
     {
-        "page": "http://localhost/vulnerabilities/sqli_blind/",
-        "action": "http://localhost/",
+        "page": "http://localhost:8080/vulnerabilities/sqli_blind/",
+        "action": "http://localhost:8080/",
         "method": "get",
         "inputs": [
             {
@@ -140,8 +140,8 @@
         ]
     },
     {
-        "page": "http://localhost/vulnerabilities/weak_id/",
-        "action": "http://localhost/",
+        "page": "http://localhost:8080/vulnerabilities/weak_id/",
+        "action": "http://localhost:8080/",
         "method": "post",
         "inputs": [
             {
@@ -151,8 +151,8 @@
         ]
     },
     {
-        "page": "http://localhost/vulnerabilities/xss_d/",
-        "action": "http://localhost/",
+        "page": "http://localhost:8080/vulnerabilities/xss_d/",
+        "action": "http://localhost:8080/",
         "method": "get",
         "inputs": [
             {
@@ -162,8 +162,8 @@
         ]
     },
     {
-        "page": "http://localhost/vulnerabilities/xss_r/",
-        "action": "http://localhost/",
+        "page": "http://localhost:8080/vulnerabilities/xss_r/",
+        "action": "http://localhost:8080/",
         "method": "get",
         "inputs": [
             {
@@ -177,8 +177,8 @@
         ]
     },
     {
-        "page": "http://localhost/vulnerabilities/xss_s/",
-        "action": "http://localhost/",
+        "page": "http://localhost:8080/vulnerabilities/xss_s/",
+        "action": "http://localhost:8080/",
         "method": "post",
         "inputs": [
             {
@@ -196,8 +196,8 @@
         ]
     },
     {
-        "page": "http://localhost/vulnerabilities/csp/",
-        "action": "http://localhost/",
+        "page": "http://localhost:8080/vulnerabilities/csp/",
+        "action": "http://localhost:8080/",
         "method": "post",
         "inputs": [
             {
@@ -211,8 +211,8 @@
         ]
     },
     {
-        "page": "http://localhost/vulnerabilities/javascript/",
-        "action": "http://localhost/",
+        "page": "http://localhost:8080/vulnerabilities/javascript/",
+        "action": "http://localhost:8080/",
         "method": "post",
         "inputs": [
             {
@@ -230,8 +230,8 @@
         ]
     },
     {
-        "page": "http://localhost/security.php",
-        "action": "http://localhost/",
+        "page": "http://localhost:8080/security.php",
+        "action": "http://localhost:8080/",
         "method": "post",
         "inputs": [
             {
