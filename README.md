@@ -121,7 +121,7 @@ You should see:
 ```bash
 cd /path/to/webscanpro
 source .venv/bin/activate
-uvicorn api.main:app --reload --host 127.0.0.1 --port 8000
+uvicorn api.main:app --reload
 ```
 
 ### Terminal 2: Frontend
@@ -294,7 +294,7 @@ npm run build && npx vercel --prod
 
 Run with Uvicorn for production:
 ```bash
-uvicorn api.main:app --reload
+uvicorn api.main:app --host 0.0.0.0 --port 8000 --workers 4
 ```
 
 Or with Docker:
@@ -304,7 +304,7 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 COPY . .
-CMD ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8000","--workers", "4"]
 ```
 
 ---
