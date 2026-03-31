@@ -292,10 +292,9 @@ npm run build && npx vercel --prod
 
 ### Backend
 
-Use Gunicorn or similar for production ASGI serving:
+Run with Uvicorn for production:
 ```bash
-pip install gunicorn
-gunicorn -w 4 -k uvicorn.workers.UvicornWorker api.main:app --bind 0.0.0.0:8000
+uvicorn api.main:app --reload
 ```
 
 Or with Docker:
