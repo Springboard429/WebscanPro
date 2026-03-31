@@ -1,0 +1,9 @@
+[
+    {
+        "url": "http://localhost/vulnerabilities/sqli/",
+        "vulnerability_type": "Insecure Direct Object Reference (IDOR)",
+        "vulnerable_input": "id",
+        "description": "Manipulating the id parameter returned unique data records.",
+        "remediation": "Implement access control checks to verify the authenticated user is authorized to access the requested object ID."
+    }
+]

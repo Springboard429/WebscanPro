@@ -1,0 +1,653 @@
+{
+  "target": "http://localhost",
+  "scan_time": "2026-03-31T11:47:02.487039",
+  "session": {
+    "cookie_name": "PHPSESSID",
+    "cookie_value": "6a39arh7g2np5p0jehovhao682",
+    "security_level": "low"
+  },
+  "urls": [
+    {
+      "url": "http://localhost",
+      "status_code": 200,
+      "title": "Welcome :: Damn Vulnerable Web Application (DVWA) v1.10 *Development*",
+      "depth": 0
+    },
+    {
+      "url": "http://localhost/vulnerabilities/exec/",
+      "status_code": 200,
+      "title": "Vulnerability: Command Injection :: Damn Vulnerable Web Application (DVWA) v1.10 *Development*",
+      "depth": 1
+    },
+    {
+      "url": "http://localhost/about.php",
+      "status_code": 200,
+      "title": "About :: Damn Vulnerable Web Application (DVWA) v1.10 *Development*",
+      "depth": 1
+    },
+    {
+      "url": "http://localhost/vulnerabilities/sqli_blind/",
+      "status_code": 200,
+      "title": "Vulnerability: SQL Injection (Blind) :: Damn Vulnerable Web Application (DVWA) v1.10 *Development*",
+      "depth": 1
+    },
+    {
+      "url": "http://localhost/vulnerabilities/csrf/",
+      "status_code": 200,
+      "title": "Vulnerability: Cross Site Request Forgery (CSRF) :: Damn Vulnerable Web Application (DVWA) v1.10 *Development*",
+      "depth": 1
+    },
+    {
+      "url": "http://localhost/vulnerabilities/sqli/",
+      "status_code": 200,
+      "title": "Vulnerability: SQL Injection :: Damn Vulnerable Web Application (DVWA) v1.10 *Development*",
+      "depth": 1
+    },
+    {
+      "url": "http://localhost/",
+      "status_code": 200,
+      "title": "Welcome :: Damn Vulnerable Web Application (DVWA) v1.10 *Development*",
+      "depth": 1
+    },
+    {
+      "url": "http://localhost/vulnerabilities/xss_s/",
+      "status_code": 200,
+      "title": "Vulnerability: Stored Cross Site Scripting (XSS) :: Damn Vulnerable Web Application (DVWA) v1.10 *Development*",
+      "depth": 1
+    },
+    {
+      "url": "http://localhost/vulnerabilities/csp/",
+      "status_code": 200,
+      "title": "Vulnerability: Content Security Policy (CSP) Bypass :: Damn Vulnerable Web Application (DVWA) v1.10 *Development*",
+      "depth": 1
+    },
+    {
+      "url": "http://localhost/vulnerabilities/xss_d/",
+      "status_code": 200,
+      "title": "Vulnerability: DOM Based Cross Site Scripting (XSS) :: Damn Vulnerable Web Application (DVWA) v1.10 *Development*",
+      "depth": 1
+    },
+    {
+      "url": "http://localhost/vulnerabilities/upload/",
+      "status_code": 200,
+      "title": "Vulnerability: File Upload :: Damn Vulnerable Web Application (DVWA) v1.10 *Development*",
+      "depth": 1
+    },
+    {
+      "url": "http://localhost/vulnerabilities/brute/",
+      "status_code": 200,
+      "title": "Vulnerability: Brute Force :: Damn Vulnerable Web Application (DVWA) v1.10 *Development*",
+      "depth": 1
+    },
+    {
+      "url": "http://localhost/phpinfo.php",
+      "status_code": 200,
+      "title": "phpinfo()",
+      "depth": 1
+    },
+    {
+      "url": "http://localhost/security.php",
+      "status_code": 200,
+      "title": "DVWA Security :: Damn Vulnerable Web Application (DVWA) v1.10 *Development*",
+      "depth": 1
+    },
+    {
+      "url": "http://localhost/vulnerabilities/javascript/",
+      "status_code": 200,
+      "title": "Vulnerability: JavaScript Attacks :: Damn Vulnerable Web Application (DVWA) v1.10 *Development*",
+      "depth": 1
+    },
+    {
+      "url": "http://localhost/vulnerabilities/weak_id/",
+      "status_code": 200,
+      "title": "Vulnerability: Weak Session IDs :: Damn Vulnerable Web Application (DVWA) v1.10 *Development*",
+      "depth": 1
+    },
+    {
+      "url": "http://localhost/instructions.php",
+      "status_code": 200,
+      "title": "Instructions :: Damn Vulnerable Web Application (DVWA) v1.10 *Development*",
+      "depth": 1
+    },
+    {
+      "url": "http://localhost/vulnerabilities/fi/?page=include.php",
+      "status_code": 200,
+      "title": "Vulnerability: File Inclusion :: Damn Vulnerable Web Application (DVWA) v1.10 *Development*",
+      "depth": 1
+    },
+    {
+      "url": "http://localhost/vulnerabilities/xss_r/",
+      "status_code": 200,
+      "title": "Vulnerability: Reflected Cross Site Scripting (XSS) :: Damn Vulnerable Web Application (DVWA) v1.10 *Development*",
+      "depth": 1
+    },
+    {
+      "url": "http://localhost/vulnerabilities/captcha/",
+      "status_code": 200,
+      "title": "Vulnerability: Insecure CAPTCHA :: Damn Vulnerable Web Application (DVWA) v1.10 *Development*",
+      "depth": 1
+    },
+    {
+      "url": "http://localhost/instructions.php?doc=PHPIDS-license",
+      "status_code": 200,
+      "title": "Instructions :: Damn Vulnerable Web Application (DVWA) v1.10 *Development*",
+      "depth": 2
+    },
+    {
+      "url": "http://localhost/security.php?phpids=on",
+      "status_code": 200,
+      "title": "DVWA Security :: Damn Vulnerable Web Application (DVWA) v1.10 *Development*",
+      "depth": 2
+    },
+    {
+      "url": "http://localhost/ids_log.php",
+      "status_code": 200,
+      "title": "PHPIDS Log :: Damn Vulnerable Web Application (DVWA) v1.10 *Development*",
+      "depth": 2
+    },
+    {
+      "url": "http://localhost/security.php?test=%22><script>eval(window.name)</script>",
+      "status_code": 200,
+      "title": "",
+      "depth": 2
+    },
+    {
+      "url": "http://localhost/instructions.php?doc=readme",
+      "status_code": 200,
+      "title": "Instructions :: Damn Vulnerable Web Application (DVWA) v1.10 *Development*",
+      "depth": 2
+    },
+    {
+      "url": "http://localhost/instructions.php?doc=changelog",
+      "status_code": 200,
+      "title": "Instructions :: Damn Vulnerable Web Application (DVWA) v1.10 *Development*",
+      "depth": 2
+    },
+    {
+      "url": "http://localhost/instructions.php?doc=copying",
+      "status_code": 200,
+      "title": "Instructions :: Damn Vulnerable Web Application (DVWA) v1.10 *Development*",
+      "depth": 2
+    },
+    {
+      "url": "http://localhost/instructions.php?doc=PDF",
+      "status_code": 200,
+      "title": "Instructions :: Damn Vulnerable Web Application (DVWA) v1.10 *Development*",
+      "depth": 2
+    },
+    {
+      "url": "http://localhost/vulnerabilities/fi/?page=file1.php",
+      "status_code": 200,
+      "title": "Vulnerability: File Inclusion :: Damn Vulnerable Web Application (DVWA) v1.10 *Development*",
+      "depth": 2
+    },
+    {
+      "url": "http://localhost/vulnerabilities/fi/?page=file2.php",
+      "status_code": 200,
+      "title": "Vulnerability: File Inclusion :: Damn Vulnerable Web Application (DVWA) v1.10 *Development*",
+      "depth": 2
+    },
+    {
+      "url": "http://localhost/vulnerabilities/fi/?page=file3.php",
+      "status_code": 200,
+      "title": "Vulnerability: File Inclusion :: Damn Vulnerable Web Application (DVWA) v1.10 *Development*",
+      "depth": 2
+    },
+    {
+      "url": "http://localhost/security.php?phpids=off",
+      "status_code": 200,
+      "title": "DVWA Security :: Damn Vulnerable Web Application (DVWA) v1.10 *Development*",
+      "depth": 3
+    }
+  ],
+  "forms": [
+    {
+      "action": "http://localhost/vulnerabilities/exec/",
+      "method": "POST",
+      "inputs": [
+        {
+          "name": "ip",
+          "type": "text",
+          "value": "",
+          "required": false
+        },
+        {
+          "name": "Submit",
+          "type": "submit",
+          "value": "Submit",
+          "required": false
+        }
+      ],
+      "name": "ping"
+    },
+    {
+      "action": "http://localhost/vulnerabilities/sqli_blind/",
+      "method": "GET",
+      "inputs": [
+        {
+          "name": "id",
+          "type": "text",
+          "value": "",
+          "required": false
+        },
+        {
+          "name": "Submit",
+          "type": "submit",
+          "value": "Submit",
+          "required": false
+        }
+      ],
+      "name": ""
+    },
+    {
+      "action": "http://localhost/vulnerabilities/csrf/",
+      "method": "GET",
+      "inputs": [
+        {
+          "name": "password_new",
+          "type": "password",
+          "value": "",
+          "required": false
+        },
+        {
+          "name": "password_conf",
+          "type": "password",
+          "value": "",
+          "required": false
+        },
+        {
+          "name": "Change",
+          "type": "submit",
+          "value": "Change",
+          "required": false
+        }
+      ],
+      "name": ""
+    },
+    {
+      "action": "http://localhost/vulnerabilities/sqli/",
+      "method": "GET",
+      "inputs": [
+        {
+          "name": "id",
+          "type": "text",
+          "value": "",
+          "required": false
+        },
+        {
+          "name": "Submit",
+          "type": "submit",
+          "value": "Submit",
+          "required": false
+        }
+      ],
+      "name": ""
+    },
+    {
+      "action": "http://localhost/vulnerabilities/xss_s/",
+      "method": "POST",
+      "inputs": [
+        {
+          "name": "txtName",
+          "type": "text",
+          "value": "",
+          "required": false
+        },
+        {
+          "name": "mtxMessage",
+          "type": "textarea",
+          "value": "",
+          "required": false
+        },
+        {
+          "name": "btnSign",
+          "type": "submit",
+          "value": "Sign Guestbook",
+          "required": false
+        },
+        {
+          "name": "btnClear",
+          "type": "submit",
+          "value": "Clear Guestbook",
+          "required": false
+        }
+      ],
+      "name": "guestform"
+    },
+    {
+      "action": "http://localhost/vulnerabilities/csp/",
+      "method": "POST",
+      "inputs": [
+        {
+          "name": "include",
+          "type": "text",
+          "value": "",
+          "required": false
+        }
+      ],
+      "name": "csp"
+    },
+    {
+      "action": "http://localhost/vulnerabilities/xss_d/",
+      "method": "GET",
+      "inputs": [
+        {
+          "name": "default",
+          "type": "select",
+          "value": "",
+          "required": false
+        }
+      ],
+      "name": "XSS"
+    },
+    {
+      "action": "http://localhost/vulnerabilities/upload/",
+      "method": "POST",
+      "inputs": [
+        {
+          "name": "MAX_FILE_SIZE",
+          "type": "hidden",
+          "value": "100000",
+          "required": false
+        },
+        {
+          "name": "uploaded",
+          "type": "file",
+          "value": "",
+          "required": false
+        },
+        {
+          "name": "Upload",
+          "type": "submit",
+          "value": "Upload",
+          "required": false
+        }
+      ],
+      "name": ""
+    },
+    {
+      "action": "http://localhost/vulnerabilities/brute/",
+      "method": "GET",
+      "inputs": [
+        {
+          "name": "username",
+          "type": "text",
+          "value": "",
+          "required": false
+        },
+        {
+          "name": "password",
+          "type": "password",
+          "value": "",
+          "required": false
+        },
+        {
+          "name": "Login",
+          "type": "submit",
+          "value": "Login",
+          "required": false
+        }
+      ],
+      "name": ""
+    },
+    {
+      "action": "http://localhost/security.php",
+      "method": "POST",
+      "inputs": [
+        {
+          "name": "security",
+          "type": "select",
+          "value": "",
+          "required": false
+        },
+        {
+          "name": "seclev_submit",
+          "type": "submit",
+          "value": "Submit",
+          "required": false
+        },
+        {
+          "name": "user_token",
+          "type": "hidden",
+          "value": "ed95b04315e5964e867eb10e0b40c023",
+          "required": false
+        }
+      ],
+      "name": ""
+    },
+    {
+      "action": "http://localhost/vulnerabilities/javascript/",
+      "method": "POST",
+      "inputs": [
+        {
+          "name": "token",
+          "type": "hidden",
+          "value": "",
+          "required": false
+        },
+        {
+          "name": "phrase",
+          "type": "text",
+          "value": "ChangeMe",
+          "required": false
+        },
+        {
+          "name": "send",
+          "type": "submit",
+          "value": "Submit",
+          "required": false
+        }
+      ],
+      "name": "low_js"
+    },
+    {
+      "action": "http://localhost/vulnerabilities/fi/?page=include.php",
+      "method": "GET",
+      "inputs": [
+        {
+          "name": "page",
+          "type": "text",
+          "value": "",
+          "required": false
+        }
+      ],
+      "name": ""
+    },
+    {
+      "action": "http://localhost/vulnerabilities/xss_r/",
+      "method": "GET",
+      "inputs": [
+        {
+          "name": "name",
+          "type": "text",
+          "value": "",
+          "required": false
+        }
+      ],
+      "name": "XSS"
+    },
+    {
+      "action": "http://localhost/vulnerabilities/captcha/",
+      "method": "POST",
+      "inputs": [
+        {
+          "name": "step",
+          "type": "hidden",
+          "value": "1",
+          "required": false
+        },
+        {
+          "name": "password_new",
+          "type": "password",
+          "value": "",
+          "required": false
+        },
+        {
+          "name": "password_conf",
+          "type": "password",
+          "value": "",
+          "required": false
+        },
+        {
+          "name": "Change",
+          "type": "submit",
+          "value": "Change",
+          "required": false
+        }
+      ],
+      "name": ""
+    },
+    {
+      "action": "http://localhost/security.php?phpids=on",
+      "method": "POST",
+      "inputs": [
+        {
+          "name": "security",
+          "type": "select",
+          "value": "",
+          "required": false
+        },
+        {
+          "name": "seclev_submit",
+          "type": "submit",
+          "value": "Submit",
+          "required": false
+        },
+        {
+          "name": "user_token",
+          "type": "hidden",
+          "value": "3aa47427f020fa5b40f10c220fd416b1",
+          "required": false
+        }
+      ],
+      "name": ""
+    },
+    {
+      "action": "http://localhost/ids_log.php",
+      "method": "GET",
+      "inputs": [
+        {
+          "name": "clear_log",
+          "type": "submit",
+          "value": "Clear Log",
+          "required": false
+        }
+      ],
+      "name": ""
+    },
+    {
+      "action": "http://localhost/security.php?test=%22><script>eval(window.name)</script>",
+      "method": "GET",
+      "inputs": [
+        {
+          "name": "test",
+          "type": "text",
+          "value": "",
+          "required": false
+        }
+      ],
+      "name": ""
+    },
+    {
+      "action": "http://localhost/vulnerabilities/fi/?page=file1.php",
+      "method": "GET",
+      "inputs": [
+        {
+          "name": "page",
+          "type": "text",
+          "value": "",
+          "required": false
+        }
+      ],
+      "name": ""
+    },
+    {
+      "action": "http://localhost/vulnerabilities/fi/?page=file2.php",
+      "method": "GET",
+      "inputs": [
+        {
+          "name": "page",
+          "type": "text",
+          "value": "",
+          "required": false
+        }
+      ],
+      "name": ""
+    },
+    {
+      "action": "http://localhost/vulnerabilities/fi/?page=file3.php",
+      "method": "GET",
+      "inputs": [
+        {
+          "name": "page",
+          "type": "text",
+          "value": "",
+          "required": false
+        }
+      ],
+      "name": ""
+    },
+    {
+      "action": "http://localhost/security.php?phpids=off",
+      "method": "POST",
+      "inputs": [
+        {
+          "name": "security",
+          "type": "select",
+          "value": "",
+          "required": false
+        },
+        {
+          "name": "seclev_submit",
+          "type": "submit",
+          "value": "Submit",
+          "required": false
+        },
+        {
+          "name": "user_token",
+          "type": "hidden",
+          "value": "03102a0f76a9b2d2814463e3faeab618",
+          "required": false
+        }
+      ],
+      "name": ""
+    }
+  ],
+  "parameters": [
+    "txtName",
+    "username",
+    "password_new",
+    "btnClear",
+    "Submit",
+    "step",
+    "MAX_FILE_SIZE",
+    "btnSign",
+    "clear_log",
+    "user_token",
+    "phrase",
+    "name",
+    "Login",
+    "Change",
+    "seclev_submit",
+    "token",
+    "id",
+    "Upload",
+    "uploaded",
+    "default",
+    "mtxMessage",
+    "test",
+    "include",
+    "page",
+    "send",
+    "password_conf",
+    "security",
+    "ip",
+    "password"
+  ],
+  "statistics": {
+    "urls_visited": 32,
+    "urls_found": 32,
+    "forms_found": 21,
+    "logged_in": true
+  }
+}

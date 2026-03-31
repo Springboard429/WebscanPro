@@ -1,0 +1,182 @@
+[
+    {
+        "url": "http://localhost/vulnerabilities/xss_r/",
+        "form_action": "http://localhost/vulnerabilities/xss_r/",
+        "method": "get",
+        "vulnerable_input": "name",
+        "payload": "<script>alert('WebScanPro_XSS')</script>",
+        "error_detected": "Payload reflected in HTML response",
+        "remediation": "Use context-aware output encoding (e.g., htmlspecialchars() in PHP) to sanitize user input before rendering it in the browser."
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_r/",
+        "form_action": "http://localhost/vulnerabilities/xss_r/",
+        "method": "get",
+        "vulnerable_input": "name",
+        "payload": "\"><img src=x onerror=alert('WebScanPro_XSS')>",
+        "error_detected": "Payload reflected in HTML response",
+        "remediation": "Use context-aware output encoding (e.g., htmlspecialchars() in PHP) to sanitize user input before rendering it in the browser."
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_r/",
+        "form_action": "http://localhost/vulnerabilities/xss_r/",
+        "method": "get",
+        "vulnerable_input": "name",
+        "payload": "javascript:alert('WebScanPro_XSS')",
+        "error_detected": "Payload reflected in HTML response",
+        "remediation": "Use context-aware output encoding (e.g., htmlspecialchars() in PHP) to sanitize user input before rendering it in the browser."
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_r/",
+        "form_action": "http://localhost/vulnerabilities/xss_r/",
+        "method": "get",
+        "vulnerable_input": "name",
+        "payload": "\" onfocus=\"alert('WebScanPro_XSS')\" autofocus=\"",
+        "error_detected": "Payload reflected in HTML response",
+        "remediation": "Use context-aware output encoding (e.g., htmlspecialchars() in PHP) to sanitize user input before rendering it in the browser."
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_r/",
+        "form_action": "http://localhost/vulnerabilities/xss_r/",
+        "method": "get",
+        "vulnerable_input": "name",
+        "payload": "<svg/onload=alert('WebScanPro_XSS')>",
+        "error_detected": "Payload reflected in HTML response",
+        "remediation": "Use context-aware output encoding (e.g., htmlspecialchars() in PHP) to sanitize user input before rendering it in the browser."
+    },
+    {
+        "url": "http://localhost/vulnerabilities/csp/",
+        "form_action": "http://localhost/vulnerabilities/csp/",
+        "method": "post",
+        "vulnerable_input": "include",
+        "payload": "<script>alert('WebScanPro_XSS')</script>",
+        "error_detected": "Payload reflected in HTML response",
+        "remediation": "Use context-aware output encoding (e.g., htmlspecialchars() in PHP) to sanitize user input before rendering it in the browser."
+    },
+    {
+        "url": "http://localhost/vulnerabilities/csp/",
+        "form_action": "http://localhost/vulnerabilities/csp/",
+        "method": "post",
+        "vulnerable_input": "include",
+        "payload": "\"><img src=x onerror=alert('WebScanPro_XSS')>",
+        "error_detected": "Payload reflected in HTML response",
+        "remediation": "Use context-aware output encoding (e.g., htmlspecialchars() in PHP) to sanitize user input before rendering it in the browser."
+    },
+    {
+        "url": "http://localhost/vulnerabilities/csp/",
+        "form_action": "http://localhost/vulnerabilities/csp/",
+        "method": "post",
+        "vulnerable_input": "include",
+        "payload": "')</script><script>alert('WebScanPro_XSS')</script><script>",
+        "error_detected": "Payload reflected in HTML response",
+        "remediation": "Use context-aware output encoding (e.g., htmlspecialchars() in PHP) to sanitize user input before rendering it in the browser."
+    },
+    {
+        "url": "http://localhost/vulnerabilities/csp/",
+        "form_action": "http://localhost/vulnerabilities/csp/",
+        "method": "post",
+        "vulnerable_input": "include",
+        "payload": "javascript:alert('WebScanPro_XSS')",
+        "error_detected": "Payload reflected in HTML response",
+        "remediation": "Use context-aware output encoding (e.g., htmlspecialchars() in PHP) to sanitize user input before rendering it in the browser."
+    },
+    {
+        "url": "http://localhost/vulnerabilities/csp/",
+        "form_action": "http://localhost/vulnerabilities/csp/",
+        "method": "post",
+        "vulnerable_input": "include",
+        "payload": "onerror=alert('WebScanPro_XSS') alt=x",
+        "error_detected": "Payload reflected in HTML response",
+        "remediation": "Use context-aware output encoding (e.g., htmlspecialchars() in PHP) to sanitize user input before rendering it in the browser."
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_s/",
+        "form_action": "http://localhost/vulnerabilities/xss_s/",
+        "method": "post",
+        "vulnerable_input": "txtName",
+        "payload": "<script>alert('WebScanPro_XSS')</script>",
+        "error_detected": "Payload reflected in HTML response",
+        "remediation": "Use context-aware output encoding (e.g., htmlspecialchars() in PHP) to sanitize user input before rendering it in the browser."
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_s/",
+        "form_action": "http://localhost/vulnerabilities/xss_s/",
+        "method": "post",
+        "vulnerable_input": "mtxMessage",
+        "payload": "<script>alert('WebScanPro_XSS')</script>",
+        "error_detected": "Payload reflected in HTML response",
+        "remediation": "Use context-aware output encoding (e.g., htmlspecialchars() in PHP) to sanitize user input before rendering it in the browser."
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_s/",
+        "form_action": "http://localhost/vulnerabilities/xss_s/",
+        "method": "post",
+        "vulnerable_input": "txtName",
+        "payload": "\"><img src=x onerror=alert('WebScanPro_XSS')>",
+        "error_detected": "Payload reflected in HTML response",
+        "remediation": "Use context-aware output encoding (e.g., htmlspecialchars() in PHP) to sanitize user input before rendering it in the browser."
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_s/",
+        "form_action": "http://localhost/vulnerabilities/xss_s/",
+        "method": "post",
+        "vulnerable_input": "mtxMessage",
+        "payload": "\"><img src=x onerror=alert('WebScanPro_XSS')>",
+        "error_detected": "Payload reflected in HTML response",
+        "remediation": "Use context-aware output encoding (e.g., htmlspecialchars() in PHP) to sanitize user input before rendering it in the browser."
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_s/",
+        "form_action": "http://localhost/vulnerabilities/xss_s/",
+        "method": "post",
+        "vulnerable_input": "txtName",
+        "payload": "\"><svg/onload=alert('WebScanPro_XSS')>",
+        "error_detected": "Payload reflected in HTML response",
+        "remediation": "Use context-aware output encoding (e.g., htmlspecialchars() in PHP) to sanitize user input before rendering it in the browser."
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_s/",
+        "form_action": "http://localhost/vulnerabilities/xss_s/",
+        "method": "post",
+        "vulnerable_input": "mtxMessage",
+        "payload": "\"><svg/onload=alert('WebScanPro_XSS')>",
+        "error_detected": "Payload reflected in HTML response",
+        "remediation": "Use context-aware output encoding (e.g., htmlspecialchars() in PHP) to sanitize user input before rendering it in the browser."
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_s/",
+        "form_action": "http://localhost/vulnerabilities/xss_s/",
+        "method": "post",
+        "vulnerable_input": "txtName",
+        "payload": "javascript:alert('WebScanPro_XSS')",
+        "error_detected": "Payload reflected in HTML response",
+        "remediation": "Use context-aware output encoding (e.g., htmlspecialchars() in PHP) to sanitize user input before rendering it in the browser."
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_s/",
+        "form_action": "http://localhost/vulnerabilities/xss_s/",
+        "method": "post",
+        "vulnerable_input": "mtxMessage",
+        "payload": "javascript:alert('WebScanPro_XSS')",
+        "error_detected": "Payload reflected in HTML response",
+        "remediation": "Use context-aware output encoding (e.g., htmlspecialchars() in PHP) to sanitize user input before rendering it in the browser."
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_s/",
+        "form_action": "http://localhost/vulnerabilities/xss_s/",
+        "method": "post",
+        "vulnerable_input": "txtName",
+        "payload": "\"><div onmouseover=alert('WebScanPro_XSS')>CLICK ME</div>",
+        "error_detected": "Payload reflected in HTML response",
+        "remediation": "Use context-aware output encoding (e.g., htmlspecialchars() in PHP) to sanitize user input before rendering it in the browser."
+    },
+    {
+        "url": "http://localhost/vulnerabilities/xss_s/",
+        "form_action": "http://localhost/vulnerabilities/xss_s/",
+        "method": "post",
+        "vulnerable_input": "mtxMessage",
+        "payload": "\"><div onmouseover=alert('WebScanPro_XSS')>CLICK ME</div>",
+        "error_detected": "Payload reflected in HTML response",
+        "remediation": "Use context-aware output encoding (e.g., htmlspecialchars() in PHP) to sanitize user input before rendering it in the browser."
+    }
+]

