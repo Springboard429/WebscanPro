@@ -1,0 +1,58 @@
+[
+    {
+        "url": "http://localhost:8080/instructions.php",
+        "vulnerability": "Broken Access Control",
+        "vulnerable_input": "Direct URL Access",
+        "description": "Page is accessible without authentication.",
+        "remediation": "Ensure authentication checks before allowing access to protected resources."
+    },
+    {
+        "url": "http://localhost:8080/setup.php",
+        "vulnerability": "Broken Access Control",
+        "vulnerable_input": "Direct URL Access",
+        "description": "Page is accessible without authentication.",
+        "remediation": "Ensure authentication checks before allowing access to protected resources."
+    },
+    {
+        "url": "http://localhost:8080/about.php",
+        "vulnerability": "Broken Access Control",
+        "vulnerable_input": "Direct URL Access",
+        "description": "Page is accessible without authentication.",
+        "remediation": "Ensure authentication checks before allowing access to protected resources."
+    },
+    {
+        "url": "https://www.virtualbox.org/",
+        "vulnerability": "Broken Access Control",
+        "vulnerable_input": "Direct URL Access",
+        "description": "Page is accessible without authentication.",
+        "remediation": "Ensure authentication checks before allowing access to protected resources."
+    },
+    {
+        "url": "https://www.vmware.com/",
+        "vulnerability": "Broken Access Control",
+        "vulnerable_input": "Direct URL Access",
+        "description": "Page is accessible without authentication.",
+        "remediation": "Ensure authentication checks before allowing access to protected resources."
+    },
+    {
+        "url": "http://www.itsecgames.com/",
+        "vulnerability": "Broken Access Control",
+        "vulnerable_input": "Direct URL Access",
+        "description": "Page is accessible without authentication.",
+        "remediation": "Ensure authentication checks before allowing access to protected resources."
+    },
+    {
+        "url": "http://sourceforge.net/projects/mutillidae/files/mutillidae-project/",
+        "vulnerability": "Broken Access Control",
+        "vulnerable_input": "Direct URL Access",
+        "description": "Page is accessible without authentication.",
+        "remediation": "Ensure authentication checks before allowing access to protected resources."
+    },
+    {
+        "url": "http://www.irongeek.com/i.php?page=mutillidae/mutillidae-deliberately-vulnerable-php-owasp-top-10",
+        "vulnerability": "Broken Access Control",
+        "vulnerable_input": "Direct URL Access",
+        "description": "Page is accessible without authentication.",
+        "remediation": "Ensure authentication checks before allowing access to protected resources."
+    }
+]

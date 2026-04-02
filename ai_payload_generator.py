@@ -161,7 +161,7 @@ def scan():
 
     results = []
 
-    print("\n🚀 Scan Started\n")
+    print("\n Scan Started\n")
 
     for form in forms:
 
@@ -205,7 +205,7 @@ def scan():
 
             if is_vulnerable(res.text, delay):
 
-                print("🔥 VULNERABLE FOUND!")
+                print("VULNERABLE FOUND!")
 
                 results.append({
                 "url": action,
@@ -220,7 +220,7 @@ def scan():
     with open("vulnerabilities_llm.json", "w") as f:
         json.dump(results, f, indent=4)
 
-    print("\n✅ Scan Complete")
+    print("\nScan Complete")
     print("Total:", len(results))
 
 

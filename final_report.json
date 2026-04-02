@@ -1,0 +1,124 @@
+{
+    "scan_metadata": {
+        "timestamp": "2026-04-01T17:46:53.856591",
+        "scanner": "WebScanPro Automated Pipeline"
+    },
+    "vulnerabilities": {
+        "sql_injection": [],
+        "cross_site_scripting": [
+            {
+                "url": "http://localhost:8080/vulnerabilities/xss_r/",
+                "payload": "<script>alert(1)</script>",
+                "method": "get",
+                "action": "#"
+            },
+            {
+                "url": "http://localhost:8080/vulnerabilities/xss_r/",
+                "payload": "\"><script>alert(1)</script>",
+                "method": "get",
+                "action": "#"
+            },
+            {
+                "url": "http://localhost:8080/vulnerabilities/xss_r/",
+                "payload": "<img src=x onerror=alert(1)>",
+                "method": "get",
+                "action": "#"
+            },
+            {
+                "url": "http://localhost:8080/vulnerabilities/xss_s/",
+                "payload": "<script>alert(1)</script>",
+                "method": "post",
+                "action": null
+            },
+            {
+                "url": "http://localhost:8080/vulnerabilities/xss_s/",
+                "payload": "\"><script>alert(1)</script>",
+                "method": "post",
+                "action": null
+            },
+            {
+                "url": "http://localhost:8080/vulnerabilities/xss_s/",
+                "payload": "<img src=x onerror=alert(1)>",
+                "method": "post",
+                "action": null
+            },
+            {
+                "url": "http://localhost:8080/vulnerabilities/csp/",
+                "payload": "<script>alert(1)</script>",
+                "method": "post",
+                "action": null
+            },
+            {
+                "url": "http://localhost:8080/vulnerabilities/csp/",
+                "payload": "\"><script>alert(1)</script>",
+                "method": "post",
+                "action": null
+            },
+            {
+                "url": "http://localhost:8080/vulnerabilities/csp/",
+                "payload": "<img src=x onerror=alert(1)>",
+                "method": "post",
+                "action": null
+            }
+        ],
+        "access_control_and_idor": [
+            {
+                "url": "http://localhost:8080/instructions.php",
+                "vulnerability": "Broken Access Control",
+                "vulnerable_input": "Direct URL Access",
+                "description": "Page is accessible without authentication.",
+                "remediation": "Ensure authentication checks before allowing access to protected resources."
+            },
+            {
+                "url": "http://localhost:8080/setup.php",
+                "vulnerability": "Broken Access Control",
+                "vulnerable_input": "Direct URL Access",
+                "description": "Page is accessible without authentication.",
+                "remediation": "Ensure authentication checks before allowing access to protected resources."
+            },
+            {
+                "url": "http://localhost:8080/about.php",
+                "vulnerability": "Broken Access Control",
+                "vulnerable_input": "Direct URL Access",
+                "description": "Page is accessible without authentication.",
+                "remediation": "Ensure authentication checks before allowing access to protected resources."
+            },
+            {
+                "url": "https://www.virtualbox.org/",
+                "vulnerability": "Broken Access Control",
+                "vulnerable_input": "Direct URL Access",
+                "description": "Page is accessible without authentication.",
+                "remediation": "Ensure authentication checks before allowing access to protected resources."
+            },
+            {
+                "url": "https://www.vmware.com/",
+                "vulnerability": "Broken Access Control",
+                "vulnerable_input": "Direct URL Access",
+                "description": "Page is accessible without authentication.",
+                "remediation": "Ensure authentication checks before allowing access to protected resources."
+            },
+            {
+                "url": "http://www.itsecgames.com/",
+                "vulnerability": "Broken Access Control",
+                "vulnerable_input": "Direct URL Access",
+                "description": "Page is accessible without authentication.",
+                "remediation": "Ensure authentication checks before allowing access to protected resources."
+            },
+            {
+                "url": "http://sourceforge.net/projects/mutillidae/files/mutillidae-project/",
+                "vulnerability": "Broken Access Control",
+                "vulnerable_input": "Direct URL Access",
+                "description": "Page is accessible without authentication.",
+                "remediation": "Ensure authentication checks before allowing access to protected resources."
+            },
+            {
+                "url": "http://www.irongeek.com/i.php?page=mutillidae/mutillidae-deliberately-vulnerable-php-owasp-top-10",
+                "vulnerability": "Broken Access Control",
+                "vulnerable_input": "Direct URL Access",
+                "description": "Page is accessible without authentication.",
+                "remediation": "Ensure authentication checks before allowing access to protected resources."
+            }
+        ]
+    },
+    "total_vulnerabilities": 17
+}
