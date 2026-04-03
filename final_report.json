@@ -1,66 +1,33 @@
 {
     "scan_metadata": {
-        "timestamp": "2026-04-01T17:46:53.856591",
+        "timestamp": "2026-04-03T14:41:06.575089",
         "scanner": "WebScanPro Automated Pipeline"
     },
     "vulnerabilities": {
-        "sql_injection": [],
-        "cross_site_scripting": [
+        "sql_injection": [
             {
-                "url": "http://localhost:8080/vulnerabilities/xss_r/",
-                "payload": "<script>alert(1)</script>",
+                "url": "http://localhost:8080/setup.php",
+                "method": "post",
+                "payload": "' OR '1'='1",
+                "issue": "Possible SQL Injection",
+                "fix": "Use prepared statements / parameterized queries"
+            },
+            {
+                "url": "http://localhost:8080/vulnerabilities/sqli/",
                 "method": "get",
-                "action": "#"
+                "payload": "' OR '1'='1",
+                "issue": "Possible SQL Injection",
+                "fix": "Use prepared statements / parameterized queries"
             },
             {
-                "url": "http://localhost:8080/vulnerabilities/xss_r/",
-                "payload": "\"><script>alert(1)</script>",
+                "url": "http://localhost:8080/vulnerabilities/sqli_blind/",
                 "method": "get",
-                "action": "#"
-            },
-            {
-                "url": "http://localhost:8080/vulnerabilities/xss_r/",
-                "payload": "<img src=x onerror=alert(1)>",
-                "method": "get",
-                "action": "#"
-            },
-            {
-                "url": "http://localhost:8080/vulnerabilities/xss_s/",
-                "payload": "<script>alert(1)</script>",
-                "method": "post",
-                "action": null
-            },
-            {
-                "url": "http://localhost:8080/vulnerabilities/xss_s/",
-                "payload": "\"><script>alert(1)</script>",
-                "method": "post",
-                "action": null
-            },
-            {
-                "url": "http://localhost:8080/vulnerabilities/xss_s/",
-                "payload": "<img src=x onerror=alert(1)>",
-                "method": "post",
-                "action": null
-            },
-            {
-                "url": "http://localhost:8080/vulnerabilities/csp/",
-                "payload": "<script>alert(1)</script>",
-                "method": "post",
-                "action": null
-            },
-            {
-                "url": "http://localhost:8080/vulnerabilities/csp/",
-                "payload": "\"><script>alert(1)</script>",
-                "method": "post",
-                "action": null
-            },
-            {
-                "url": "http://localhost:8080/vulnerabilities/csp/",
-                "payload": "<img src=x onerror=alert(1)>",
-                "method": "post",
-                "action": null
+                "payload": "' OR '1'='1",
+                "issue": "Possible SQL Injection",
+                "fix": "Use prepared statements / parameterized queries"
             }
         ],
+        "cross_site_scripting": [],
         "access_control_and_idor": [
             {
                 "url": "http://localhost:8080/instructions.php",
@@ -117,8 +84,15 @@
                 "vulnerable_input": "Direct URL Access",
                 "description": "Page is accessible without authentication.",
                 "remediation": "Ensure authentication checks before allowing access to protected resources."
+            },
+            {
+                "url": "http://www.irongeek.com/i.php?page=mutillidae/mutillidae-deliberately-vulnerable-php-owasp-top-10",
+                "vulnerability": "Insecure Direct Object Reference (IDOR)",
+                "vulnerable_input": "buyer_credit_user_address_change",
+                "description": "Manipulating the ID parameter returns different user data.",
+                "remediation": "Implement proper access control checks to ensure users can only access their own data."
             }
         ]
     },
-    "total_vulnerabilities": 17
+    "total_vulnerabilities": 12
 }

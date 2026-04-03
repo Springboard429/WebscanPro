@@ -54,5 +54,12 @@
         "vulnerable_input": "Direct URL Access",
         "description": "Page is accessible without authentication.",
         "remediation": "Ensure authentication checks before allowing access to protected resources."
+    },
+    {
+        "url": "http://www.irongeek.com/i.php?page=mutillidae/mutillidae-deliberately-vulnerable-php-owasp-top-10",
+        "vulnerability": "Insecure Direct Object Reference (IDOR)",
+        "vulnerable_input": "buyer_credit_user_address_change",
+        "description": "Manipulating the ID parameter returns different user data.",
+        "remediation": "Implement proper access control checks to ensure users can only access their own data."
     }
 ]
