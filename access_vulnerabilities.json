@@ -1,0 +1,63 @@
+[
+    {
+        "type": "Broken Access Control",
+        "url": "http://localhost/setup.php",
+        "issue": "Accessible without authentication",
+        "remediation": "Restrict access using proper authentication checks."
+    },
+    {
+        "type": "IDOR",
+        "url": "http://localhost/setup.php",
+        "parameter": "user_token",
+        "test_values": [
+            "1",
+            "2"
+        ],
+        "issue": "Direct object reference without authorization",
+        "remediation": "Validate user permissions for object access."
+    },
+    {
+        "type": "IDOR",
+        "url": "http://localhost/vulnerabilities/brute/",
+        "parameter": "username",
+        "test_values": [
+            "1",
+            "2"
+        ],
+        "issue": "Direct object reference without authorization",
+        "remediation": "Validate user permissions for object access."
+    },
+    {
+        "type": "IDOR",
+        "url": "http://localhost/vulnerabilities/sqli/",
+        "parameter": "id",
+        "test_values": [
+            "1",
+            "2"
+        ],
+        "issue": "Direct object reference without authorization",
+        "remediation": "Validate user permissions for object access."
+    },
+    {
+        "type": "IDOR",
+        "url": "http://localhost/vulnerabilities/sqli_blind/",
+        "parameter": "id",
+        "test_values": [
+            "1",
+            "2"
+        ],
+        "issue": "Direct object reference without authorization",
+        "remediation": "Validate user permissions for object access."
+    },
+    {
+        "type": "IDOR",
+        "url": "http://localhost/security.php",
+        "parameter": "user_token",
+        "test_values": [
+            "1",
+            "2"
+        ],
+        "issue": "Direct object reference without authorization",
+        "remediation": "Validate user permissions for object access."
+    }
+]

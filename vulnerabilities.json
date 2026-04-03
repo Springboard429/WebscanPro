@@ -1,15 +1,15 @@
 [
     {
-        "url": "http://localhost:8080/vulnerabilities/brute/",
-        "form_action": "http://localhost:8080/vulnerabilities/brute/",
+        "url": "http://localhost/vulnerabilities/brute/",
+        "form_action": "http://localhost/vulnerabilities/brute/",
         "method": "get",
         "payload": "'",
         "error_detected": "Database error message found",
         "remediation": "Use parameterized queries to prevent SQL injection"
     },
     {
-        "url": "http://localhost:8080/vulnerabilities/sqli/",
-        "form_action": "http://localhost:8080/vulnerabilities/sqli/",
+        "url": "http://localhost/vulnerabilities/sqli/",
+        "form_action": "http://localhost/vulnerabilities/sqli/",
         "method": "get",
         "payload": "'",
         "error_detected": "Database error message found",

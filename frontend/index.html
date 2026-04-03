@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>WebScanPro Dashboard</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #0d1117;
+    color: #fff;
+}
+
+/* HEADER */
+header {
+    padding: 20px;
+    background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+    color: #00ffcc;
+}
+
+header p {
+    margin: 5px;
+    color: #aaa;
+}
+
+/* BUTTONS */
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px;
+}
+
+button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.run-btn {
+    background: #00c853;
+    color: white;
+}
+
+.run-btn:hover {
+    background: #00e676;
+}
+
+.report-btn {
+    background: #2979ff;
+    color: white;
+}
+
+.report-btn:hover {
+    background: #5393ff;
+}
+
+/* LOADER */
+.loader {
+    display: none;
+    text-align: center;
+    font-size: 18px;
+    color: #00ffcc;
+}
+
+/* SUMMARY */
+.summary {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.card {
+    padding: 20px;
+    border-radius: 12px;
+    width: 20%;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.sqli { background: #ff1744; }
+.xss { background: #ff9100; }
+.access { background: #2979ff; }
+
+/* RESULTS */
+.results {
+    margin: 20px;
+}
+
+.vuln-card {
+    background: #161b22;
+    padding: 15px;
+    margin: 10px;
+    border-left: 5px solid #00ffcc;
+    border-radius: 8px;
+}
+
+.vuln-card h3 {
+    margin: 5px 0;
+}
+
+.vuln-card p {
+    margin: 3px 0;
+    color: #ccc;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <h1>🛡️ WebScanPro</h1>
+    <p>Advanced Web Vulnerability Scanner</p>
+</header>
+
+<div class="controls">
+    <button class="run-btn" onclick="runScan()">Run Scan</button>
+    <button class="report-btn" onclick="loadReport()">View Report</button>
+</div>
+
+<div class="loader" id="loader">⚡ Scanning in progress...</div>
+
+<div class="summary">
+    <div class="card sqli">
+        <h2 id="sqliCount">0</h2>
+        <p>SQL Injection</p>
+    </div>
+    <div class="card xss">
+        <h2 id="xssCount">0</h2>
+        <p>XSS</p>
+    </div>
+    <div class="card access">
+        <h2 id="accessCount">0</h2>
+        <p>Access Control</p>
+    </div>
+</div>
+
+<div class="results" id="results"></div>
+
+<script>
+
+async function runScan() {
+    document.getElementById("loader").style.display = "block";
+
+    await fetch("http://127.0.0.1:8000/scan");
+
+    document.getElementById("loader").style.display = "none";
+    alert("Scan Completed!");
+}
+
+async function loadReport() {
+
+    let res = await fetch("http://127.0.0.1:8000/report");
+    let data = await res.json();
+
+    let resultsDiv = document.getElementById("results");
+    resultsDiv.innerHTML = "";
+
+    let sqli = 0, xss = 0, access = 0;
+
+    let details = data.details;
+
+    for (let category in details) {
+
+        let vulns = details[category];
+
+        vulns.forEach(v => {
+
+            if (category.includes("SQL")) sqli++;
+            else if (category.includes("XSS")) xss++;
+            else access++;
+
+            let card = document.createElement("div");
+            card.className = "vuln-card";
+
+            card.innerHTML = `
+                <h3>${category}</h3>
+                <p><b>URL:</b> ${v.url || "-"}</p>
+                <p><b>Payload:</b> ${v.payload || "-"}</p>
+                <p><b>Method:</b> ${v.method || "-"}</p>
+                <p><b>Input:</b> ${v.vulnerable_input || "-"}</p>
+                <p><b>Fix:</b> ${v.remediation || "-"}</p>
+            `;
+
+            resultsDiv.appendChild(card);
+        });
+    }
+
+    document.getElementById("sqliCount").innerText = sqli;
+    document.getElementById("xssCount").innerText = xss;
+    document.getElementById("accessCount").innerText = access;
+}
+
+</script>
+
+</body>
+</html>

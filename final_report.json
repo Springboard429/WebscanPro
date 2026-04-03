@@ -1,0 +1,261 @@
+{
+    "summary": {
+        "total_vulnerabilities": 27,
+        "SQL Injection": 12,
+        "XSS": 9,
+        "Access Control / IDOR": 6
+    },
+    "details": {
+        "SQL Injection": [
+            {
+                "url": "http://localhost:8080/vulnerabilities/brute/",
+                "form_action": "http://localhost:8080/vulnerabilities/brute/",
+                "method": "get",
+                "payload": "'",
+                "error_detected": "Database error message found",
+                "remediation": "Use parameterized queries to prevent SQL injection"
+            },
+            {
+                "url": "http://localhost:8080/vulnerabilities/sqli/",
+                "form_action": "http://localhost:8080/vulnerabilities/sqli/",
+                "method": "get",
+                "payload": "'",
+                "error_detected": "Database error message found",
+                "remediation": "Use parameterized queries to prevent SQL injection"
+            },
+            {
+                "url": "http://localhost/vulnerabilities/brute/",
+                "form_action": "http://localhost/vulnerabilities/brute/",
+                "method": "get",
+                "vulnerable_input": "username",
+                "payload": "1 AND '1'=1--",
+                "error_detected": "Database error message found",
+                "remediation": "Use parameterized queries (prepared statements)."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/brute/",
+                "form_action": "http://localhost/vulnerabilities/brute/",
+                "method": "get",
+                "vulnerable_input": "username",
+                "payload": "1' UNION SELECT NULL, NULL--",
+                "error_detected": "Database error message found",
+                "remediation": "Use parameterized queries (prepared statements)."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/brute/",
+                "form_action": "http://localhost/vulnerabilities/brute/",
+                "method": "get",
+                "vulnerable_input": "username",
+                "payload": "1' AND '1'=1--",
+                "error_detected": "Database error message found",
+                "remediation": "Use parameterized queries (prepared statements)."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/brute/",
+                "form_action": "http://localhost/vulnerabilities/brute/",
+                "method": "get",
+                "vulnerable_input": "username",
+                "payload": "1' OR 1=1 /*",
+                "error_detected": "Database error message found",
+                "remediation": "Use parameterized queries (prepared statements)."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/brute/",
+                "form_action": "http://localhost/vulnerabilities/brute/",
+                "method": "get",
+                "vulnerable_input": "username",
+                "payload": "1 AND '1'='1'/*",
+                "error_detected": "Database error message found",
+                "remediation": "Use parameterized queries (prepared statements)."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/sqli/",
+                "form_action": "http://localhost/vulnerabilities/sqli/",
+                "method": "get",
+                "vulnerable_input": "id",
+                "payload": "1 AND '1'=1--",
+                "error_detected": "Database error message found",
+                "remediation": "Use parameterized queries (prepared statements)."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/sqli/",
+                "form_action": "http://localhost/vulnerabilities/sqli/",
+                "method": "get",
+                "vulnerable_input": "id",
+                "payload": "1' UNION SELECT NULL, NULL--",
+                "error_detected": "Database error message found",
+                "remediation": "Use parameterized queries (prepared statements)."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/sqli/",
+                "form_action": "http://localhost/vulnerabilities/sqli/",
+                "method": "get",
+                "vulnerable_input": "id",
+                "payload": "1' AND '1'=1--",
+                "error_detected": "Database error message found",
+                "remediation": "Use parameterized queries (prepared statements)."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/sqli/",
+                "form_action": "http://localhost/vulnerabilities/sqli/",
+                "method": "get",
+                "vulnerable_input": "id",
+                "payload": "1' OR 1=1 /*",
+                "error_detected": "Database error message found",
+                "remediation": "Use parameterized queries (prepared statements)."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/sqli/",
+                "form_action": "http://localhost/vulnerabilities/sqli/",
+                "method": "get",
+                "vulnerable_input": "id",
+                "payload": "1 AND '1'='1'/*",
+                "error_detected": "Database error message found",
+                "remediation": "Use parameterized queries (prepared statements)."
+            }
+        ],
+        "XSS": [
+            {
+                "url": "http://localhost/vulnerabilities/xss_r/",
+                "form_action": "http://localhost/vulnerabilities/xss_r/",
+                "method": "get",
+                "payload": "<script>alert(1)</script>",
+                "type": "XSS",
+                "remediation": "Sanitize user input and encode output."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_s/",
+                "form_action": "http://localhost/vulnerabilities/xss_s/",
+                "method": "post",
+                "payload": "<script>alert(1)</script>",
+                "type": "XSS",
+                "remediation": "Sanitize user input and encode output."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/csp/",
+                "form_action": "http://localhost/vulnerabilities/csp/",
+                "method": "post",
+                "payload": "<script>alert(1)</script>",
+                "type": "XSS",
+                "remediation": "Sanitize user input and encode output."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_r/",
+                "form_action": "http://localhost/vulnerabilities/xss_r/",
+                "method": "get",
+                "vulnerable_input": "name",
+                "payload": "Submit",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_r/",
+                "form_action": "http://localhost/vulnerabilities/xss_r/",
+                "method": "get",
+                "vulnerable_input": "name",
+                "payload": "</form>",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_s/",
+                "form_action": "http://localhost/vulnerabilities/xss_s/",
+                "method": "post",
+                "vulnerable_input": "txtName",
+                "payload": "Submit",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_s/",
+                "form_action": "http://localhost/vulnerabilities/xss_s/",
+                "method": "post",
+                "vulnerable_input": "txtName",
+                "payload": "</form>",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/csp/",
+                "form_action": "http://localhost/vulnerabilities/csp/",
+                "method": "post",
+                "vulnerable_input": "include",
+                "payload": "Submit",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/csp/",
+                "form_action": "http://localhost/vulnerabilities/csp/",
+                "method": "post",
+                "vulnerable_input": "include",
+                "payload": "</form>",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            }
+        ],
+        "Access Control / IDOR": [
+            {
+                "type": "Broken Access Control",
+                "url": "http://localhost/setup.php",
+                "issue": "Accessible without authentication",
+                "remediation": "Restrict access using proper authentication checks."
+            },
+            {
+                "type": "IDOR",
+                "url": "http://localhost/setup.php",
+                "parameter": "user_token",
+                "test_values": [
+                    "1",
+                    "2"
+                ],
+                "issue": "Direct object reference without authorization",
+                "remediation": "Validate user permissions for object access."
+            },
+            {
+                "type": "IDOR",
+                "url": "http://localhost/vulnerabilities/brute/",
+                "parameter": "username",
+                "test_values": [
+                    "1",
+                    "2"
+                ],
+                "issue": "Direct object reference without authorization",
+                "remediation": "Validate user permissions for object access."
+            },
+            {
+                "type": "IDOR",
+                "url": "http://localhost/vulnerabilities/sqli/",
+                "parameter": "id",
+                "test_values": [
+                    "1",
+                    "2"
+                ],
+                "issue": "Direct object reference without authorization",
+                "remediation": "Validate user permissions for object access."
+            },
+            {
+                "type": "IDOR",
+                "url": "http://localhost/vulnerabilities/sqli_blind/",
+                "parameter": "id",
+                "test_values": [
+                    "1",
+                    "2"
+                ],
+                "issue": "Direct object reference without authorization",
+                "remediation": "Validate user permissions for object access."
+            },
+            {
+                "type": "IDOR",
+                "url": "http://localhost/security.php",
+                "parameter": "user_token",
+                "test_values": [
+                    "1",
+                    "2"
+                ],
+                "issue": "Direct object reference without authorization",
+                "remediation": "Validate user permissions for object access."
+            }
+        ]
+    }
+}
