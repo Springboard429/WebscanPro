@@ -10,6 +10,14 @@ session = requests.Session()
 
 
 # ---------------- GENERATE PAYLOADS ----------------
+payloads = [p.strip() for p in text.split("\n") if p.strip()]
+
+# ✅ FILTER ONLY VALID XSS PAYLOADS
+payloads = [
+    p for p in payloads
+    if "<script" in p or "onerror" in p or "onload" in p or "javascript:" in p
+]
+
 def generate_payloads():
 
     print("[+] Generating XSS payloads using Ollama...")
