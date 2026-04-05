@@ -1,23 +1,23 @@
 {
     "summary": {
-        "total_vulnerabilities": 27,
-        "SQL Injection": 12,
-        "XSS": 9,
+        "total_vulnerabilities": 125,
+        "SQL Injection": 18,
+        "XSS": 101,
         "Access Control / IDOR": 6
     },
     "details": {
         "SQL Injection": [
             {
-                "url": "http://localhost:8080/vulnerabilities/brute/",
-                "form_action": "http://localhost:8080/vulnerabilities/brute/",
+                "url": "http://localhost/vulnerabilities/brute/",
+                "form_action": "http://localhost/vulnerabilities/brute/",
                 "method": "get",
                 "payload": "'",
                 "error_detected": "Database error message found",
                 "remediation": "Use parameterized queries to prevent SQL injection"
             },
             {
-                "url": "http://localhost:8080/vulnerabilities/sqli/",
-                "form_action": "http://localhost:8080/vulnerabilities/sqli/",
+                "url": "http://localhost/vulnerabilities/sqli/",
+                "form_action": "http://localhost/vulnerabilities/sqli/",
                 "method": "get",
                 "payload": "'",
                 "error_detected": "Database error message found",
@@ -28,7 +28,7 @@
                 "form_action": "http://localhost/vulnerabilities/brute/",
                 "method": "get",
                 "vulnerable_input": "username",
-                "payload": "1 AND '1'=1--",
+                "payload": "' AND 1=1 --",
                 "error_detected": "Database error message found",
                 "remediation": "Use parameterized queries (prepared statements)."
             },
@@ -37,7 +37,7 @@
                 "form_action": "http://localhost/vulnerabilities/brute/",
                 "method": "get",
                 "vulnerable_input": "username",
-                "payload": "1' UNION SELECT NULL, NULL--",
+                "payload": "' OR 1<2 union select null,version()",
                 "error_detected": "Database error message found",
                 "remediation": "Use parameterized queries (prepared statements)."
             },
@@ -46,7 +46,7 @@
                 "form_action": "http://localhost/vulnerabilities/brute/",
                 "method": "get",
                 "vulnerable_input": "username",
-                "payload": "1' AND '1'=1--",
+                "payload": "' AND (SELECT%20SLEEP(5))--",
                 "error_detected": "Database error message found",
                 "remediation": "Use parameterized queries (prepared statements)."
             },
@@ -55,7 +55,7 @@
                 "form_action": "http://localhost/vulnerabilities/brute/",
                 "method": "get",
                 "vulnerable_input": "username",
-                "payload": "1' OR 1=1 /*",
+                "payload": "' UNION SELECT NULL,(SELECT%60IF(1=1,SLEEP(5),SLEEP(0)%60)--",
                 "error_detected": "Database error message found",
                 "remediation": "Use parameterized queries (prepared statements)."
             },
@@ -64,7 +64,34 @@
                 "form_action": "http://localhost/vulnerabilities/brute/",
                 "method": "get",
                 "vulnerable_input": "username",
-                "payload": "1 AND '1'='1'/*",
+                "payload": "' OR 1=(SELECT%20CASE%20WHEN%201=1%20THEN%20SLEEP(5)%20ELSE%20SLEEP(0)%20END)",
+                "error_detected": "Database error message found",
+                "remediation": "Use parameterized queries (prepared statements)."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/brute/",
+                "form_action": "http://localhost/vulnerabilities/brute/",
+                "method": "get",
+                "vulnerable_input": "username",
+                "payload": "' UNION SELECT NULL,(SELECT CASE WHEN 1=1 THEN pg_sleep(5) ELSE pg_sleep(0) END)--",
+                "error_detected": "Database error message found",
+                "remediation": "Use parameterized queries (prepared statements)."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/brute/",
+                "form_action": "http://localhost/vulnerabilities/brute/",
+                "method": "get",
+                "vulnerable_input": "username",
+                "payload": "' UNION ALL SELECT NULL,SLEEP(5)--",
+                "error_detected": "Database error message found",
+                "remediation": "Use parameterized queries (prepared statements)."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/brute/",
+                "form_action": "http://localhost/vulnerabilities/brute/",
+                "method": "get",
+                "vulnerable_input": "username",
+                "payload": "' OR 1<2 union select null,md5('test')--,null--",
                 "error_detected": "Database error message found",
                 "remediation": "Use parameterized queries (prepared statements)."
             },
@@ -73,7 +100,7 @@
                 "form_action": "http://localhost/vulnerabilities/sqli/",
                 "method": "get",
                 "vulnerable_input": "id",
-                "payload": "1 AND '1'=1--",
+                "payload": "' AND 1=1 --",
                 "error_detected": "Database error message found",
                 "remediation": "Use parameterized queries (prepared statements)."
             },
@@ -82,7 +109,7 @@
                 "form_action": "http://localhost/vulnerabilities/sqli/",
                 "method": "get",
                 "vulnerable_input": "id",
-                "payload": "1' UNION SELECT NULL, NULL--",
+                "payload": "' OR 1<2 union select null,version()",
                 "error_detected": "Database error message found",
                 "remediation": "Use parameterized queries (prepared statements)."
             },
@@ -91,7 +118,7 @@
                 "form_action": "http://localhost/vulnerabilities/sqli/",
                 "method": "get",
                 "vulnerable_input": "id",
-                "payload": "1' AND '1'=1--",
+                "payload": "' AND (SELECT%20SLEEP(5))--",
                 "error_detected": "Database error message found",
                 "remediation": "Use parameterized queries (prepared statements)."
             },
@@ -100,7 +127,7 @@
                 "form_action": "http://localhost/vulnerabilities/sqli/",
                 "method": "get",
                 "vulnerable_input": "id",
-                "payload": "1' OR 1=1 /*",
+                "payload": "' UNION SELECT NULL,(SELECT%60IF(1=1,SLEEP(5),SLEEP(0)%60)--",
                 "error_detected": "Database error message found",
                 "remediation": "Use parameterized queries (prepared statements)."
             },
@@ -109,7 +136,34 @@
                 "form_action": "http://localhost/vulnerabilities/sqli/",
                 "method": "get",
                 "vulnerable_input": "id",
-                "payload": "1 AND '1'='1'/*",
+                "payload": "' OR 1=(SELECT%20CASE%20WHEN%201=1%20THEN%20SLEEP(5)%20ELSE%20SLEEP(0)%20END)",
+                "error_detected": "Database error message found",
+                "remediation": "Use parameterized queries (prepared statements)."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/sqli/",
+                "form_action": "http://localhost/vulnerabilities/sqli/",
+                "method": "get",
+                "vulnerable_input": "id",
+                "payload": "' UNION SELECT NULL,(SELECT CASE WHEN 1=1 THEN pg_sleep(5) ELSE pg_sleep(0) END)--",
+                "error_detected": "Database error message found",
+                "remediation": "Use parameterized queries (prepared statements)."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/sqli/",
+                "form_action": "http://localhost/vulnerabilities/sqli/",
+                "method": "get",
+                "vulnerable_input": "id",
+                "payload": "' UNION ALL SELECT NULL,SLEEP(5)--",
+                "error_detected": "Database error message found",
+                "remediation": "Use parameterized queries (prepared statements)."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/sqli/",
+                "form_action": "http://localhost/vulnerabilities/sqli/",
+                "method": "get",
+                "vulnerable_input": "id",
+                "payload": "' OR 1<2 union select null,md5('test')--,null--",
                 "error_detected": "Database error message found",
                 "remediation": "Use parameterized queries (prepared statements)."
             }
@@ -121,7 +175,7 @@
                 "method": "get",
                 "payload": "<script>alert(1)</script>",
                 "type": "XSS",
-                "remediation": "Sanitize user input and encode output."
+                "remediation": "Sanitize input and encode output"
             },
             {
                 "url": "http://localhost/vulnerabilities/xss_s/",
@@ -129,22 +183,14 @@
                 "method": "post",
                 "payload": "<script>alert(1)</script>",
                 "type": "XSS",
-                "remediation": "Sanitize user input and encode output."
-            },
-            {
-                "url": "http://localhost/vulnerabilities/csp/",
-                "form_action": "http://localhost/vulnerabilities/csp/",
-                "method": "post",
-                "payload": "<script>alert(1)</script>",
-                "type": "XSS",
-                "remediation": "Sanitize user input and encode output."
+                "remediation": "Sanitize input and encode output"
             },
             {
                 "url": "http://localhost/vulnerabilities/xss_r/",
                 "form_action": "http://localhost/vulnerabilities/xss_r/",
                 "method": "get",
                 "vulnerable_input": "name",
-                "payload": "Submit",
+                "payload": "```html",
                 "type": "XSS (LLM Generated)",
                 "remediation": "Use output encoding and input validation."
             },
@@ -153,6 +199,519 @@
                 "form_action": "http://localhost/vulnerabilities/xss_r/",
                 "method": "get",
                 "vulnerable_input": "name",
+                "payload": "<script>alert('XSS Test')</script>",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_r/",
+                "form_action": "http://localhost/vulnerabilities/xss_r/",
+                "method": "get",
+                "vulnerable_input": "name",
+                "payload": "```",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_r/",
+                "form_action": "http://localhost/vulnerabilities/xss_r/",
+                "method": "get",
+                "vulnerable_input": "name",
+                "payload": "```html",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_r/",
+                "form_action": "http://localhost/vulnerabilities/xss_r/",
+                "method": "get",
+                "vulnerable_input": "name",
+                "payload": "<img src=\"x\" onerror=\"alert('XSS')\">",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_r/",
+                "form_action": "http://localhost/vulnerabilities/xss_r/",
+                "method": "get",
+                "vulnerable_input": "name",
+                "payload": "```",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_r/",
+                "form_action": "http://localhost/vulnerabilities/xss_r/",
+                "method": "get",
+                "vulnerable_input": "name",
+                "payload": "```html",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_r/",
+                "form_action": "http://localhost/vulnerabilities/xss_r/",
+                "method": "get",
+                "vulnerable_input": "name",
+                "payload": "<div style=\"this:expression(alert('XSS'))\"></div>",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_r/",
+                "form_action": "http://localhost/vulnerabilities/xss_r/",
+                "method": "get",
+                "vulnerable_input": "name",
+                "payload": "```",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_r/",
+                "form_action": "http://localhost/vulnerabilities/xss_r/",
+                "method": "get",
+                "vulnerable_input": "name",
+                "payload": "```html",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_r/",
+                "form_action": "http://localhost/vulnerabilities/xss_r/",
+                "method": "get",
+                "vulnerable_input": "name",
+                "payload": "<a href=\"javascript:alert('XSS')\">Click Me</a>",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_r/",
+                "form_action": "http://localhost/vulnerabilities/xss_r/",
+                "method": "get",
+                "vulnerable_input": "name",
+                "payload": "```",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_r/",
+                "form_action": "http://localhost/vulnerabilities/xss_r/",
+                "method": "get",
+                "vulnerable_input": "name",
+                "payload": "```html",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_r/",
+                "form_action": "http://localhost/vulnerabilities/xss_r/",
+                "method": "get",
+                "vulnerable_input": "name",
+                "payload": "<object data=\"data:text/html;base64,PHNjcmlwdD5hbGVydCgnWFNTIGlzIDEuMCkgMSkgPC9zY3JpcHQ+\"></object>",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_r/",
+                "form_action": "http://localhost/vulnerabilities/xss_r/",
+                "method": "get",
+                "vulnerable_input": "name",
+                "payload": "```",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_r/",
+                "form_action": "http://localhost/vulnerabilities/xss_r/",
+                "method": "get",
+                "vulnerable_input": "name",
+                "payload": "```html",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_r/",
+                "form_action": "http://localhost/vulnerabilities/xss_r/",
+                "method": "get",
+                "vulnerable_input": "name",
+                "payload": "<iframe src=\"javascript:alert('XSS')\"></iframe>",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_r/",
+                "form_action": "http://localhost/vulnerabilities/xss_r/",
+                "method": "get",
+                "vulnerable_input": "name",
+                "payload": "```",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_r/",
+                "form_action": "http://localhost/vulnerabilities/xss_r/",
+                "method": "get",
+                "vulnerable_input": "name",
+                "payload": "```html",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_r/",
+                "form_action": "http://localhost/vulnerabilities/xss_r/",
+                "method": "get",
+                "vulnerable_input": "name",
+                "payload": "<div onmouseover=\"alert(document.domain);\">Hover Over Me</div>",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_r/",
+                "form_action": "http://localhost/vulnerabilities/xss_r/",
+                "method": "get",
+                "vulnerable_input": "name",
+                "payload": "```",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_r/",
+                "form_action": "http://localhost/vulnerabilities/xss_r/",
+                "method": "get",
+                "vulnerable_input": "name",
+                "payload": "```html",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_r/",
+                "form_action": "http://localhost/vulnerabilities/xss_r/",
+                "method": "get",
+                "vulnerable_input": "name",
+                "payload": "<form action=\"\" onsubmit=\"alert('XSS');return false;\">",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_r/",
+                "form_action": "http://localhost/vulnerabilities/xss_r/",
+                "method": "get",
+                "vulnerable_input": "name",
+                "payload": "<input type=\"text\" name=\"xss\">",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_r/",
+                "form_action": "http://localhost/vulnerabilities/xss_r/",
+                "method": "get",
+                "vulnerable_input": "name",
+                "payload": "<button>Submit</button>",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_r/",
+                "form_action": "http://localhost/vulnerabilities/xss_r/",
+                "method": "get",
+                "vulnerable_input": "name",
+                "payload": "</form>",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_r/",
+                "form_action": "http://localhost/vulnerabilities/xss_r/",
+                "method": "get",
+                "vulnerable_input": "name",
+                "payload": "```",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_r/",
+                "form_action": "http://localhost/vulnerabilities/xss_r/",
+                "method": "get",
+                "vulnerable_input": "name",
+                "payload": "```html",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_r/",
+                "form_action": "http://localhost/vulnerabilities/xss_r/",
+                "method": "get",
+                "vulnerable_input": "name",
+                "payload": "<svg onload=\"alert('XSS')\"></svg>",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_r/",
+                "form_action": "http://localhost/vulnerabilities/xss_r/",
+                "method": "get",
+                "vulnerable_input": "name",
+                "payload": "```",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_r/",
+                "form_action": "http://localhost/vulnerabilities/xss_r/",
+                "method": "get",
+                "vulnerable_input": "name",
+                "payload": "```html",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_r/",
+                "form_action": "http://localhost/vulnerabilities/xss_r/",
+                "method": "get",
+                "vulnerable_input": "name",
+                "payload": "<div [innerHtml]=\"&lt;script&gt;alert(&#39;XSS&#39;)&lt;/script&gt;\"></div>",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_r/",
+                "form_action": "http://localhost/vulnerabilities/xss_r/",
+                "method": "get",
+                "vulnerable_input": "name",
+                "payload": "```",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_s/",
+                "form_action": "http://localhost/vulnerabilities/xss_s/",
+                "method": "post",
+                "vulnerable_input": "txtName",
+                "payload": "```html",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_s/",
+                "form_action": "http://localhost/vulnerabilities/xss_s/",
+                "method": "post",
+                "vulnerable_input": "txtName",
+                "payload": "<script>alert('XSS Test')</script>",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_s/",
+                "form_action": "http://localhost/vulnerabilities/xss_s/",
+                "method": "post",
+                "vulnerable_input": "txtName",
+                "payload": "```",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_s/",
+                "form_action": "http://localhost/vulnerabilities/xss_s/",
+                "method": "post",
+                "vulnerable_input": "txtName",
+                "payload": "```html",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_s/",
+                "form_action": "http://localhost/vulnerabilities/xss_s/",
+                "method": "post",
+                "vulnerable_input": "txtName",
+                "payload": "<img src=\"x\" onerror=\"alert('XSS')\">",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_s/",
+                "form_action": "http://localhost/vulnerabilities/xss_s/",
+                "method": "post",
+                "vulnerable_input": "txtName",
+                "payload": "```",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_s/",
+                "form_action": "http://localhost/vulnerabilities/xss_s/",
+                "method": "post",
+                "vulnerable_input": "txtName",
+                "payload": "```html",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_s/",
+                "form_action": "http://localhost/vulnerabilities/xss_s/",
+                "method": "post",
+                "vulnerable_input": "txtName",
+                "payload": "<div style=\"this:expression(alert('XSS'))\"></div>",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_s/",
+                "form_action": "http://localhost/vulnerabilities/xss_s/",
+                "method": "post",
+                "vulnerable_input": "txtName",
+                "payload": "```",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_s/",
+                "form_action": "http://localhost/vulnerabilities/xss_s/",
+                "method": "post",
+                "vulnerable_input": "txtName",
+                "payload": "```html",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_s/",
+                "form_action": "http://localhost/vulnerabilities/xss_s/",
+                "method": "post",
+                "vulnerable_input": "txtName",
+                "payload": "<a href=\"javascript:alert('XSS')\">Click Me</a>",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_s/",
+                "form_action": "http://localhost/vulnerabilities/xss_s/",
+                "method": "post",
+                "vulnerable_input": "txtName",
+                "payload": "```",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_s/",
+                "form_action": "http://localhost/vulnerabilities/xss_s/",
+                "method": "post",
+                "vulnerable_input": "txtName",
+                "payload": "```html",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_s/",
+                "form_action": "http://localhost/vulnerabilities/xss_s/",
+                "method": "post",
+                "vulnerable_input": "txtName",
+                "payload": "<object data=\"data:text/html;base64,PHNjcmlwdD5hbGVydCgnWFNTIGlzIDEuMCkgMSkgPC9zY3JpcHQ+\"></object>",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_s/",
+                "form_action": "http://localhost/vulnerabilities/xss_s/",
+                "method": "post",
+                "vulnerable_input": "txtName",
+                "payload": "```",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_s/",
+                "form_action": "http://localhost/vulnerabilities/xss_s/",
+                "method": "post",
+                "vulnerable_input": "txtName",
+                "payload": "```html",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_s/",
+                "form_action": "http://localhost/vulnerabilities/xss_s/",
+                "method": "post",
+                "vulnerable_input": "txtName",
+                "payload": "<iframe src=\"javascript:alert('XSS')\"></iframe>",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_s/",
+                "form_action": "http://localhost/vulnerabilities/xss_s/",
+                "method": "post",
+                "vulnerable_input": "txtName",
+                "payload": "```",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_s/",
+                "form_action": "http://localhost/vulnerabilities/xss_s/",
+                "method": "post",
+                "vulnerable_input": "txtName",
+                "payload": "```html",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_s/",
+                "form_action": "http://localhost/vulnerabilities/xss_s/",
+                "method": "post",
+                "vulnerable_input": "txtName",
+                "payload": "<div onmouseover=\"alert(document.domain);\">Hover Over Me</div>",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_s/",
+                "form_action": "http://localhost/vulnerabilities/xss_s/",
+                "method": "post",
+                "vulnerable_input": "txtName",
+                "payload": "```",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_s/",
+                "form_action": "http://localhost/vulnerabilities/xss_s/",
+                "method": "post",
+                "vulnerable_input": "txtName",
+                "payload": "```html",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_s/",
+                "form_action": "http://localhost/vulnerabilities/xss_s/",
+                "method": "post",
+                "vulnerable_input": "txtName",
+                "payload": "<form action=\"\" onsubmit=\"alert('XSS');return false;\">",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_s/",
+                "form_action": "http://localhost/vulnerabilities/xss_s/",
+                "method": "post",
+                "vulnerable_input": "txtName",
+                "payload": "<input type=\"text\" name=\"xss\">",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_s/",
+                "form_action": "http://localhost/vulnerabilities/xss_s/",
+                "method": "post",
+                "vulnerable_input": "txtName",
+                "payload": "<button>Submit</button>",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_s/",
+                "form_action": "http://localhost/vulnerabilities/xss_s/",
+                "method": "post",
+                "vulnerable_input": "txtName",
                 "payload": "</form>",
                 "type": "XSS (LLM Generated)",
                 "remediation": "Use output encoding and input validation."
@@ -162,7 +721,7 @@
                 "form_action": "http://localhost/vulnerabilities/xss_s/",
                 "method": "post",
                 "vulnerable_input": "txtName",
-                "payload": "Submit",
+                "payload": "```",
                 "type": "XSS (LLM Generated)",
                 "remediation": "Use output encoding and input validation."
             },
@@ -171,6 +730,285 @@
                 "form_action": "http://localhost/vulnerabilities/xss_s/",
                 "method": "post",
                 "vulnerable_input": "txtName",
+                "payload": "```html",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_s/",
+                "form_action": "http://localhost/vulnerabilities/xss_s/",
+                "method": "post",
+                "vulnerable_input": "txtName",
+                "payload": "<svg onload=\"alert('XSS')\"></svg>",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_s/",
+                "form_action": "http://localhost/vulnerabilities/xss_s/",
+                "method": "post",
+                "vulnerable_input": "txtName",
+                "payload": "```",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_s/",
+                "form_action": "http://localhost/vulnerabilities/xss_s/",
+                "method": "post",
+                "vulnerable_input": "txtName",
+                "payload": "```html",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_s/",
+                "form_action": "http://localhost/vulnerabilities/xss_s/",
+                "method": "post",
+                "vulnerable_input": "txtName",
+                "payload": "<div [innerHtml]=\"&lt;script&gt;alert(&#39;XSS&#39;)&lt;/script&gt;\"></div>",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/xss_s/",
+                "form_action": "http://localhost/vulnerabilities/xss_s/",
+                "method": "post",
+                "vulnerable_input": "txtName",
+                "payload": "```",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/csp/",
+                "form_action": "http://localhost/vulnerabilities/csp/",
+                "method": "post",
+                "vulnerable_input": "include",
+                "payload": "```html",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/csp/",
+                "form_action": "http://localhost/vulnerabilities/csp/",
+                "method": "post",
+                "vulnerable_input": "include",
+                "payload": "<script>alert('XSS Test')</script>",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/csp/",
+                "form_action": "http://localhost/vulnerabilities/csp/",
+                "method": "post",
+                "vulnerable_input": "include",
+                "payload": "```",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/csp/",
+                "form_action": "http://localhost/vulnerabilities/csp/",
+                "method": "post",
+                "vulnerable_input": "include",
+                "payload": "```html",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/csp/",
+                "form_action": "http://localhost/vulnerabilities/csp/",
+                "method": "post",
+                "vulnerable_input": "include",
+                "payload": "<img src=\"x\" onerror=\"alert('XSS')\">",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/csp/",
+                "form_action": "http://localhost/vulnerabilities/csp/",
+                "method": "post",
+                "vulnerable_input": "include",
+                "payload": "```",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/csp/",
+                "form_action": "http://localhost/vulnerabilities/csp/",
+                "method": "post",
+                "vulnerable_input": "include",
+                "payload": "```html",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/csp/",
+                "form_action": "http://localhost/vulnerabilities/csp/",
+                "method": "post",
+                "vulnerable_input": "include",
+                "payload": "<div style=\"this:expression(alert('XSS'))\"></div>",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/csp/",
+                "form_action": "http://localhost/vulnerabilities/csp/",
+                "method": "post",
+                "vulnerable_input": "include",
+                "payload": "```",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/csp/",
+                "form_action": "http://localhost/vulnerabilities/csp/",
+                "method": "post",
+                "vulnerable_input": "include",
+                "payload": "```html",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/csp/",
+                "form_action": "http://localhost/vulnerabilities/csp/",
+                "method": "post",
+                "vulnerable_input": "include",
+                "payload": "<a href=\"javascript:alert('XSS')\">Click Me</a>",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/csp/",
+                "form_action": "http://localhost/vulnerabilities/csp/",
+                "method": "post",
+                "vulnerable_input": "include",
+                "payload": "```",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/csp/",
+                "form_action": "http://localhost/vulnerabilities/csp/",
+                "method": "post",
+                "vulnerable_input": "include",
+                "payload": "```html",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/csp/",
+                "form_action": "http://localhost/vulnerabilities/csp/",
+                "method": "post",
+                "vulnerable_input": "include",
+                "payload": "<object data=\"data:text/html;base64,PHNjcmlwdD5hbGVydCgnWFNTIGlzIDEuMCkgMSkgPC9zY3JpcHQ+\"></object>",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/csp/",
+                "form_action": "http://localhost/vulnerabilities/csp/",
+                "method": "post",
+                "vulnerable_input": "include",
+                "payload": "```",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/csp/",
+                "form_action": "http://localhost/vulnerabilities/csp/",
+                "method": "post",
+                "vulnerable_input": "include",
+                "payload": "```html",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/csp/",
+                "form_action": "http://localhost/vulnerabilities/csp/",
+                "method": "post",
+                "vulnerable_input": "include",
+                "payload": "<iframe src=\"javascript:alert('XSS')\"></iframe>",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/csp/",
+                "form_action": "http://localhost/vulnerabilities/csp/",
+                "method": "post",
+                "vulnerable_input": "include",
+                "payload": "```",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/csp/",
+                "form_action": "http://localhost/vulnerabilities/csp/",
+                "method": "post",
+                "vulnerable_input": "include",
+                "payload": "```html",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/csp/",
+                "form_action": "http://localhost/vulnerabilities/csp/",
+                "method": "post",
+                "vulnerable_input": "include",
+                "payload": "<div onmouseover=\"alert(document.domain);\">Hover Over Me</div>",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/csp/",
+                "form_action": "http://localhost/vulnerabilities/csp/",
+                "method": "post",
+                "vulnerable_input": "include",
+                "payload": "```",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/csp/",
+                "form_action": "http://localhost/vulnerabilities/csp/",
+                "method": "post",
+                "vulnerable_input": "include",
+                "payload": "```html",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/csp/",
+                "form_action": "http://localhost/vulnerabilities/csp/",
+                "method": "post",
+                "vulnerable_input": "include",
+                "payload": "<form action=\"\" onsubmit=\"alert('XSS');return false;\">",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/csp/",
+                "form_action": "http://localhost/vulnerabilities/csp/",
+                "method": "post",
+                "vulnerable_input": "include",
+                "payload": "<input type=\"text\" name=\"xss\">",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/csp/",
+                "form_action": "http://localhost/vulnerabilities/csp/",
+                "method": "post",
+                "vulnerable_input": "include",
+                "payload": "<button>Submit</button>",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/csp/",
+                "form_action": "http://localhost/vulnerabilities/csp/",
+                "method": "post",
+                "vulnerable_input": "include",
                 "payload": "</form>",
                 "type": "XSS (LLM Generated)",
                 "remediation": "Use output encoding and input validation."
@@ -180,7 +1018,7 @@
                 "form_action": "http://localhost/vulnerabilities/csp/",
                 "method": "post",
                 "vulnerable_input": "include",
-                "payload": "Submit",
+                "payload": "```",
                 "type": "XSS (LLM Generated)",
                 "remediation": "Use output encoding and input validation."
             },
@@ -189,7 +1027,52 @@
                 "form_action": "http://localhost/vulnerabilities/csp/",
                 "method": "post",
                 "vulnerable_input": "include",
-                "payload": "</form>",
+                "payload": "```html",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/csp/",
+                "form_action": "http://localhost/vulnerabilities/csp/",
+                "method": "post",
+                "vulnerable_input": "include",
+                "payload": "<svg onload=\"alert('XSS')\"></svg>",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/csp/",
+                "form_action": "http://localhost/vulnerabilities/csp/",
+                "method": "post",
+                "vulnerable_input": "include",
+                "payload": "```",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/csp/",
+                "form_action": "http://localhost/vulnerabilities/csp/",
+                "method": "post",
+                "vulnerable_input": "include",
+                "payload": "```html",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/csp/",
+                "form_action": "http://localhost/vulnerabilities/csp/",
+                "method": "post",
+                "vulnerable_input": "include",
+                "payload": "<div [innerHtml]=\"&lt;script&gt;alert(&#39;XSS&#39;)&lt;/script&gt;\"></div>",
+                "type": "XSS (LLM Generated)",
+                "remediation": "Use output encoding and input validation."
+            },
+            {
+                "url": "http://localhost/vulnerabilities/csp/",
+                "form_action": "http://localhost/vulnerabilities/csp/",
+                "method": "post",
+                "vulnerable_input": "include",
+                "payload": "```",
                 "type": "XSS (LLM Generated)",
                 "remediation": "Use output encoding and input validation."
             }

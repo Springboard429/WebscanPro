@@ -1,8 +1,5 @@
-from crawler import *
-from sqli_tester import test_forms as test_sqli
-from sqli_llm_tester import test_forms as test_sqli_llm
-from xss_tester import test_xss
-from xss_tester_llm import test_forms as test_xss_llm
+BASE_URL = "http://localhost/"
+LOGIN_URL = BASE_URL + "login.php"
 from report_generator import generate_final_json, generate_html
 
 
@@ -11,23 +8,27 @@ def run_all():
     print("\n🚀 Starting Full WebScanPro Scan...\n")
 
     # Step 1: Crawl
-    login()
+    print("🔄 Running crawler...")
+    import crawler   # this will execute crawler script
     print("✔ Crawling completed")
 
     # Step 2: SQL Injection
-    test_sqli()
+    import sqli_tester
     print("✔ SQL Injection scan done")
 
-    test_sqli_llm()
+    import sqli_llm_tester
     print("✔ LLM SQL scan done")
 
     # Step 3: XSS
-    test_xss()
+    import xss_tester
     print("✔ XSS scan done")
 
-    test_xss_llm()
+    import xss_tester_llm
     print("✔ LLM XSS scan done")
 
+    import access_control_tester
+    print("✔ Access Control scan done")
+    
     # Step 4: Report
     data = generate_final_json()
     generate_html(data)
@@ -35,5 +36,6 @@ def run_all():
     print("\n✅ FULL SCAN COMPLETED SUCCESSFULLY")
 
 
+# 🔥 THIS LINE WAS MISSING
 if __name__ == "__main__":
     run_all()

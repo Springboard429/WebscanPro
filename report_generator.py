@@ -1,5 +1,9 @@
 import json
 import os
+import html
+
+def safe(value):
+    return html.escape(str(value))
 
 # ---------------- FILES ----------------
 FILES = {
@@ -76,7 +80,7 @@ def generate_final_json():
 # ---------------- GENERATE HTML ----------------
 def generate_html(data):
 
-    html = """
+    html_content = """
     <html>
     <head>
         <title>WebScanPro Report</title>
@@ -85,7 +89,7 @@ def generate_html(data):
             h1 { text-align: center; }
             .summary { background: white; padding: 15px; border-radius: 10px; margin-bottom: 20px; }
             .section { background: white; padding: 15px; border-radius: 10px; margin-bottom: 20px; }
-            .vuln { margin: 10px 0; padding: 10px; border-left: 5px solid red; background: #ffe6e6; }
+            .vuln { margin: 10px 0; padding: 10px; border-left: 5px solid red; background: #ffe6e6; word-wrap: break-word; }
         </style>
     </head>
     <body>
@@ -96,36 +100,36 @@ def generate_html(data):
     # ---------- SUMMARY ----------
     summary = data["summary"]
 
-    html += "<div class='summary'>"
-    html += f"<p><b>Total Vulnerabilities:</b> {summary['total_vulnerabilities']}</p>"
-    html += f"<p>SQL Injection: {summary['SQL Injection']}</p>"
-    html += f"<p>XSS: {summary['XSS']}</p>"
-    html += f"<p>Access Control / IDOR: {summary['Access Control / IDOR']}</p>"
-    html += "</div>"
+    html_content += "<div class='summary'>"
+    html_content += f"<p><b>Total Vulnerabilities:</b> {summary['total_vulnerabilities']}</p>"
+    html_content += f"<p>SQL Injection: {summary['SQL Injection']}</p>"
+    html_content += f"<p>XSS: {summary['XSS']}</p>"
+    html_content += f"<p>Access Control / IDOR: {summary['Access Control / IDOR']}</p>"
+    html_content += "</div>"
 
     # ---------- DETAILS ----------
     for category, vulns in data["details"].items():
 
-        html += f"<div class='section'><h2>{category}</h2>"
+        html_content += f"<div class='section'><h2>{safe(category)}</h2>"
 
         if not vulns:
-            html += "<p>No vulnerabilities found</p>"
+            html_content += "<p>No vulnerabilities found</p>"
 
         for v in vulns:
-            html += "<div class='vuln'>"
+            html_content += "<div class='vuln'>"
 
             for key, value in v.items():
-                html += f"<b>{key}:</b> {value}<br>"
+                html_content += f"<b>{safe(key)}:</b> {safe(value)}<br>"
 
-            html += "</div>"
+            html_content += "</div>"
 
-        html += "</div>"
+        html_content += "</div>"
 
-    html += "</body></html>"
+    html_content += "</body></html>"
 
     # save HTML
     with open("final_report.html", "w") as f:
-        f.write(html)
+        f.write(html_content)
 
     print("[+] final_report.html created")
 

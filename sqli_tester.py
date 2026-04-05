@@ -138,6 +138,29 @@ def test_form(url, form, session, payloads):
 
     return vulnerabilities
 
+def test_forms(base_url, login_url):
+    session = login_dvwa(base_url, login_url)
+
+    if not session:
+        return []
+
+    payloads = load_payloads()
+
+    try:
+        with open("forms.json", "r") as f:
+            forms = json.load(f)
+    except FileNotFoundError:
+        print("forms.json not found")
+        return []
+
+    all_vulnerabilities = []
+
+    for form in forms:
+        url = form.get("page")
+        vulns = test_form(url, form, session, payloads)
+        all_vulnerabilities.extend(vulns)
+
+    return all_vulnerabilities
 
 # --------------------------
 # Main scanner
