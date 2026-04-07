@@ -1,11 +1,28 @@
 import requests
 import json
 from urllib.parse import urljoin
-
-# -------------------------
-# LOGIN FUNCTION (DVWA)
-
 import re
+import os   # ✅ ADD THIS
+
+from openai import OpenAI
+
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+def generate_xss_payloads():
+    prompt = """
+    Generate 10 different XSS payloads.
+    Each payload should be on a new line.
+    Avoid explanations.
+    """
+
+    response = client.chat.completions.create(
+        model="gpt-5-mini",
+        messages=[
+            {"role": "user", "content": prompt}
+        ]
+    )
+
+    payloads = response.choices[0].message.content.strip().split("\n")
+    return payloads
 
 def login_dvwa(session, base_url):
     login_url = base_url + "/login.php"
@@ -173,3 +190,14 @@ def main():
 # -------------------------
 if __name__ == "__main__":
     main()
+
+def load_payloads(file_path):
+    with open(file_path, "r") as f:
+        payloads = [line.strip() for line in f if line.strip()]
+    return payloads
+
+payloads = load_payloads("payload.txt")
+
+print("[+] Loaded Payloads:")
+for p in payloads:
+    print(p)
